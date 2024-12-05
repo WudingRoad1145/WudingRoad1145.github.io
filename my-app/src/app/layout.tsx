@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "hi yan",
+  title: "hi cool beans",
   description: "nice to meet you",
   icons: {
     icon: '/yan.ico',

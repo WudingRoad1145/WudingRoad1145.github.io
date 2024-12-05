@@ -1,12 +1,11 @@
-// src/app/contact/page.tsx
 import React from 'react';
 import Link from 'next/link';
 
-const ContactPage = () => {
+const humansPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between p-8">
       <div>
-        <h1 className="text-5xl font-bold mb-8">Contact</h1>
+        <h1 className="text-5xl font-bold mb-8">humans</h1>
 
         <p className="text-lg mb-4">
           Don’t hesitate if you want to talk about fun things, do sports together, or plan an adventure with me!
@@ -39,4 +38,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default humansPage;

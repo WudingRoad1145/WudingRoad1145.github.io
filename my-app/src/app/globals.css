@@ -31,3 +31,14 @@ body {
   grid-column: span 8 / span 8;
   grid-column-start: 3;
 }
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+* {
+  user-select: none;
+}
