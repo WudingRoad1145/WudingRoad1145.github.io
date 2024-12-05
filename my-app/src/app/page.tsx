@@ -1,19 +1,22 @@
-"use client"
-import { useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import DraggableNotes from '@/components/DraggableNotes';
+"use client";
+
+import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Draggable from "react-draggable";
+
+interface Note {
+  src: string;
+  position: { x: number; y: number };
+  rotation: number;
+}
 
 interface Project {
   title: string;
   intro: string;
   image: string;
   slug: string;
-  notes?: {
-    src: string;
-    position: { x: number; y: number };
-    rotation: number;
-  }[];
+  notes?: Note[];
 }
 
 const projects: Project[] = [
@@ -48,13 +51,56 @@ const projects: Project[] = [
 ];
 
 function ProjectSection({ project }: { project: Project }) {
-  return project.slug === 'wiser' ? (
-    <DraggableNotes project={project} />
+  return project.slug === "wiser" ? (
+    <div className="relative grid grid-cols-2 gap-8 max-w-6xl mx-auto p-8">
+      <div className="relative">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={800}
+          height={600}
+          className="w-full h-[70vh] object-cover"
+        />
+        {project.notes?.map((note, index) => (
+          <Draggable
+            key={index}
+            defaultPosition={{
+              x: note.position.x,
+              y: note.position.y
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                transform: `rotate(${note.rotation}deg)`,
+                zIndex: 10
+              }}
+              className="cursor-move hover:scale-105 transition-transform"
+            >
+              <Image
+                src={note.src}
+                alt={`Note ${index + 1}`}
+                width={200}
+                height={200}
+                draggable={false}
+              />
+            </div>
+          </Draggable>
+        ))}
+      </div>
+      <div className="flex flex-col justify-center">
+        <h2 className="text-6xl mb-8">{project.title}</h2>
+        <p className="text-xl mb-8">{project.intro}</p>
+        <Link href={`/projects/${project.slug}`} className="text-xl underline">
+          Read more
+        </Link>
+      </div>
+    </div>
   ) : (
     <div className="relative grid grid-cols-2 gap-8 max-w-6xl mx-auto p-8">
       <div className="relative">
-        <Image 
-          src={project.image} 
+        <Image
+          src={project.image}
           alt={project.title}
           width={800}
           height={600}
@@ -81,7 +127,7 @@ export default function HomePage() {
   };
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -108,12 +154,25 @@ export default function HomePage() {
           <h2 className="text-5xl mb-8">About Yán Fēng 颜丰</h2>
           <div className="space-y-6">
             <p>welcome! I appreciate you taking the time to get to know me</p>
-            <p>I'm a builder and I care about building deeply humanizing products that shape us into better humans</p>
+            <p>
+              I'm a builder and I care about building deeply humanizing products
+              that shape us into better humans
+            </p>
             <p>currently, I am studying computer science at Duke University</p>
-            <p>previously, I worked as product at rabbit. I also spent a significant amount of time in multi-agent and blockchain research</p>
+            <p>
+              previously, I worked as product at rabbit. I also spent a
+              significant amount of time in multi-agent and blockchain research
+            </p>
             <br />
-            <p>DON&apos;T hesitate if you want to talk about fun things, do sports together, or plan an adventure with me!</p>
-            <p>just leave a msg here: <span className="font-bold">yanffyy at gmail dot com</span> or catch me in the wild :D</p>
+            <p>
+              DON&apos;T hesitate if you want to talk about fun things, do
+              sports together, or plan an adventure with me!
+            </p>
+            <p>
+              just leave a msg here:{" "}
+              <span className="font-bold">yanffyy at gmail dot com</span> or
+              catch me in the wild :D
+            </p>
           </div>
         </div>
       </section>
@@ -155,11 +214,25 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl mb-8">HUMANS</h2>
           <div className="space-y-4">
-            <p>I am more than grateful to folks who I felt love from, some I know their names, some I don't</p>
+            <p>
+              I am more than grateful to folks who I felt love from, some I know
+              their names, some I don't
+            </p>
             <p>THANK YOU for making me a better human</p>
-            <p>Those who felt comfortable to be publicly associated with me /smirk are here:</p>
-            <p>Robin and Shally Yan - well, thanks mum and dad for making me a human to begin with and thank you for making me unapologetically myself</p>
-            <p>Lin Zhao, Patrick Merrigan, Victoria Zhang, ShaoBo Zhang, Nan Jiang, Qitian Hu, Sandy Wang, Jerry Jiang, Angie Xie, Henri Mattise, Steve Jobs, Jared Maccain, Ming Yao...</p>
+            <p>
+              Those who felt comfortable to be publicly associated with me
+              /smirk are here:
+            </p>
+            <p>
+              Robin and Shally Yan - well, thanks mum and dad for making me a
+              human to begin with and thank you for making me unapologetically
+              myself
+            </p>
+            <p>
+              Lin Zhao, Patrick Merrigan, Victoria Zhang, ShaoBo Zhang, Nan
+              Jiang, Qitian Hu, Sandy Wang, Jerry Jiang, Angie Xie, Henri
+              Mattise, Steve Jobs, Jared Maccain, Ming Yao...
+            </p>
           </div>
         </div>
       </section>
