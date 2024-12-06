@@ -39,6 +39,20 @@ img {
   -o-user-drag: none;
 }
 
+.draggable-note {
+  position: absolute;
+  z-index: 20; /* Ensure notes are above */
+  pointer-events: auto; /* Allow interactions with notes */
+  transform-origin: center; /* Rotate around the center */
+  display: inline-block;
+}
+
+.draggable-container {
+  position: relative;
+  z-index: 10; /* Base layer for images */
+}
+
+
 * {
   user-select: none;
 }
