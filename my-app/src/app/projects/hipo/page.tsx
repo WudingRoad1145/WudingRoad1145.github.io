@@ -36,7 +36,7 @@ export default function ProjectPage() {
           <p>
             <strong>Try Here:</strong>{" "}
             <Link
-              href="https://github.com/your-username/hipo-extension"
+              href="https://github.com/WudingRoad1145/hipo"
               className="underline text-black hover:text-gray-700"
               target="_blank"
             >
