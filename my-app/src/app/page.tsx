@@ -54,7 +54,7 @@ const projects: Project[] = [
     title: "account abstraction wallets",
     intro: "I was fortunate enough to travel around the world to hack around blockcahin related ideas and build products for better UX",
     image: "/images/aa.jpg",
-    slug: "multi-agent"
+    slug: "AA"
   }
   ,
   {
@@ -63,6 +63,12 @@ const projects: Project[] = [
     image: "/images/agent.jpg",
     slug: "multi-agent"
   }, 
+  {
+    title: "Big Woman",
+    intro: "Growing up in a culture that idealized frailty, I once wished to change my muscular body. Today, I celebrate it. Through sports and strength training, I’ve learned that aesthetics are not innate—they are learned. Here, I share my journey of embracing strength as beauty and inspire others to live strong, capable, and free. Join me in discovering the joy of strength.",
+    image: "/images/flex.jpg",
+    slug: "big-woman"
+  },
   {
     title: "because it is there",
     intro: "A personal journey through technology and human experience.",
@@ -185,12 +191,26 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section ref={sectionRefs.about} className="snap-start h-screen p-8">
+      <section ref={sectionRefs.about} className="snap-start h-screen p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl mb-8">About Yán Fēng 颜丰</h2>
           <div className="space-y-6">
             <p>Welcome! I appreciate you taking the time to get to know me</p>
-            <p>I would appreciate you even more if you try to call me by Yan(last name) Feng(first name) as in its original Chinese sequence. You can also find the pronounciation here: </p>
+            <p>I would appreciate you even more if you try to call me by Yan(last name) Feng(first name) as in its original Chinese sequence  🔈
+              <button
+                onClick={() => {
+                  const audio = document.getElementById("name-audio") as HTMLAudioElement;
+                  audio.play();
+                }}
+                style={{
+                  color: "#808080",
+                }}
+                className="hover:text-blue-800"
+              >
+                Pronounce my name
+              </button>
+              <audio id="name-audio" src="pronounce.m4a" />
+            </p>
             <p>
               I care about building deeply humanizing products
               as well as genuine connections that shape us into better humans
@@ -241,7 +261,7 @@ export default function HomePage() {
       </section>
 
       {/* Adventures Section */}
-      <section ref={sectionRefs.adventures} className="snap-start h-screen p-8">
+      <section ref={sectionRefs.adventures} className="snap-start h-screen p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl mb-8">ADVENTURES</h2>
           <div className="columns-2 gap-8">
@@ -270,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* Humans Section */}
-      <section ref={sectionRefs.humans} className="snap-start h-screen p-8">
+      <section ref={sectionRefs.humans} className="snap-start h-screen p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl mb-8">HUMANS</h2>
           <div className="space-y-4">

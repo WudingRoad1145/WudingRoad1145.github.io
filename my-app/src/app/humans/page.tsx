@@ -1,41 +1,67 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-const humansPage = () => {
+const HumansPage = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between p-8">
-      <div>
-        <h1 className="text-5xl font-bold mb-8">humans</h1>
-
-        <p className="text-lg mb-4">
-          Don’t hesitate if you want to talk about fun things, do sports together, or plan an adventure with me!
-        </p>
-        <p className="text-lg mb-4">
-          Just leave me something here: <span className="font-bold">yanffyy at gmail dot com</span>
-        </p>
-        <p className="text-lg mb-4">
-          You can also check out my LinkedIn{' '}
-          <a
-            href="https://www.linkedin.com/in/feng-yan-a6408018a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
-          >
-            here
-          </a>
-        </p>
-        <p className="text-lg">
-          Or catch me in the wild!
-        </p>
-      </div>
-
-      <footer className="text-black">
-        <Link href="/" className="hover:underline">
-          Back to Home
+    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
+      {/* Navigation Bar */}
+      <nav className="fixed top-8 right-8 flex gap-6">
+        <Link href="/" className="text-black hover:underline uppercase">
+          About
         </Link>
-      </footer>
+        <Link href="/projects" className="text-black hover:underline uppercase">
+          Projects
+        </Link>
+        <Link href="/adventures" className="text-black hover:underline uppercase">
+          Adventures
+        </Link>
+        <Link href="/humans" className="text-black hover:underline uppercase">
+          Humans
+        </Link>
+      </nav>
+
+      {/* Content Grid */}
+      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
+        {/* Title Section */}
+        <h1 className="col-span-12 text-4xl font-bold text-left mb-8">
+          Humans
+        </h1>
+
+        {/* Gratitude Section */}
+        <div className="col-span-12 text-lg space-y-6 text-left">
+          <p>
+            I am more than grateful to folks who I’ve felt love from—some I know
+            their names, some I don’t 💙
+          </p>
+          <p>THANK YOU for making me a better human.</p>
+          <p>
+            Those who felt comfortable being publicly associated with me 😏 are
+            here:
+          </p>
+          <ul className="list-disc list-inside space-y-4">
+            <li>
+              <strong>Robin and Shally Yan:</strong> Thanks, mum and dad, for
+              making me a human to begin with and thank you for making me
+              unapologetically myself.
+            </li>
+            <li>Lin Zhao</li>
+            <li>Patrick Merrigan</li>
+            <li>Victoria Zhang</li>
+            <li>ShaoBo Zhang</li>
+            <li>Nan Jiang</li>
+            <li>Qitian Hu</li>
+            <li>Sandy Wang</li>
+            <li>Jerry Jiang</li>
+            <li>Angie Xie</li>
+            <li>Henri Matisse</li>
+            <li>Steve Jobs</li>
+            <li>Jared Maccain</li>
+            <li>Ming Yao...</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default humansPage;
+export default HumansPage;

@@ -6,7 +6,7 @@ export default function ProjectPage() {
     <div className="min-h-screen p-8">
       <h1 className="text-6xl mb-8">miscellaneous</h1>
       {/* Project content */}
-      <Link href="/" className="text-xl underline">Back home</Link>
+      <Link href="/projects" className="text-xl underline">Back home</Link>
     </div>
   );
 }
