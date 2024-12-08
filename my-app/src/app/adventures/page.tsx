@@ -3,9 +3,24 @@ import Link from 'next/link';
 
 const AdventuresPage = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between p-8">
+    <div className="min-h-screen flex flex-col justify-center p-8">
+      {/* Navigation Bar */}
+      <nav className="fixed top-8 right-8 flex gap-6">
+        <Link href="/" className="text-black hover:underline uppercase">
+          About
+        </Link>
+        <Link href="/projects" className="text-black hover:underline uppercase">
+          Projects
+        </Link>
+        <Link href="/adventures" className="text-black hover:underline uppercase">
+          Adventures
+        </Link>
+        <Link href="/humans" className="text-black hover:underline uppercase">
+          Humans
+        </Link>
+      </nav>
       <div>
-        <h1 className="text-5xl font-bold mb-4">Adventures</h1>
+        <h1 className="text-6xl mb-8">Adventures</h1>
         <ul className="list-disc ml-8 space-y-4">
             <li>fortunate enough to have roadtripped to 31/34 provinces in China with my parents</li>
             <li>climbed the ABC treks in Nepal with my parents and survived 7 days without showering</li>
@@ -23,11 +38,6 @@ const AdventuresPage = () => {
         </ul>
       </div>
 
-      <footer className="text-black">
-        <Link href="/" className="hover:underline">
-          Back to Home
-        </Link>
-      </footer>
     </div>
   );
 };

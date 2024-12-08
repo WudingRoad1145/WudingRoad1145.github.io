@@ -23,7 +23,7 @@ export default function ProjectPage() {
       {/* Content Grid */}
       <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
         {/* Title Section */}
-        <h1 className="col-span-12 text-4xl font-bold text-left mb-6">
+        <h1 className="col-span-12 text-6xl text-left mb-8">
         miscellaneous 无用之用
         </h1>
       {/* Project content */}

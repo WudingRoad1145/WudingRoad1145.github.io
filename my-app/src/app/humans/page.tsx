@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HumansPage = () => {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
+    <div className="min-h-screen bg-white text-black flex flex-col items-start justify-center px-24 py-16">
       {/* Navigation Bar */}
       <nav className="fixed top-8 right-8 flex gap-6">
         <Link href="/" className="text-black hover:underline uppercase">
@@ -23,24 +23,22 @@ const HumansPage = () => {
       {/* Content Grid */}
       <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
         {/* Title Section */}
-        <h1 className="col-span-12 text-4xl font-bold text-left mb-8">
+        <h1 className="text-6xl mb-8">
           Humans
         </h1>
 
         {/* Gratitude Section */}
         <div className="col-span-12 text-lg space-y-6 text-left">
           <p>
-            I am more than grateful to folks who I’ve felt love from—some I know
-            their names, some I don’t 💙
+            I am deeply grateful to everyone from whom I’ve felt love—some whose names I know, and others I don’t 💙
           </p>
-          <p>THANK YOU for making me a better human.</p>
+          <p>THANK YOU for making me a better human</p>
           <p>
-            Those who felt comfortable being publicly associated with me 😏 are
-            here:
+            To those who felt comfortable being publicly associated with me 😏, here’s a special shout-out:
           </p>
           <ul className="list-disc list-inside space-y-4">
             <li>
-              <strong>Robin and Shally Yan:</strong> Thanks, mum and dad, for
+              <strong>Robin and Shally Yan:</strong> Thank you, Mum and Dad, for
               making me a human to begin with and thank you for making me
               unapologetically myself.
             </li>
@@ -56,7 +54,8 @@ const HumansPage = () => {
             <li>Henri Matisse</li>
             <li>Steve Jobs</li>
             <li>Jared Maccain</li>
-            <li>Ming Yao...</li>
+            <li>Ming Yao</li>
+            <li>...</li>
           </ul>
         </div>
       </div>
