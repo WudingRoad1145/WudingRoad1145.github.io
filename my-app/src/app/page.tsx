@@ -249,7 +249,7 @@ export default function HomePage() {
         <section className="snap-start h-screen flex items-center justify-center">
           <div className="text-center space-y-6">
             <h2 className="text-5xl font-bold">All Projects</h2>
-            <p className="text-lg">Discoverthe details of all my projects.</p>
+            <p className="text-lg">Discover the details of all my projects here</p>
             <Link
               href="/projects"
               className="text-xl underline font-bold hover:text-gray-700"
