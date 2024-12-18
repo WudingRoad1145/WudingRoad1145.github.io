@@ -32,7 +32,7 @@ const HumansPage = () => {
           <p>
             I am deeply grateful to everyone from whom I’ve felt love—some whose names I know, and others I don’t 💙
           </p>
-          <p>THANK YOU for making me a better human</p>
+          <p>THANK YOU for making me a better human!</p>
           <p>
             To those who felt comfortable being publicly associated with me 😏, here’s a special shout-out:
           </p>
