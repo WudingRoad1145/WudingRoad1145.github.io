@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Draggable from "react-draggable";
@@ -78,6 +78,15 @@ const projects: Project[] = [
 ];
 
 function ProjectSection({ project }: { project: Project }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return project.slug === "wiser" ? (
     <div className="relative grid grid-cols-2 gap-8 max-w-6xl mx-auto p-8">
       <div className="relative">
@@ -87,16 +96,17 @@ function ProjectSection({ project }: { project: Project }) {
           alt={project.title}
           width={800}
           height={600}
-          className="w-full h-[70vh] object-cover"
+          className="w-full h-[50vh] md:h-[70vh] object-cover"
         />
         </div>
-        {project.notes?.map((note, index) => (
+        {!isMobile && project.notes?.map((note, index) => (
           <Draggable
             key={index}
             defaultPosition={{
-              x: note.position.x,
-              y: note.position.y
+              x: isMobile ? 0 :  note.position.x,
+              y: isMobile ? 0 :  note.position.y
             }}
+            disabled={isMobile}
           >
             <div
               className="draggable-note"
@@ -119,30 +129,30 @@ function ProjectSection({ project }: { project: Project }) {
         ))}
       </div>
       <div className="flex flex-col justify-center">
-        <h2 className="text-6xl mb-8">{project.title}</h2>
-        <p className="text-xl mb-8">{project.intro}</p>
+        <h2 className="text-3xl md:text-6xl mb-4 md:mb-8">{project.title}</h2>
+        <p className="text-base md:text-xl mb-4 md:mb-8">{project.intro}</p>
         <Link href={`/projects/${project.slug}`} className="text-xl underline">
           Read more
         </Link>
       </div>
     </div>
   ) : (
-    <div className="flex items-center justify-center h-full p-8"> 
-    <div className="grid grid-cols-10 gap-8 max-w-6xl mx-auto p-8">
+    <div className="flex items-center justify-center min-h-screen py-4 md:py-8"> 
+    <div className="grid grid-cols-1 md:grid-cols-10 gap-4 md:gap-8 max-w-6xl mx-auto px-4 md:px-8">
       {/* Image Section */}
-      <div className="col-span-3">
+      <div className="col-span-1 md:col-span-3">
         <Image
           src={project.image}
           alt={project.title}
           width={400} // Adjusted size for smaller images
           height={267} // Maintain golden ratio (400/1.618)
-          className="rounded-lg shadow-md object-cover"
+          className="w-full rounded-lg shadow-md object-cover"
         />
       </div>
       {/* Title + Intro Section */}
-      <div className="col-span-7 flex flex-col justify-center space-y-4">
-        <h2 className="text-4xl font-bold">{project.title}</h2>
-        <p className="text-lg">{project.intro}</p>
+      <div className="col-span-1 md:col-span-7 flex flex-col justify-center space-y-4">
+        <h2 className="text-2xl md:text-4xl font-bold">{project.title}</h2>
+        <p className="text-base md:text-lg">{project.intro}</p>
         <Link
           href={
             project.slug === "rabbit-r1"
@@ -161,6 +171,8 @@ function ProjectSection({ project }: { project: Project }) {
 }
 
 export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const sectionRefs = {
     about: useRef<HTMLDivElement>(null),
     projects: useRef<HTMLDivElement>(null),
@@ -170,19 +182,35 @@ export default function HomePage() {
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
   };
 
   return (
     <div className="snap-y snap-mandatory h-screen overflow-scroll">
       {/* Hero Section */}
-      <section className="snap-start h-screen flex items-center justify-center">
-        <h1 className="text-7xl font-bold">make better humans</h1>
-        <nav className="fixed top-8 right-8 flex gap-6">
+      <section className="snap-start h-screen flex flex-col items-center justify-center p-4">
+        <h1 className="text-4xl md:text-7xl font-bold text-center">make better humans</h1>
+        {/* Mobile Menu Button */}
+        <button 
+          className="fixed top-4 right-4 z-50 md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          ☰
+        </button>
+
+        {/* Navigation */}
+        <nav className={`
+          fixed md:top-8 md:right-8 flex 
+          ${isMenuOpen 
+            ? 'top-0 right-0 h-screen w-screen bg-white flex-col items-center justify-center gap-8' 
+            : 'hidden md:flex'} 
+          md:gap-6
+        `}>
           {Object.entries(sectionRefs).map(([key, ref]) => (
             <button
               key={key}
               onClick={() => scrollToSection(ref)}
-              className="text-black hover:underline uppercase"
+              className="text-black hover:underline uppercase text-xl md:text-base"
             >
               {key}
             </button>
@@ -191,10 +219,10 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section ref={sectionRefs.about} className="snap-start h-screen p-8 flex items-center justify-center">
+      <section ref={sectionRefs.about} className="snap-start min-h-screen p-4 md:p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl mb-8">About Yán Fēng 颜丰</h2>
-          <div className="space-y-6">
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-8">About Yán Fēng 颜丰</h2>
+          <div className="space-y-4 md:space-y-6 text-base md:text-lg">
             <p>Welcome! I appreciate you taking the time to get to know me</p>
             <p>I would appreciate you even more if you try to call me by Yan(last name) Feng(first name) as in its original Chinese sequence  🔈
               <button
@@ -241,18 +269,18 @@ export default function HomePage() {
       {/* Projects Section */}
       <section ref={sectionRefs.projects} className="snap-start">
         {projects.map((project, index) => (
-          <section key={index} className="snap-start h-screen">
+          <section key={index} className="snap-start min-h-screen">
             <ProjectSection project={project} />
           </section>
         ))}
         {/* Portal to All Projects */}
-        <section className="snap-start h-screen flex items-center justify-center">
-          <div className="text-center space-y-6">
-            <h2 className="text-5xl font-bold">All Projects</h2>
-            <p className="text-lg">Discover the details of all my projects here</p>
+        <section className="snap-start min-h-screen flex items-center justify-center p-4">
+          <div className="text-center space-y-4 md:space-y-6">
+            <h2 className="text-3xl md:text-5xl font-bold">All Projects</h2>
+            <p className="text-base md:text-lg">Discover the details of all my projects here</p>
             <Link
               href="/projects"
-              className="text-xl underline font-bold hover:text-gray-700"
+              className="text-lg md:text-xl underline font-bold hover:text-gray-700"
             >
               View All Projects
             </Link>
@@ -261,10 +289,10 @@ export default function HomePage() {
       </section>
 
       {/* Adventures Section */}
-      <section ref={sectionRefs.adventures} className="snap-start h-screen p-8 flex items-center justify-center">
+      <section ref={sectionRefs.adventures} className="snap-start min-h-screen p-4 md:p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl mb-8">ADVENTURES</h2>
-          <div className="columns-2 gap-8">
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-8">ADVENTURES</h2>
+          <div className="columns-1 md:columns-2 gap-4 md:gap-8">
             <ul className="space-y-4 list-none">
               {[
                 "fortunate enough to have roadtripped to 31/34 provinces in China with my parents",
@@ -291,10 +319,10 @@ export default function HomePage() {
       </section>
 
       {/* Humans Section */}
-      <section ref={sectionRefs.humans} className="snap-start h-screen p-8 flex items-center justify-center">
+      <section ref={sectionRefs.humans} className="snap-start min-h-screen p-4 md:p-8 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl mb-8">HUMANS</h2>
-          <div className="space-y-4">
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-8">HUMANS</h2>
+          <div className="space-y-4 text-base md: text-lg">
             <p>
               I am more than grateful to folks who I felt love from, some I know
               their names, some I don't 💙

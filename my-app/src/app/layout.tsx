@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
