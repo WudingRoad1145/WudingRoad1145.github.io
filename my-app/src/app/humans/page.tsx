@@ -1,66 +1,54 @@
-import React from "react";
-import Link from "next/link";
-
-const HumansPage = () => {
+export const metadata = { title: "Humans — Yán Fēng" };
+export default function HumansPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start justify-center px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
-      {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
-        {/* Title Section */}
-        <h1 className="text-6xl mb-8">
-          Humans
+    <main className="humans-page">
+      <header className="page-heading">
+        <span className="small-label">No one becomes themselves alone</span>
+        <h1>
+          Because of
+          <br />
+          <em>you.</em>
         </h1>
-
-        {/* Gratitude Section */}
-        <div className="col-span-12 text-lg space-y-6 text-left">
-          <p>
-            I am deeply grateful to everyone from whom I’ve felt love—some whose names I know, and others I don’t 💙
-          </p>
-          <p>THANK YOU for making me a better human!</p>
-          <p>
-            To those who felt comfortable being publicly associated with me 😏, here’s a special shout-out:
-          </p>
-          <ul className="list-disc list-inside space-y-4">
-            <li>
-              <strong>Robin and Shally Yan:</strong> Thank you, Mum and Dad, for
-              making me a human to begin with and thank you for making me
-              unapologetically myself.
-            </li>
-            <li>Lin Zhao</li>
-            <li>Patrick Merrigan</li>
-            <li>Victoria Zhang</li>
-            <li>ShaoBo Zhang</li>
-            <li>Nan Jiang</li>
-            <li>Qitian Hu</li>
-            <li>Sandy Wang</li>
-            <li>Jerry Jiang</li>
-            <li>Angie Xie</li>
-            <li>Henri Matisse</li>
-            <li>Steve Jobs</li>
-            <li>Jared Maccain</li>
-            <li>Ming Yao</li>
-            <li>...</li>
-          </ul>
+        <p>
+          I’m grateful to the people I’ve felt love from. Some whose names I
+          know, and some whose names I don’t.
+        </p>
+      </header>
+      <section className="gratitude">
+        <div className="gratitude-mark" aria-hidden="true">
+          ♡
         </div>
+        <div>
+          <h2>Robin & Shally Yan</h2>
+          <p>
+            Thank you, Mum and Dad, for making me a human to begin with. And for
+            making me unapologetically myself.
+          </p>
+        </div>
+      </section>
+      <div className="humans-intro">
+        <p>
+          Friends, teachers, collaborators, and people whose work has stayed
+          with me.
+        </p>
+        <span>Thank you for making me a better human.</span>
       </div>
-    </div>
+      <ul className="human-names">
+        <li>Lin Zhao</li>
+        <li>Patrick Merrigan</li>
+        <li>Victoria Zhang</li>
+        <li>ShaoBo Zhang</li>
+        <li>Nan Jiang</li>
+        <li>Qitian Hu</li>
+        <li>Sandy Wang</li>
+        <li>Jerry Jiang</li>
+        <li>Angie Xie</li>
+        <li>Henri Matisse</li>
+        <li>Steve Jobs</li>
+        <li>Jared Maccain</li>
+        <li>Ming Yao</li>
+        <li>...</li>
+      </ul>
+    </main>
   );
-};
-
-export default HumansPage;
+}

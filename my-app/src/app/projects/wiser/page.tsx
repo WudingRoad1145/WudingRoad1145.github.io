@@ -1,33 +1,25 @@
 "use client";
 
+import WiserNotes from "@/components/WiserNotes";
 import React from "react";
 import Link from "next/link";
 
 export default function WiserPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
+    <main className="essay-page">
+      <Link href="/projects" className="essay-back">
+        Selected work
+      </Link>
       {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
+      <div className="essay-content">
         {/* Title Section */}
-        <h1 className="col-span-12 text-6xl text-left mb-8">
-          Wiser
-        </h1>
+        <h1 className="col-span-12 text-6xl text-left mb-8">Wiser</h1>
+        <figure className="essay-hero essay-hero-wiser">
+          <img
+            src="/images/wiser.jpg"
+            alt="Walking outdoors in a Wiser shirt"
+          />
+        </figure>
 
         {/* Date */}
         <div className="col-span-12 text-left mb-10">
@@ -59,8 +51,8 @@ export default function WiserPage() {
           shared my frustration, and after a long silence, he invited me to
           lunch. Over black beans and chapati, he told me about a “mzungu” lady
           who visited his school when he was 13. He only remembered her saying,
-          “Think outside of the box.” That simple phrase guided his life, leading
-          him to Nairobi and a successful career.
+          “Think outside of the box.” That simple phrase guided his life,
+          leading him to Nairobi and a successful career.
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           “I don’t even remember her name nor her look. But I pray for her every
@@ -73,12 +65,12 @@ export default function WiserPage() {
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           I am infinitely grateful for this journey of feeling miserable,
-          helpless, and small. Nevertheless, I believe only through suffering and
-          hardship, we truly see, learn, and understand. I am the one who is
+          helpless, and small. Nevertheless, I believe only through suffering
+          and hardship, we truly see, learn, and understand. I am the one who is
           truly educated by this experience by facing the brutal real world. But
-          pushing through the darkness, I stand in soberness, knowing how much is
-          yet to be done. It is this humbling journey that set me up on a path
-          that sees bigger.
+          pushing through the darkness, I stand in soberness, knowing how much
+          is yet to be done. It is this humbling journey that set me up on a
+          path that sees bigger.
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           Hey, just keep doing the right things.
@@ -87,7 +79,8 @@ export default function WiserPage() {
           I am constantly working on viable ways to do more, please contact me
           if you would like to be part of the effort!
         </p>
+        <WiserNotes />
       </div>
-    </div>
+    </main>
   );
 }

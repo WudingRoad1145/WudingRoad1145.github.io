@@ -4,29 +4,14 @@ import Image from "next/image";
 
 export default function BigWomanPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
+    <main className="essay-page">
+      <Link href="/projects" className="essay-back">
+        Selected work
+      </Link>
       {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
+      <div className="essay-content">
         {/* Title Section */}
-        <h1 className="text-6xl mb-8">
-          Big Woman
-        </h1>
+        <h1 className="text-6xl mb-8">Big Woman</h1>
 
         {/* Date and Try Here */}
         <div className="col-span-12 text-left mb-10">
@@ -35,9 +20,7 @@ export default function BigWomanPage() {
           </p>
           <p>
             <strong>Try Here:</strong>{" "}
-            <span className="underline">
-              Anytime, anywhere—you got this!
-            </span>
+            <span className="underline">Anytime, anywhere—you got this!</span>
           </p>
         </div>
 
@@ -47,37 +30,32 @@ export default function BigWomanPage() {
             Aesthetics are learned. This might seem obvious when discussing art,
             but it’s less apparent when we think about our own bodies.
           </p>
-          <blockquote className="italic">
-            “Your biceps scared me.”
-          </blockquote>
+          <blockquote className="italic">“Your biceps scared me.”</blockquote>
           <p>
             Growing up in China, where slimness—often bordering on frailty—is
             considered the pinnacle of beauty for women, I was often labeled
-            “boyish” or “壮.” In Chinese, “壮” means strong but in an unflattering
-            way—chubby, muscular, and unrefined for a girl. While these remarks
-            from friends and family were meant as harmless jokes, I internalized
-            them and spent years wanting to change how my body looked.
+            “boyish” or “壮.” In Chinese, “壮” means strong but in an
+            unflattering way—chubby, muscular, and unrefined for a girl. While
+            these remarks from friends and family were meant as harmless jokes,
+            I internalized them and spent years wanting to change how my body
+            looked.
           </p>
-          <p>
-            Fortunately, I never succeeded.
-          </p>
+          <p>Fortunately, I never succeeded.</p>
           <p>
             Over time, I came to appreciate my body for what it could do, not
-            just how it looked. I learned that starting around age 30, women lose
-            3-5% of muscle mass per decade. This muscle loss contributes to the
-            challenges many women face as they age—weakness, joint pain, and the
-            inability to perform everyday tasks. My slim, delicate mother often
-            suffers from such issues, and I realized the root cause wasn’t weight
-            but a lack of strength.
+            just how it looked. I learned that starting around age 30, women
+            lose 3-5% of muscle mass per decade. This muscle loss contributes to
+            the challenges many women face as they age—weakness, joint pain, and
+            the inability to perform everyday tasks. My slim, delicate mother
+            often suffers from such issues, and I realized the root cause wasn’t
+            weight but a lack of strength.
           </p>
           <p>
             During my gap year, I began subtly introducing strength training to
             her life. Together, we discovered the freedom and confidence that
             comes with building strength.
           </p>
-          <p>
-            Today, I embrace my body.
-          </p>
+          <p>Today, I embrace my body.</p>
           <ul className="list-disc list-inside space-y-4">
             <li>
               I appreciate my biceps for helping me rain shots on the court.
@@ -102,14 +80,14 @@ export default function BigWomanPage() {
             strength.
           </p>
           <p>
-            I’m now diving deeper into anatomy and kinesiology to support a long,
-            healthy, and athletic life. If this resonates with you, I’ll be
-            sharing my learnings and notes here. Let’s celebrate the power of
+            I’m now diving deeper into anatomy and kinesiology to support a
+            long, healthy, and athletic life. If this resonates with you, I’ll
+            be sharing my learnings and notes here. Let’s celebrate the power of
             strength together.
           </p>
         </div>
-         {/* Image Section */}
-         <div className="col-span-12 flex justify-center mb-10">
+        {/* Image Section */}
+        <div className="col-span-12 flex justify-center mb-10">
           <Image
             src="/images/big.jpg" // Replace with actual path
             alt="Me flexing"
@@ -118,8 +96,7 @@ export default function BigWomanPage() {
             className="rounded-lg shadow-md"
           />
         </div>
-
       </div>
-    </div>
+    </main>
   );
 }

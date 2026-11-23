@@ -4,25 +4,12 @@ import Image from "next/image";
 
 export default function ProjectPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
+    <main className="essay-page">
+      <Link href="/projects" className="essay-back">
+        Selected work
+      </Link>
       {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16 ">
+      <div className="essay-content">
         {/* Title Section */}
         <h1 className="col-span-12 text-6xl text-left mb-8">
           HiPo - Hidden Polarization Detector
@@ -47,10 +34,10 @@ export default function ProjectPage() {
 
         {/* Intro Section */}
         <p className="col-span-12 text-lg text-left mb-10">
-          HiPo is a Chrome extension designed to help users identify hidden biases
-          and polarized viewpoints in online content. By offering quick, actionable
-          insights, it empowers users to navigate the overwhelming sea of
-          information with clarity and fairness.
+          HiPo is a Chrome extension designed to help users identify hidden
+          biases and polarized viewpoints in online content. By offering quick,
+          actionable insights, it empowers users to navigate the overwhelming
+          sea of information with clarity and fairness.
         </p>
 
         {/* Graphics Section */}
@@ -75,32 +62,36 @@ export default function ProjectPage() {
 
         {/* Design Thinking Section */}
         <div className="col-span-12 mt-16">
-          <h2 className="text-4xl font-bold text-left mb-6">Key Design Principles</h2>
+          <h2 className="text-4xl font-bold text-left mb-6">
+            Key Design Principles
+          </h2>
           <ul className="list-disc list-inside text-lg space-y-6 text-left">
             <li>
-              <strong>Lightweight, Everyday Accessibility:</strong> Choosing a Chrome
-              extension allows HiPo to seamlessly integrate into users' daily browsing.
-              Its lightweight design ensures it works silently and effectively to help
-              users discern polarization in their daily digests without any additional
-              friction.
+              <strong>Lightweight, Everyday Accessibility:</strong> Choosing a
+              Chrome extension allows HiPo to seamlessly integrate into users'
+              daily browsing. Its lightweight design ensures it works silently
+              and effectively to help users discern polarization in their daily
+              digests without any additional friction.
             </li>
             <li>
-              <strong>Promoting Civil Conversations:</strong> Beyond highlighting biases
-              in user readings, HiPo fosters civil conversations by offering a section
-              of opposing viewpoints and related articles. With easy one-click links,
-              users can discover alternative perspectives and fill in the "gaps in
-              understanding," reducing the barriers to meaningful dialogue.
+              <strong>Promoting Civil Conversations:</strong> Beyond
+              highlighting biases in user readings, HiPo fosters civil
+              conversations by offering a section of opposing viewpoints and
+              related articles. With easy one-click links, users can discover
+              alternative perspectives and fill in the "gaps in understanding,"
+              reducing the barriers to meaningful dialogue.
             </li>
             <li>
-              <strong>Minimizing Built-In Model Bias:</strong> The slider feature enables
-              users to provide their own perception of polarization levels. This feedback
-              helps reduce reliance on the prebuilt model's biases. Over time, with
-              sufficient data collection, HiPo can fine-tune its algorithms to better
-              capture the nuances of user perspectives.
+              <strong>Minimizing Built-In Model Bias:</strong> The slider
+              feature enables users to provide their own perception of
+              polarization levels. This feedback helps reduce reliance on the
+              prebuilt model's biases. Over time, with sufficient data
+              collection, HiPo can fine-tune its algorithms to better capture
+              the nuances of user perspectives.
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

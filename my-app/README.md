@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yán Fēng’s portfolio
 
-## Getting Started
+Next.js 14 / React 18 / TypeScript. Use Node.js 20 or newer.
 
-First, run the development server:
+## Local review
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+npm ci
+npm run dev -- --hostname 127.0.0.1 --port 3012
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://127.0.0.1:3012/. All project and personal pages are available through the shared navigation. No BabyMilu service credentials are required.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Before validating a production build, stop the development server: both use `.next`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npx tsc --noEmit --incremental false
+npm run build
+```
 
-## Learn More
+The existing Vercel integration handles deployment after a merge to the production branch. A local preview or build does not update production.
 
-To learn more about Next.js, take a look at the following resources:
+## Visual system
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The editorial direction draws on [ShaoBo’s portfolio](https://portfolio.shaobo.co/) for typographic restraint and [bo.haus](https://www.bo.haus/) for an object-led, lightly tactile presentation. All images and project content are from this portfolio’s own archive; no reference-site assets are copied.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app/globals.css`: shared typography, spacing, responsive layouts, focus states, and reduced-motion behavior.
+- `src/components/SiteChrome.tsx`: shared navigation, mobile menu, skip link, and footer.
+- `src/data/projects.ts`: project index and homepage captions.
+- `src/components/MiluBuddy.tsx`: shared interactive companion. Tap or use the keyboard to change expression; pointer tracking respects reduced motion.
+- `src/components/WiserNotes.tsx`: native-dialog keepsake viewer. The explicit asset list excludes `note9.jpg`, which is absent from the archive. Escape closes and restores focus.
+- `src/app/projects/babymilu/`: the longer BabyMilu story, scenes, artifact archive, and [asset provenance](src/app/projects/babymilu/README.md).
 
-## Deploy on Vercel
+The homepage uses ordinary document scrolling. Project cards lead to their local case studies. Existing essay prose remains in each route; sparse stories are presented honestly without invented project details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Review checklist
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check all 14 routes at desktop and phone widths. Exercise the mobile menu, name pronunciation, Milu expression, Wiser keepsake viewer, wallet gallery, BabyMilu scene controls, reminder choices, and archive dialog. Check reduced motion and keyboard focus. Scroll through lazy-loaded imagery before checking for broken assets or capturing full-page screenshots.

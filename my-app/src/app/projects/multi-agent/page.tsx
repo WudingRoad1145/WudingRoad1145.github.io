@@ -3,30 +3,23 @@ import Link from "next/link";
 
 export default function MultiPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
+    <main className="essay-page">
+      <Link href="/projects" className="essay-back">
+        Selected work
+      </Link>
       {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
+      <div className="essay-content">
         {/* Title Section */}
         <h1 className="col-span-12 text-6xl text-left mb-8">
-        Get It Cooperating: Enhancing Generative Agent Cooperation
-        with Commitment Devices
+          Get It Cooperating: Enhancing Generative Agent Cooperation with
+          Commitment Devices
         </h1>
+        <figure className="essay-hero essay-hero-multi-agent">
+          <img
+            src="/images/agent.jpg"
+            alt="Agents in a simulated game environment"
+          />
+        </figure>
 
         {/* Time and Collaborator Section */}
         <div className="col-span-12 text-left mb-10">
@@ -90,6 +83,6 @@ export default function MultiPage() {
           game scenarios.
         </p>
       </div>
-    </div>
+    </main>
   );
 }

@@ -67,3 +67,7 @@ The published [BabyMilu Design System](https://www.figma.com/design/ZRg0xeGk0mnD
 Exact implementation values come from the app's `constants/Colors.ts` and bundled fonts: primary `#555992`, input text `#5C5D72`, cream `#FFF1E1`, Poltawski Nowy and Open Sans. Figma's structured API was quota-limited, so these are not represented as an exported token set. The portfolio's editorial shell retains the older web wordmark, Sneakers Pro lettering, and pink `#DA659D`.
 
 The daily-life stage offers a Pause/Play control for repeating faces. Reduced-motion preferences always select still frames and omit animation controls. The archive dialog supports Escape and restores focus to the opening artifact.
+
+## Shared portfolio shell
+
+The portfolio refinement uses Geist for the editorial narrative, with the same navigation as the other pages. BabyMilu’s existing pink, wordmark, Sneakers lettering, Poltawski Nowy, and app colors remain in its branded elements. `MiluBuddy` is shared with the homepage; the original story scenes and artifact interactions remain intact.

@@ -1,8 +1,7 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import SiteChrome from "@/components/SiteChrome";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -10,16 +9,17 @@ const geistSans = localFont({
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/Helvetica.woff2",
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
 
 export const metadata: Metadata = {
-  title: "hi cool beans",
-  description: "nice to meet you",
+  title: "Yán Fēng — Design, technology & being human",
+  description:
+    "Selected work and personal stories by Yán Fēng. Product, hardware, interfaces, and the humans behind them.",
   icons: {
-    icon: '/yan.ico',
+    icon: "/yan.ico",
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
