@@ -15,10 +15,10 @@ export const artworks = [
     medium: "Electrical circuits, Arduino, code, paper and pen",
     size: "35 × 48 cm",
     feature: true,
-    note: "mum, my model ♡",
+    note: "mum, my model",
     story: [
-      "Can a computer be an artist? I used a neural network to process portraits and built a drawing machine with Arduino, circuits, paper and pen — my mum sat for it",
-      "If people learn to make art by copying, what separates our learning from a computer’s? This experiment put that question on a drawing board",
+      "Can a computer be an artist? I used a neural network to process portraits and built a drawing machine with Arduino, circuits, paper and pen — my mum sat for it.",
+      "If people learn to make art by copying, what separates our learning from a computer’s? This experiment put that question on a drawing board.",
     ],
     images: [
       picture(
@@ -39,8 +39,8 @@ export const artworks = [
     medium: "Maya 3D modelling and PLA 3D printing",
     size: "10 × 15 × 24 cm",
     story: [
-      "Are we our genetic code, or something more? I built a rabbit whose surface is made from A, T, C and G, then brought it into the world as a hollow PLA print",
-      "The letters describe a body, but leave an open question about what is inside — and what genes alone can explain",
+      "Are we our genetic code, or something more? I built a rabbit whose surface is made from A, T, C and G, then brought it into the world as a hollow PLA print.",
+      "The letters describe a body, but leave an open question about what is inside — and what genes alone can explain.",
     ],
     images: [
       picture(
@@ -58,8 +58,8 @@ export const artworks = [
     medium: "Mixed media · acrylic on canvas, sculpture and paper",
     size: "Sculpture 10 × 4 × 30 cm · painting 60 × 80 cm",
     story: [
-      "A friend put a Buddha in his code comments to wish for a bug-free program — that small ritual became the starting point for this piece",
-      "Typing hands and strands of zeros and ones surround the seated Buddha, asking how technology changes the ways we hold on to belief",
+      "A friend put a Buddha in his code comments to wish for a bug-free program — that small ritual became the starting point for this piece.",
+      "Typing hands and strands of zeros and ones surround the seated Buddha, asking how technology changes the ways we hold on to belief.",
     ],
     images: [
       picture(
@@ -79,9 +79,9 @@ export const artworks = [
     feature: true,
     note: "one street away",
     story: [
-      "Growing up in Shanghai, I noticed the older streets just one road away from the bright, busy Nanjing Road — Tianjin Road, Niuzhuang Road and Ningbo Road",
-      "I called this work Millionaire for the contradiction I saw: homes valued at millions, yet residents living with difficult conditions and memories they could not simply exchange for a better life",
-      "Photographs and layered drawings bring those streets into view, alongside the city’s more familiar skyline",
+      "Growing up in Shanghai, I noticed the older streets just one road away from the bright, busy Nanjing Road — Tianjin Road, Niuzhuang Road and Ningbo Road.",
+      "I called this work Millionaire for the contradiction I saw: homes valued at millions, yet residents living with difficult conditions and memories they could not simply exchange for a better life.",
+      "Photographs and layered drawings bring those streets into view, alongside the city’s more familiar skyline.",
     ],
     images: [
       picture(
@@ -142,8 +142,8 @@ export const artworks = [
     feature: true,
     note: "same face, another feeling",
     story: [
-      "Following Alexander Calder’s idea of drawing in space, I bent iron wire into an angry face — a set of lines with a three-dimensional presence",
-      "Changing the light gives the same face different expressions in shadow, a small way of exploring how many feelings one face can hold",
+      "Following Alexander Calder’s idea of drawing in space, I bent iron wire into an angry face — a set of lines with a three-dimensional presence.",
+      "Changing the light gives the same face different expressions in shadow, a small way of exploring how many feelings one face can hold.",
     ],
     images: [
       picture(
@@ -211,7 +211,7 @@ export const artworks = [
     year: "2018–2019",
     date: "2018–2019",
     story: [
-      "We made this cartoon series to help our biology classmates review plant biology together",
+      "We made this cartoon series to help our biology classmates review plant biology together.",
     ],
     medium: "Digital illustration · biology cartoons",
     size: "From Enzyme Bio-chemistry Cartoon – Plant Transportation",

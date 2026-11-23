@@ -18,22 +18,29 @@ export default function PersonalDesk() {
           hi, I’m Yán Fēng <span lang="zh">颜丰</span>
         </h2>
         <div className="desk-name">
-          <span>Yan is my family name, Feng is my given name</span>
+          <span>
+            Yan is my family name, Feng is my given name — so you’ve probably
+            come across my name in English as Feng Yan.
+          </span>
+          <span>
+            But this is my little corner of the internet, so bear with my
+            stubbornness about keeping the original order.
+          </span>
           <NamePronunciation />
         </div>
         <p>
           I care about building deeply humanizing products and the connections
-          that shape us into better humans
+          that shape us into better humans.
         </p>
         <p>
           I’m the cofounder and CTO of BabyMilu, previously product at rabbit,
-          with roots in computer science at Duke
+          with roots in computer science at Duke.
         </p>
         <p>
           You can catch me prototyping crazy stuff in my attic and at{" "}
           <a href="https://joininteract.com/">Interact Studio</a>, asking stupid
           questions at <a href="https://www.southparkcommons.com/">SPC</a>, or
-          simping over dogs on the street
+          simping over dogs on the street.
         </p>
         <p>
           Otherwise, I’m hooping at{" "}
@@ -49,7 +56,7 @@ export default function PersonalDesk() {
             Aquatic Park
           </a>{" "}
           (and <a href="https://ggtc.org/">GGTC</a> friends who are probably
-          faster than the seals)
+          faster than the seals).
         </p>
         <div className="desk-intro-links">
           <span>

@@ -19,7 +19,7 @@ export default function RoboticsPage() {
         </h1>
         <p>
           Learning how to teach a robot to act — and exploring when it should
-          stop and question an instruction
+          stop and question an instruction.
         </p>
         <span className={styles.status}>
           MuJoCo policy training + SO101 safety exploration · Ongoing
@@ -56,22 +56,22 @@ export default function RoboticsPage() {
         <p>
           A small task with a lot hiding inside it: demonstrations, camera
           framing, grasping, and the gap between a simulated joint and a real
-          motor
+          motor.
         </p>
         <p>
           I’m adapting an ACT imitation-learning policy in MuJoCo, then working
-          with recordings from the real SO101 arm
+          with recordings from the real SO101 arm.
         </p>
         <div className={styles.observation}>
           <h3>What the experiments show so far</h3>
           <p>
             The blue-tape policy completed all 10 reserved simulated trials in a
-            narrow, controlled setup
+            narrow, controlled setup.
           </p>
           <p>
             Fine-tuning on 10 real demonstrations improved the fit to those
             recordings, but held-out prediction error remained high — even a
-            hold-current-pose baseline performed better
+            hold-current-pose baseline performed better.
           </p>
           <span className="handwritten">
             fitting the recordings isn’t the same as knowing what to do
@@ -79,7 +79,7 @@ export default function RoboticsPage() {
         </div>
         <p>
           This real-data checkpoint has been evaluated offline only — it hasn’t
-          yet demonstrated autonomous success on the physical arm
+          yet demonstrated autonomous success on the physical arm.
         </p>
       </section>
       <section className={styles.chapter}>
@@ -92,15 +92,15 @@ export default function RoboticsPage() {
         <p>
           Alongside policy training, I’m exploring how vision models judge
           proposed actions using the same real camera image and read-only SO101
-          arm state
+          arm state.
         </p>
         <p>
           The first pilots record whether a model would authorize, refuse, hold,
-          or ask for clarification The arm does not execute those decisions
+          or ask for clarification. The arm does not execute those decisions.
         </p>
         <p>
           These are early observations, not a general safety ranking or evidence
-          that a robot is safe in the world
+          that a robot is safe in the world.
         </p>
         <span className="handwritten">
           still building, still asking questions

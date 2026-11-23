@@ -167,7 +167,8 @@
   gap: 10px 18px;
   margin: 30px 0;
 }
-.repairList span {
+.repairList span,
+.repairList a {
   font:
     28px / 1.1 PersonalHand,
     cursive;
@@ -175,8 +176,86 @@
   transform: rotate(-3deg);
   padding: 4px 0;
 }
-.repairList span:nth-child(even) {
+.repairList > :nth-child(even) {
   transform: rotate(2deg);
+}
+.repairList a:hover {
+  color: #a1384b;
+}
+.repairList a:focus-visible {
+  outline: 2px solid #a1384b;
+  outline-offset: 5px;
+}
+.dryerStory {
+  margin-top: 95px;
+  padding-top: 42px;
+  border-top: 1px solid #d6c7bf;
+  scroll-margin-top: 40px;
+}
+.dryerHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.dryerHeading h3 {
+  font-size: clamp(30px, 3.6vw, 45px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin: 14px 0;
+}
+.dryerHeading p {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.comingSoon {
+  flex-shrink: 0;
+  color: #737368;
+  font-size: 13px;
+}
+.dryerAlbum {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 20px;
+}
+.dryerFilmSpace,
+.dryerPhotoSpace {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  border: 1px solid #dcded5;
+  background: #e8ebe3;
+  color: #69735f;
+  text-align: center;
+  font:
+    28px / 1.1 PersonalHand,
+    cursive;
+}
+.dryerFilmSpace {
+  min-height: 320px;
+}
+.dryerPhotoStack {
+  display: grid;
+  gap: 20px;
+}
+.dryerPhotoSpace {
+  min-height: 150px;
+  background: #f0ece4;
+  border-color: #e3ddd3;
+  color: #80705e;
+}
+.frameCorner {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  font:
+    11px / 1.4 var(--font-geist-sans),
+    sans-serif;
+  opacity: 0.7;
 }
 .signoff {
   font:
@@ -188,6 +267,33 @@
   transform: rotate(-3deg);
 }
 @media (max-width: 700px) {
+  .dryerStory {
+    margin-top: 65px;
+  }
+  .dryerHeading {
+    display: block;
+  }
+  .comingSoon {
+    display: block;
+    margin-top: 18px;
+  }
+  .dryerAlbum {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dryerFilmSpace {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .dryerPhotoStack {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .dryerPhotoSpace {
+    min-height: 145px;
+    padding: 32px 12px 20px;
+    font-size: 24px;
+  }
   .titleStage {
     margin-top: 80px;
     width: calc(100vw - 20px);

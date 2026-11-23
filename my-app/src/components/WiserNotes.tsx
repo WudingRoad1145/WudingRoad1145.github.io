@@ -41,7 +41,7 @@ export default function WiserNotes({ home = false }: { home?: boolean }) {
           <br />
           never throw away
         </h2>
-        <p>Two months in Muhuru Bay These letters came home with me</p>
+        <p>Two months in Muhuru Bay. These letters came home with me.</p>
         {home && (
           <Link href="/projects/wiser" className="text-link">
             The story of Wiser
@@ -77,9 +77,9 @@ export default function WiserNotes({ home = false }: { home?: boolean }) {
       </div>
       <div className="pile-tools">
         <p>
-          Drag a letter out of the pile Tap to read it
+          Drag a letter out of the pile. Tap to read it.
           <br />
-          <small>You can also move a focused letter with the arrow keys</small>
+          <small>You can also move a focused letter with the arrow keys.</small>
         </p>
         <div>
           <button type="button" onClick={() => setSelected(0)}>

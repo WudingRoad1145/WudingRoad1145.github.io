@@ -21,13 +21,13 @@ export default function ArtPage() {
           </span>
           <h1 lang="zh">无用之用</h1>
           <p className={s.lead}>
-            Some questions need a pencil
+            Some questions need a pencil.
             <br />
-            Others need a circuit board
+            Others need a circuit board.
           </p>
           <p className={s.intro}>
-            Portraits, little machines, things made by hand
-            <br />A few ways of following my curiosity
+            Portraits, little machines, things made by hand.
+            <br />A few ways of following my curiosity.
           </p>
           <a className={s.wander} href="#artworks">
             take a little wander <span aria-hidden="true">↘</span>

@@ -21,7 +21,7 @@ const artifacts = [
     title: "The very first possibility",
     category: "Prototype",
     caption:
-      "July 2025 · A GoPro inside a Kuromi plushie The character animation was simulated",
+      "July 2025 · A GoPro inside a Kuromi plushie. The character animation was simulated.",
   },
   {
     image: "sketch.webp",
@@ -59,14 +59,14 @@ const artifacts = [
     title: "A finished DVT unit",
     category: "Factory",
     caption:
-      "June 28, 2026 · Box labeled BM-DVT-001 The photograph of the remembered first-box moment is still to identify",
+      "June 28, 2026 · Box labeled BM-DVT-001. The photograph of the remembered first-box moment is still to identify.",
   },
   {
     image: "hero.webp",
     title: "Different ways to be Milu",
     category: "Prototype",
     caption:
-      "Product photography · Two plush designs Shoot date not recorded in this archive",
+      "Product photography · Two plush designs. Shoot date not recorded in this archive.",
   },
 ];
 
@@ -77,8 +77,8 @@ function DeliveryStudy() {
       <span className={s.eyebrow}>An interaction, up close</span>
       <h3>Company should be a choice</h3>
       <p>
-        A beta participant wanted Milu to stay quiet at work Choosing where a
-        reminder arrives makes that boundary tangible
+        A beta participant wanted Milu to stay quiet at work. Choosing where a
+        reminder arrives makes that boundary tangible.
       </p>
       <div
         className={s.deliveryControls}
@@ -145,7 +145,7 @@ function ArtifactArchive() {
         </div>
         <p>
           Sketches, experiments, and the parts that made their way into the
-          world
+          world.
         </p>
       </div>
       <div
@@ -301,7 +301,7 @@ export default function BabyMiluStory() {
               />
               <figcaption>The first prototype Yes, that’s a GoPro</figcaption>
             </figure>
-            <span className={s.photoNote}>poor Kuromi ♡</span>
+            <span className={s.photoNote}>poor Kuromi</span>
           </div>
           <div className={s.prose}>
             <span className={s.eyebrow}>San Francisco · The beginning</span>
@@ -311,15 +311,15 @@ export default function BabyMiluStory() {
             </h2>
             <p>
               We took apart a poor Kuromi plushie and squashed my GoPro inside
-              to fake an emotional Tamagotchi
+              to fake an emotional Tamagotchi.
             </p>
             <p>
               Then we took it to Japantown and stopped people to ask what they
-              thought That rough little object made a possibility feel real
+              thought. That rough little object made a possibility feel real.
             </p>
             <p>
-              We filmed character-alarm ideas with the same prototype The
-              TikToks took off Our Discord grew We found our first backers
+              We filmed character-alarm ideas with the same prototype. The
+              TikToks took off. Our Discord grew. We found our first backers.
             </p>
             <p className={s.pullLine}>Suddenly, people were waiting for it</p>
             <div className={s.marginNote}>
@@ -347,13 +347,13 @@ export default function BabyMiluStory() {
               survive an ordinary day
             </h2>
             <p>
-              One participant talked through her morning routine Another kept
-              Milu beside her bed but didn’t know what to say Someone else
-              needed it to stay quiet at work
+              One participant talked through her morning routine. Another kept
+              Milu beside her bed but didn’t know what to say. Someone else
+              needed it to stay quiet at work.
             </p>
             <p>
-              The invitation mattered So did the effort, the timing, and
-              permission to stop
+              The invitation mattered. So did the effort, the timing, and
+              permission to stop.
             </p>
           </div>
           <DeliveryStudy />
@@ -366,8 +366,9 @@ export default function BabyMiluStory() {
               <h2>Now it had to work</h2>
             </div>
             <p>
-              I had never developed firmware I started the stack from zero and
-              kept returning to Shenzhen with a huge backpack and a lot to learn
+              I had never developed firmware. I started the stack from zero and
+              kept returning to Shenzhen with a huge backpack and a lot to
+              learn.
             </p>
           </div>
           <div className={s.makingGrid}>
@@ -390,17 +391,17 @@ export default function BabyMiluStory() {
                 but I learn fast”
               </blockquote>
               <p>
-                That was what I told vendors After five prototypes, and many
-                trips between factories, I found a path toward production
+                That was what I told vendors. After five prototypes, and many
+                trips between factories, I found a path toward production.
               </p>
               <p>
                 Back home, I printed parts, assembled PCBAs, connected sensors,
-                and tested the device with our voice server and app We shipped a
-                hundred beta units in about two months
+                and tested the device with our voice server and app. We shipped
+                a hundred beta units in about two months.
               </p>
               <p>
                 Between assembly sessions, I was on calls and in Discord DMs,
-                helping people connect to Wi-Fi and finding the rough edges
+                helping people connect to Wi-Fi and finding the rough edges.
               </p>
               <div className={s.missingFilm}>
                 <span aria-hidden="true">▤</span>
@@ -426,7 +427,7 @@ export default function BabyMiluStory() {
             </div>
             <p>
               Firmware, voice server, app, and evaluation were how we worked on
-              one continuous interaction
+              one continuous interaction.
             </p>
           </div>
         </section>
@@ -444,8 +445,8 @@ export default function BabyMiluStory() {
               </h2>
               <p>
                 In February, I flew to Dongguan and ate and slept in the
-                workshop while we tried to get the first batch ready So many
-                small details were still unresolved
+                workshop while we tried to get the first batch ready. So many
+                small details were still unresolved.
               </p>
             </div>
             <figure className={s.factoryPeople}>
@@ -467,18 +468,18 @@ export default function BabyMiluStory() {
                 </span>
                 <h3>The little loop</h3>
                 <p>
-                  Someone picks Milu up by its hanger The fabric lifts The
-                  electronic core has weight Suddenly, a tiny detail connects
-                  the whole product
+                  Someone picks Milu up by its hanger. The fabric lifts. The
+                  electronic core has weight. Suddenly, a tiny detail connects
+                  the whole product.
                 </p>
                 <p>
                   I worked through different mounting approaches with mechanical
                   and factory collaborators: how to carry the load, protect the
-                  core, sew it together, and keep the face usable
+                  core, sew it together, and keep the face usable.
                 </p>
                 <p>
                   Their experience helped turn sketches into parts we could
-                  hold, test, and change
+                  hold, test, and change.
                 </p>
               </div>
               <div className={s.loopPhotos}>
@@ -513,8 +514,8 @@ export default function BabyMiluStory() {
               </span>
               <p>
                 Assembly, inspection, sensors, test procedures, and matching
-                each device to its box The factory made every part of the
-                experience concrete
+                each device to its box. The factory made every part of the
+                experience concrete.
               </p>
             </div>
           </div>
@@ -544,10 +545,10 @@ export default function BabyMiluStory() {
             </h2>
             <p>
               When the first unit with its final look was assembled and placed
-              in our packaging, I pretty much cried
+              in our packaging, I pretty much cried.
             </p>
             <p>
-              I had carried so many unfinished versions Now one was in its box
+              I had carried so many unfinished versions. Now one was in its box.
             </p>
           </div>
         </section>
@@ -562,18 +563,18 @@ export default function BabyMiluStory() {
           <div className={s.promiseCopy}>
             <p>
               More conventions led us to question whether the market we were
-              reaching could sustain the company We moved toward software I
-              still insisted that we honor the shipping we had promised
+              reaching could sustain the company. We moved toward software. I
+              still insisted that we honor the shipping we had promised.
             </p>
             <p>
               We also reconsidered what a good relationship with Milu could look
-              like Daily engagement wasn’t automatically the goal A less
-              frequent, more natural interaction could matter more
+              like. Daily engagement wasn’t automatically the goal. A less
+              frequent, more natural interaction could matter more.
             </p>
             <p>
-              We are now working to open-source BabyMilu I want the prototypes,
+              We are now working to open-source BabyMilu. I want the prototypes,
               mistakes, collaborators, and lessons to remain available to the
-              people who come after us
+              people who come after us.
             </p>
           </div>
           <span className={s.openNote}>
@@ -614,7 +615,7 @@ export default function BabyMiluStory() {
             </p>
             <p>
               Thanks to Gopal, Evan, Lizz, Joy, Miffy, Jiayue, Aaron, Anwei,
-              Charlotte, David, Elaina for believing in this dream with us
+              Charlotte, David, Elaina for believing in this dream with us.
             </p>
           </div>
           <Link href="/projects">Back to selected work</Link>
