@@ -1,0 +1,282 @@
+.rescue {
+  position: relative;
+  min-height: 100svh;
+  background: #1d1e1b;
+  color: #f4f2e9;
+  box-shadow: 0 0 0 100vmax #1d1e1b;
+  clip-path: inset(0 -100vmax);
+  padding: 55px 0;
+  margin: 45px 0 100px;
+  display: flex;
+  align-items: center;
+}
+.layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.8fr) minmax(
+      180px,
+      0.8fr
+    );
+  gap: 30px;
+  align-items: center;
+}
+.handwritten {
+  display: block;
+  font:
+    29px/1 PersonalHand,
+    cursive;
+  transform: rotate(-5deg);
+  margin-bottom: 30px;
+}
+.intro h2 {
+  font:
+    650 clamp(40px, 5vw, 72px) / 0.95 var(--font-geist-sans),
+    Arial,
+    sans-serif;
+  letter-spacing: -0.065em;
+  margin: 0 0 27px;
+}
+.intro > p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #bdbcaf;
+}
+.marginNote {
+  display: block;
+  font:
+    26px/1 PersonalHand,
+    cursive;
+  transform: rotate(-5deg);
+  margin-top: 45px;
+  max-width: 190px;
+}
+.filmColumn {
+  min-width: 0;
+}
+.film {
+  position: relative;
+  width: 100%;
+  max-width: calc((100svh - 130px) * 6 / 7);
+  aspect-ratio: 6 / 7;
+  margin: auto;
+  background: #33342e;
+  transform: rotate(-1deg);
+}
+.film video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.doodle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.doodle path {
+  stroke: #fffce8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 1px #000b);
+}
+.filmLabel {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  background: #20211ccc;
+  padding: 6px 11px;
+  font:
+    24px/1 PersonalHand,
+    cursive;
+  transform: rotate(-3deg);
+}
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  max-width: calc((100svh - 130px) * 6 / 7);
+  margin: 20px auto 0;
+}
+.controls button {
+  border: 0;
+  border-bottom: 1px solid #66675e;
+  padding: 6px 0;
+  background: none;
+  color: inherit;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.controls progress {
+  height: 2px;
+  width: 100%;
+  border: 0;
+  background: #55564c;
+  accent-color: #e2e0d1;
+}
+.controls progress::-webkit-progress-bar {
+  background: #55564c;
+}
+.controls progress::-webkit-progress-value {
+  background: #e2e0d1;
+}
+.chapterHint {
+  display: block;
+  font:
+    26px/1 PersonalHand,
+    cursive;
+  color: #bdbcaf;
+  margin-bottom: 22px;
+}
+.steps {
+  display: grid;
+  gap: 25px;
+}
+.steps button {
+  display: flex;
+  gap: 11px;
+  text-align: left;
+  border: 0;
+  background: none;
+  color: #b0b0a5;
+  padding: 0;
+  cursor: pointer;
+}
+.steps button[aria-pressed="true"] {
+  color: #fffdf1;
+}
+.steps strong {
+  font:
+    29px/0.95 PersonalHand,
+    cursive;
+  display: block;
+}
+.steps small {
+  font-size: 12px;
+  line-height: 1.4;
+  display: block;
+  margin-top: 8px;
+}
+.stepMark {
+  width: 15px;
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+.bigWoman {
+  display: block;
+  position: relative;
+  margin: 70px 0 0 10px;
+  text-decoration: none;
+  transform: rotate(-4deg);
+}
+.bigWoman > svg {
+  position: absolute;
+  width: 60px;
+  height: 65px;
+  left: -45px;
+  top: -52px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+.bigWoman span {
+  font:
+    26px/1 PersonalHand,
+    cursive;
+  display: block;
+}
+.bigWoman strong {
+  display: inline-block;
+  font-size: clamp(25px, 2.4vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-top: 7px;
+  border-bottom: 2px solid currentColor;
+}
+.bigWoman:hover strong {
+  transform: rotate(2deg);
+}
+.fallback {
+  font-size: 14px;
+  margin-top: 15px;
+}
+.rescue :focus-visible {
+  outline-color: #fffce8;
+}
+@media (max-width: 1000px) {
+  .layout {
+    gap: 20px;
+    grid-template-columns: minmax(130px, 0.7fr) minmax(0, 1.7fr) minmax(
+        160px,
+        0.8fr
+      );
+  }
+  .steps strong {
+    font-size: 26px;
+  }
+}
+@media (max-width: 760px) {
+  .rescue {
+    padding: 40px 0 55px;
+    margin: 30px 0 75px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 15px;
+  }
+  .handwritten {
+    grid-column: 1 / -1;
+    font-size: 29px;
+    margin-bottom: 5px;
+  }
+  .intro h2 {
+    font-size: 48px;
+    margin: 0;
+  }
+  .intro > p {
+    font-size: 14px;
+    margin: 0;
+  }
+  .marginNote {
+    display: none;
+  }
+  .film {
+    max-width: min(100%, 540px);
+  }
+  .controls {
+    max-width: 540px;
+  }
+  .notes {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
+  }
+  .steps strong {
+    font-size: 27px;
+  }
+  .bigWoman {
+    margin: 55px 0 0 55px;
+    max-width: 300px;
+  }
+  .bigWoman strong {
+    font-size: 37px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bigWoman:hover strong {
+    transform: none;
+  }
+}

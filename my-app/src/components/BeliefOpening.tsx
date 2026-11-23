@@ -37,14 +37,14 @@ export default function BeliefOpening() {
       const data = await response.json();
       if (!response.ok)
         throw new Error(
-          data.error || "Your thought couldn’t be saved. Please try again.",
+          data.error || "Your thought couldn’t be saved Please try again",
         );
       setReply(data);
     } catch (reason) {
       setError(
         reason instanceof Error
           ? reason.message
-          : "Your thought couldn’t be saved. Please try again.",
+          : "Your thought couldn’t be saved Please try again",
       );
     } finally {
       setPending(false);
@@ -59,13 +59,12 @@ export default function BeliefOpening() {
             connect! <span>connect!</span> connect!
           </span>
           <p>
-            Play! Break things! Put them back together. Get dirty. Talk to
-            people!
+            Play! Break things! Put them back together Get dirty Talk to people!
           </p>
           <p>
-            Mean well. Follow through.
+            Mean well Follow through
             <br />
-            My way of loving this world.
+            My way of loving this world
           </p>
           <svg
             className={styles.curl}
@@ -137,7 +136,7 @@ export default function BeliefOpening() {
                       name="answer"
                       value={answer}
                       onChange={(event) => setAnswer(event.target.value)}
-                      placeholder="A word, or a few…"
+                      placeholder="A word, or a few"
                       maxLength={160}
                       required
                       autoComplete="off"
@@ -146,14 +145,18 @@ export default function BeliefOpening() {
                     />
                     <button
                       type="submit"
-                      aria-label="Share your meaning of good"
+                      aria-label={
+                        pending
+                          ? "Saving your thought"
+                          : "Share your meaning of good"
+                      }
                       disabled={pending || !answer.trim()}
                     >
-                      {pending ? "…" : "↵"}
+                      {pending ? "↻" : "↵"}
                     </button>
                   </div>
                   <p className={styles.sharing} id="sharing-note">
-                    Shared here, anonymously. Just your words.
+                    Shared here, anonymously Just your words
                   </p>
                   {error && (
                     <p className={styles.error} role="alert">
@@ -164,14 +167,14 @@ export default function BeliefOpening() {
               ) : (
                 <div className={styles.response} aria-live="polite">
                   <p className={styles.thanks} id="good-question">
-                    Thank you for leaving a little of yourself.
+                    Thank you for leaving a little of yourself
                   </p>
                   <blockquote>“{reply.answer}”</blockquote>
-                  <p className={styles.myTurn}>as for me…</p>
+                  <p className={styles.myTurn}>as for me</p>
                   <p>
-                    I don’t know. But the idea of knowing I was a good person by
-                    my own standard keeps coming back to me. I’m trying to live
-                    up to my standards, and that has been giving me peace.
+                    I don’t know But the idea of knowing I was a good person by
+                    my own standard keeps coming back to me I’m trying to live
+                    up to my standards, and that has been giving me peace
                   </p>
                   <div className={styles.previous}>
                     {reply.previous.length ? (
@@ -190,12 +193,12 @@ export default function BeliefOpening() {
                         </ul>
                       </>
                     ) : (
-                      <p>You’re the first to leave a thought here.</p>
+                      <p>You’re the first to leave a thought here</p>
                     )}
                   </div>
                   {reply.mode === "local" && (
                     <p className={styles.sharing}>
-                      Local preview · these replies stay on this computer.
+                      Local preview · these replies stay on this computer
                     </p>
                   )}
                 </div>
@@ -204,10 +207,10 @@ export default function BeliefOpening() {
           )}
         </div>
         <div className={styles.humanNote}>
-          <p>why we make, pursue, exist.</p>
+          <p>why we make, pursue, exist</p>
           <p>
             The one thing we are and will always be better at: being human &amp;
-            loving humanity.
+            loving humanity
           </p>
         </div>
       </div>

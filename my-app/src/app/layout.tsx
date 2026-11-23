@@ -17,7 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Yán Fēng — Design, technology & being human",
   description:
-    "Selected work and personal stories by Yán Fēng. Product, hardware, interfaces, and the humans behind them.",
+    "Selected work and personal stories by Yán Fēng Product, hardware, interfaces, and the humans behind them",
   icons: {
     icon: "/yan.ico",
   },

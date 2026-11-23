@@ -11,7 +11,7 @@ export default function AboutPage() {
           Yán Fēng <span lang="zh">颜丰</span>
         </h1>
         <div className="about-name">
-          <p>Yan is my family name. Feng is my given name.</p>
+          <p>Yan is my family name Feng is my given name</p>
           <NamePronunciation />
         </div>
       </header>
@@ -24,30 +24,30 @@ export default function AboutPage() {
             height={880}
             priority
           />
-          <figcaption>A work in progress, in every sense.</figcaption>
+          <figcaption>A work in progress, in every sense</figcaption>
         </figure>
         <div className="about-prose">
           <p className="lead">
             I care about building deeply humanizing products—and genuine
-            connections that shape us into better humans.
+            connections that shape us into better humans
           </p>
           <p>
             As cofounder and CTO of BabyMilu, I worked across hardware,
             firmware, and the experience of bringing an AI companion into
-            everyday life.
+            everyday life
           </p>
           <p>
             My background includes computer science at Duke, product work at
-            rabbit, and research in multi-agent systems and blockchain.
+            rabbit, and research in multi-agent systems and blockchain
           </p>
           <p>
             Ideally, I’m one or several of the following: an enthusiastic
             mountaineer, avid basketball player, spontaneous painter,
-            adventurous cook, unreasonable dog person, and yet-to-be triathlete.
+            adventurous cook, unreasonable dog person, and yet-to-be triathlete
           </p>
           <p>
             If you want to talk about fun things, play sports, or plan an
-            adventure, please say hello.
+            adventure, please say hello
           </p>
           <a className="text-link" href="mailto:yanffyy@gmail.com">
             yanffyy@gmail.com

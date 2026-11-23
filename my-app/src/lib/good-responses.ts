@@ -23,14 +23,14 @@ export class ThoughtError extends Error {
 
 export function normalizeAnswer(value: unknown): string {
   if (typeof value !== "string")
-    throw new ThoughtError("Leave a word, or a few, before sharing.", 400);
+    throw new ThoughtError("Leave a word, or a few, before sharing", 400);
   const answer = value
     .replace(/[\u0000-\u001f\u007f]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
   if (!answer || answer.length > 160)
     throw new ThoughtError(
-      "Please keep your thought between 1 and 160 characters.",
+      "Please keep your thought between 1 and 160 characters",
       400,
     );
   return answer;
@@ -43,7 +43,7 @@ function checkCooldown(existing: StoredThought | undefined, answer: string) {
     Date.now() - Date.parse(existing.created_at) < 60_000
   ) {
     throw new ThoughtError(
-      "Give that thought a moment. You can change it in a minute.",
+      "Give that thought a moment You can change it in a minute",
       429,
     );
   }
@@ -58,7 +58,7 @@ function storeMode() {
   if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test")
     return "local";
   throw new ThoughtError(
-    "The shared notebook isn’t connected yet. Please come back soon.",
+    "The shared notebook isn’t connected yet Please come back soon",
     503,
   );
 }

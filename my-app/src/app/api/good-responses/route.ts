@@ -11,7 +11,7 @@ const uuid =
 async function readSmallBody(request: NextRequest) {
   const reader = request.body?.getReader();
   if (!reader)
-    throw new ThoughtError("Leave a word, or a few, before sharing.", 400);
+    throw new ThoughtError("Leave a word, or a few, before sharing", 400);
   let length = 0;
   const chunks: Uint8Array[] = [];
   while (true) {
@@ -20,7 +20,7 @@ async function readSmallBody(request: NextRequest) {
     length += value.byteLength;
     if (length > 2048) {
       await reader.cancel();
-      throw new ThoughtError("Please keep your thought short.", 413);
+      throw new ThoughtError("Please keep your thought short", 413);
     }
     chunks.push(value);
   }
@@ -28,7 +28,7 @@ async function readSmallBody(request: NextRequest) {
     return JSON.parse(Buffer.concat(chunks).toString("utf8"));
   } catch {
     throw new ThoughtError(
-      "That thought couldn’t be read. Please try again.",
+      "That thought couldn’t be read Please try again",
       400,
     );
   }
@@ -48,13 +48,13 @@ export async function POST(request: NextRequest) {
   }
   if (!sameOrigin) {
     return NextResponse.json(
-      { error: "Please share your thought from this page." },
+      { error: "Please share your thought from this page" },
       { status: 403 },
     );
   }
   if (!request.headers.get("content-type")?.startsWith("application/json")) {
     return NextResponse.json(
-      { error: "Please share your thought using the form." },
+      { error: "Please share your thought using the form" },
       { status: 415 },
     );
   }
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
         error:
           error instanceof ThoughtError
             ? error.message
-            : "Your thought couldn’t be saved just now. Please try again.",
+            : "Your thought couldn’t be saved just now Please try again",
       },
       {
         status: error instanceof ThoughtError ? error.status : 503,

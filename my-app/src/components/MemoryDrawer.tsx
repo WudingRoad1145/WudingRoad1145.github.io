@@ -8,9 +8,9 @@ export default function MemoryDrawer() {
       <div>
         <span className="handwritten">little bits of a life</span>
         <h2>
-          I said yes.
+          I said yes
           <br />
-          Here’s what happened.
+          Here’s what happened
         </h2>
         <button
           type="button"
@@ -28,7 +28,7 @@ export default function MemoryDrawer() {
       <article className="memory-ticket" aria-live="polite">
         <span>A memory I’m keeping</span>
         <p>{memories[index]}</p>
-        <small>No grand lesson required.</small>
+        <small>No grand lesson required</small>
       </article>
     </section>
   );

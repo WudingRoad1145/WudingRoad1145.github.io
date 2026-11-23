@@ -7,8 +7,8 @@ export default function MountainPage() {
         Personal pursuits
       </Link>
       <div className="essay-content">
-        <h1>Because it is there.</h1>
-        <p className="essay-dek">A personal story from the mountains.</p>
+        <h1>Because it is there</h1>
+        <p className="essay-dek">A personal story from the mountains</p>
         <figure className="essay-hero">
           <Image
             src="/images/hiking.jpg"
@@ -21,15 +21,14 @@ export default function MountainPage() {
         <blockquote>
           “Why do you want to climb Mount Everest?”
           <br />
-          “Because it’s there.”<cite>George Herbert Leigh Mallory</cite>
+          “Because it’s there”<cite>George Herbert Leigh Mallory</cite>
         </blockquote>
         <p>
-          This story is still being written. In the meantime, a few memories
-          from the journey are in my{" "}
+          This story is still being written In the meantime, a few memories from
+          the journey are in my{" "}
           <Link className="text-link" href="/adventures">
             adventure notebook
           </Link>
-          .
         </p>
       </div>
     </main>

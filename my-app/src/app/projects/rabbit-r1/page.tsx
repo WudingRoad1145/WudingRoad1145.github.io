@@ -8,7 +8,7 @@ export default function RabbitPage() {
       </Link>
       <div className="essay-content">
         <h1>rabbit r1</h1>
-        <p className="essay-dek">A different way to meet a computer.</p>
+        <p className="essay-dek">A different way to meet a computer</p>
         <figure className="essay-hero">
           <Image
             src="/images/rabbit.jpg"
@@ -20,7 +20,7 @@ export default function RabbitPage() {
         </figure>
         <p>
           Leading product development for r1, a first-of-its-kind AI hardware
-          device, reimagining human–machine interaction.
+          device, reimagining human–machine interaction
         </p>
         <p>
           <a className="text-link" href="https://www.rabbit.tech/">

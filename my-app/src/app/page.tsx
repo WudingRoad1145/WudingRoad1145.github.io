@@ -4,6 +4,7 @@ import BeliefOpening from "@/components/BeliefOpening";
 import PersonalDesk from "@/components/PersonalDesk";
 import WiserNotes from "@/components/WiserNotes";
 import ProjectCard from "@/components/ProjectCard";
+import RoborockRescue from "@/components/RoborockRescue";
 import { projects } from "@/data/projects";
 
 export default function HomePage() {
@@ -15,11 +16,9 @@ export default function HomePage() {
         id="my-world"
         aria-labelledby="keepsakes-title"
       >
-        <h2 id="keepsakes-title" className="sr-only">
-          A few things from my world
-        </h2>
         <PersonalDesk />
       </section>
+      <RoborockRescue />
       <section className="selected-work" aria-labelledby="work-title">
         <div className="section-heading">
           <h2 id="work-title">
@@ -32,7 +31,7 @@ export default function HomePage() {
             </span>{" "}
             into
           </h2>
-          <span>Some worked. All of them taught me something.</span>
+          <span>Some worked All of them taught me something</span>
         </div>
         <div className="project-grid">
           {projects.slice(0, 3).map((project, index) => (
@@ -44,7 +43,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="work-index-link">
-          <p>Also: wallets, cooperative agents, and other curiosities.</p>
+          <p>Also: wallets, cooperative agents, and other curiosities</p>
           <Link className="text-link" href="/projects">
             Explore all work
           </Link>

@@ -8,13 +8,13 @@ export default function ProjectsPage() {
       <header className="page-heading">
         <span className="small-label">A collection of work</span>
         <h1>
-          Things made.
+          Things made
           <br />
-          <em>Things learned.</em>
+          <em>Things learned</em>
         </h1>
         <p>
           Across hardware, interfaces, and research, I keep coming back to how
-          we live with technology—and with one another.
+          we live with technology—and with one another
         </p>
       </header>
       <div className="project-grid">

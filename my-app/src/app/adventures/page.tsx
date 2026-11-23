@@ -10,9 +10,9 @@ export default function AdventuresPage() {
         <h1>
           Go a little
           <br />
-          <em>further.</em>
+          <em>further</em>
         </h1>
-        <p>Some things I’m glad I said yes to.</p>
+        <p>Some things I’m glad I said yes to</p>
       </header>
       <figure className="adventure-photo">
         <Image
@@ -23,7 +23,7 @@ export default function AdventuresPage() {
           priority
         />
         <figcaption>
-          Monkeydokey + me, Kilimanjaro. He was ten already. He made it, too!
+          Monkeydokey + me, Kilimanjaro He was ten already He made it, too!
         </figcaption>
       </figure>
       <MemoryDrawer />

@@ -77,8 +77,8 @@ export default function Movable({
       aria-describedby={helpId}
       style={
         {
-          left: `${x}%`,
-          top: `${y}%`,
+          left: `var(--object-x, ${x}%)`,
+          top: `var(--object-y, ${y}%)`,
           transform: `translate(${position.x}px, ${position.y}px) rotate(${angle}deg)`,
           zIndex: z,
         } as CSSProperties
@@ -134,7 +134,7 @@ export default function Movable({
     >
       {children}
       <span id={helpId} className="sr-only">
-        Drag to move. Arrow keys move the object. Enter opens it.
+        Drag to move Arrow keys move the object Enter opens it
       </span>
     </button>
   );

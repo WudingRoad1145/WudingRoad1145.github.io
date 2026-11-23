@@ -54,33 +54,32 @@ export default function MultiPage() {
         <p className="col-span-12 text-lg text-left mb-10">
           Large Language Model (LLM)-based agents have demonstrated potential in
           various applications, effectively serving as proxies for human
-          interaction in numerous tasks. Previously, the exploration of agent
+          interaction in numerous tasks Previously, the exploration of agent
           cooperation has been primarily confined to Multi-agent Reinforcement
           Learning (MARL), where commitment devices (CDs) have significantly
-          improved collaborative efforts.
+          improved collaborative efforts
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           This paper examines the effectiveness of CDs in fostering cooperative
-          behavior among LLM agents within game-theoretic contexts. We
+          behavior among LLM agents within game-theoretic contexts We
           investigate the ability of LLM agents to utilize CDs to achieve
-          socially optimal outcomes while balancing their individual interests.
+          socially optimal outcomes while balancing their individual interests
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           Our experimental range includes various game structures, such as the
           classic Prisoner’s Dilemma, Public Goods games, and the more complex
-          dynamic Harvest game. We introduce a framework for agents to use CDs
-          in these games to achieve higher socially optimal outcomes.
+          dynamic Harvest game We introduce a framework for agents to use CDs in
+          these games to achieve higher socially optimal outcomes
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           Our preliminary experiments show that in simpler game scenarios,
           agents successfully use CDs to reach socially optimal outcomes (the
-          new Nash Equilibrium of the game with CDs). In more complex dynamic
+          new Nash Equilibrium of the game with CDs) In more complex dynamic
           games, however, agents exhibit limitations in strategically applying
-          CDs, resulting in more nuanced performance improvements. These
-          findings suggest that while commitment devices can enhance cooperation
-          among generative agents, further work in fundamental model-level
-          improvement is necessary for optimal results in complex, realistic
-          game scenarios.
+          CDs, resulting in more nuanced performance improvements These findings
+          suggest that while commitment devices can enhance cooperation among
+          generative agents, further work in fundamental model-level improvement
+          is necessary for optimal results in complex, realistic game scenarios
         </p>
       </div>
     </main>

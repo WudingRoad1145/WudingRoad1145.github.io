@@ -1805,54 +1805,158 @@ p {
   font-size: 14px;
 }
 .keepsakes-section .desk-wrap {
-  max-width: 840px;
+  max-width: 1280px;
   margin: auto;
+  position: relative;
 }
 .keepsakes-section .desk {
-  height: 760px;
+  height: 900px;
 }
-.keepsakes-section .desk-scribble {
-  font-size: 32px;
-  color: #34342d;
+.desk-introduction {
+  position: absolute;
+  left: 26%;
+  top: 15%;
+  width: 48%;
+  padding: 20px;
+  z-index: 2;
+  background: #fff;
+}
+.desk-welcome {
+  display: block;
+  font:
+    28px/1 PersonalHand,
+    cursive;
+  transform: rotate(-3deg);
+  margin-bottom: 18px;
+}
+.desk-introduction h2 {
+  font:
+    600 clamp(30px, 3.2vw, 46px) / 1.1 var(--font-geist-sans),
+    sans-serif;
+  letter-spacing: -0.055em;
+  margin: 0 0 16px;
+}
+.desk-introduction h2 > span {
+  display: inline-block;
+  font-size: 0.5em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.desk-name {
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+  color: #6d6c61;
+  margin-bottom: 25px;
+}
+.desk-introduction > p {
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 16px 0;
+}
+.desk-introduction > .desk-invitation {
+  font:
+    27px/1.1 PersonalHand,
+    cursive;
+  margin-top: 22px;
+}
+.desk-intro-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.desk-intro-links a {
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
+}
+.desk-play-prompt {
+  display: block;
+  font:
+    27px/1.1 PersonalHand,
+    cursive;
+  transform: rotate(-3deg);
+  margin-top: 30px;
 }
 .keepsakes-section .desk-milu {
-  width: 30%;
+  width: 20%;
 }
 .keepsakes-section .desk-photo {
-  width: 38%;
+  width: 21%;
 }
 .keepsakes-section .desk-letter {
-  width: 25%;
+  width: 17%;
 }
 .keepsakes-section .desk-letter > span:not(.sr-only) {
   padding: 12px 8px;
-  font-size: 26px;
+  font-size: 25px;
   line-height: 0.95;
 }
 .keepsakes-section .desk-sticker {
-  width: 31%;
+  width: 20%;
+}
+.keepsakes-section .desk-sticker > span {
+  font-size: clamp(28px, 3vw, 43px);
+}
+@media (max-width: 900px) {
+  .desk-introduction {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+    padding: 0 8px 35px;
+  }
+  .keepsakes-section .desk {
+    height: 650px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .keepsakes-section .desk-milu {
+    width: 32%;
+    --object-x: 8%;
+    --object-y: 10%;
+  }
+  .keepsakes-section .desk-photo {
+    width: 40%;
+    --object-x: 53%;
+    --object-y: 5%;
+  }
+  .keepsakes-section .desk-letter {
+    width: 29%;
+    --object-x: 59%;
+    --object-y: 43%;
+  }
+  .keepsakes-section .desk-sticker {
+    width: 32%;
+    --object-x: 7%;
+    --object-y: 67%;
+  }
 }
 @media (max-width: 700px) {
   .keepsakes-section {
     padding: 55px 0 65px;
   }
-  .keepsakes-section .desk {
-    height: 650px;
-  }
-  .keepsakes-section .desk-scribble {
-    font-size: 26px;
+  .desk-introduction h2 {
+    font-size: 36px;
   }
   .keepsakes-section .desk-milu {
     width: 35%;
   }
   .keepsakes-section .desk-photo {
     width: 44%;
+    --object-x: 48%;
   }
   .keepsakes-section .desk-photo > span:not(.sr-only) {
     font-size: 23px;
   }
   .keepsakes-section .desk-letter {
     width: 34%;
+    --object-x: 54%;
+    --object-y: 40%;
   }
   .keepsakes-section .desk-letter > span:not(.sr-only) {
     font-size: 23px;

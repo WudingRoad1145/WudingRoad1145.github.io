@@ -17,7 +17,7 @@ export default function Monkeydokey() {
         <div className="monkey-photo">
           <Image
             src="/images/hiking.jpg"
-            alt="Me holding Monkeydokey, my stuffed monkey travel companion, at the summit of Mount Kilimanjaro."
+            alt="Me holding Monkeydokey, my stuffed monkey travel companion, at the summit of Mount Kilimanjaro"
             width={2274}
             height={1280}
             sizes="(max-width: 700px) 90vw, 52vw"
@@ -47,7 +47,7 @@ export default function Monkeydokey() {
             <span>the real star!!</span>
           </div>
         </div>
-        <figcaption>two very happy explorers. one is a monkey.</figcaption>
+        <figcaption>two very happy explorers one is a monkey</figcaption>
         <button
           type="button"
           className="monkey-toggle"
@@ -61,16 +61,16 @@ export default function Monkeydokey() {
       <div className="life-copy monkey-copy">
         <span className="handwritten">meet Monkeydokey!</span>
         <h2 id="monkey-title">
-          He was ten.
+          He was ten
           <br />
-          He made it, too.
+          He made it, too
         </h2>
         <p>
-          That’s Monkeydokey in my arms. He was already ten years old when we
-          made it to the top of Kilimanjaro.
+          That’s Monkeydokey in my arms He was already ten years old when we
+          made it to the top of Kilimanjaro
         </p>
         <p>
-          He comes on almost every adventure with me. This is our summit photo.
+          He comes on almost every adventure with me This is our summit photo
         </p>
         <span className="monkey-postscript">of course he came along :)</span>
         <div className="life-links">

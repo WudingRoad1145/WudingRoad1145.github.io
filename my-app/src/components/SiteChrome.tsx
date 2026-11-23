@@ -87,7 +87,7 @@ export default function SiteChrome({
             <Link href="/" className="wordmark">
               Yán Fēng <span lang="zh">颜丰</span>
             </Link>
-            <p>Making things. Becoming human.</p>
+            <p>Making things Becoming human</p>
           </div>
           <div>
             <span className="small-label">Leave a little hello</span>
