@@ -22,6 +22,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "BabyMilu",
+    intro: "Bringing a character home. My journey as cofounder and CTO, designing an AI companion through rough prototypes, everyday routines, factory visits, and a promise to our community.",
+    image: "/babymilu/hero.webp",
+    slug: "babymilu"
+  },
+  {
     title: "HiPo",
     intro: "In today's increasingly polarized political landscape, it seems inevitable to fall into echo chambers and information cocoons, fueled by recommendation engines that prioritize engagement over balance. Yet, listening to and understanding opposing perspectives is more critical than ever. Inspired by Dean Sue's class on thinking in a polarized age, I created Hipo, a Chrome plugin that surfaces hidden biases and offers opposing viewpoints to help users navigate the overwhelming sea of information. Riding the wave of AI development and alignment efforts, Hipo strives to leverage technology to provide fair and thoughtful analysis of online content, fostering honest dialogue and civil engagement.",
     image: "/images/hipo.jpg",
