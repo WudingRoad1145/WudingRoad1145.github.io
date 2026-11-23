@@ -43,7 +43,7 @@ export default function AboutPage() {
           <p>
             Ideally, I’m one or several of the following: an enthusiastic
             mountaineer, avid basketball player, spontaneous painter,
-            adventurous cook, unreasonable dog person, and yet-to-be triathlete
+            adventurous cook, unreasonable dog person, and a first-time IRONMAN 70.3 finisher
           </p>
           <p>
             If you want to talk about fun things, play sports, or plan an

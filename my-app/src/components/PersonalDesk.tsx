@@ -29,7 +29,7 @@ export default function PersonalDesk() {
         <p>
           Ideally, I’m one or several of these: enthusiastic mountaineer, avid
           basketball player, spontaneous painter, adventurous cook, unreasonable
-          dog person, and yet-to-be triathlete
+          dog person, and a first-time IRONMAN 70.3 finisher
         </p>
         <p className="desk-invitation">
           Come talk about fun things, play sports, or plan an adventure with me
