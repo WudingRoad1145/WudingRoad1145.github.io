@@ -597,16 +597,24 @@ export default function BabyMiluStory() {
           </div>
           <div>
             <p>
-              <strong>Yan Feng</strong> · Cofounder & CTO
+              <strong>Lanruo Xie</strong> · Cofounder & CEO
+              <br />
+              <strong>Yán Fēng</strong> · Cofounder & CTO
               <br />
               <strong>Tammy Chen</strong> · App design
               <br />
-              <strong>Lanruo Xie</strong> · Cofounder
+              <strong>Jackson Xie</strong> · Engineering
+              <br />
+              <strong>Blossom Okonkwo</strong> · Marketing
             </p>
             <p>
               And our engineering, design, mechanical, factory,
               <br />
               and community collaborators
+            </p>
+            <p>
+              Thanks to Gopal, Evan, Lizz, Joy, Miffy, Jiayue, Aaron, Anwei,
+              Charlotte, David, Elaina for believing in this dream with us
             </p>
           </div>
           <Link href="/projects">Back to selected work</Link>

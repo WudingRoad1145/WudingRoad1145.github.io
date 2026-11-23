@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import { archivedProjects, projects } from "@/data/projects";
-export const metadata = { title: "Make — Yán Fēng" };
+export const metadata = { title: "Work — Yán Fēng" };
 export default function ProjectsPage() {
   return (
     <main className="work-page">

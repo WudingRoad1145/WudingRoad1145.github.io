@@ -86,3 +86,9 @@ The [requested Website v3 canvas](https://www.figma.com/design/zpqkQTMVaesnnxu3R
 The three scenes are tied to ordinary document scrolling, with direct scene buttons and a skip-to-story link. Only the selected video plays, films pause offscreen, and the pause preference persists across scenes. Reduced motion renders still images and disables animated scrolling. Films are silent; no soundtrack starts automatically. The train and garden scenes illustrate the historical product invitation and are not documentary footage or claimed user research.
 
 The original daily-life sequence and documentary chapters remain. The factory chapter uses a darker background as a visual transition into the making process. Existing dates, evidence qualifications, and Tammy Chen’s app-design credit are preserved.
+
+## Team and supporter credits
+
+The footer lists Lanruo Xie first as Cofounder & CEO, then Yán Fēng as Cofounder & CTO, Tammy Chen for App design, Jackson Xie for Engineering, and Blossom Okonkwo for Marketing
+The supporter thank-you names Gopal, Evan, Lizz, Joy, Miffy, Jiayue, Aaron, Anwei, Charlotte, David, and Elaina as supplied by Yan
+The display name follows the homepage’s family-name-first order consistently

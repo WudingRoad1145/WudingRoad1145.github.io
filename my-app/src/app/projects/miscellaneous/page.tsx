@@ -12,7 +12,7 @@ export default function ArtPage() {
   return (
     <main className={s.page}>
       <Link href="/projects" className={s.back}>
-        ← Make
+        ← Work
       </Link>
       <header className={s.opening}>
         <div>

@@ -689,6 +689,9 @@
   color: var(--milu-muted);
   line-height: 1.8;
 }
+.footer > div:nth-child(2) {
+  max-width: 480px;
+}
 .footer > div > img {
   margin-bottom: 20px;
 }

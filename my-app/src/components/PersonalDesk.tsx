@@ -49,7 +49,7 @@ export default function PersonalDesk() {
             Aquatic Park
           </a>{" "}
           (and <a href="https://ggtc.org/">GGTC</a> friends who are probably
-          faster)
+          faster than the seals)
         </p>
         <div className="desk-intro-links">
           <span>
