@@ -1784,7 +1784,6 @@ p {
     width: 31%;
   }
 }
-.desk,
 .letter-pile {
   isolation: isolate;
 }
@@ -1805,6 +1804,7 @@ p {
   font-size: 14px;
 }
 .keepsakes-section .desk-wrap {
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   max-width: 1280px;
