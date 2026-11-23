@@ -10,19 +10,16 @@ export default function RunnerCutout() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setRunning(entry.isIntersecting && entry.intersectionRatio >= 0.5);
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          setRunning(true);
+          observer.disconnect();
+        }
       },
       { threshold: 0.5 },
     );
     if (figure.current) observer.observe(figure.current);
-    const keepsake = figure.current?.closest("button");
-    const replay = () => setRunning(true);
-    keepsake?.addEventListener("pointerenter", replay);
-    keepsake?.addEventListener("focus", replay);
     return () => {
       observer.disconnect();
-      keepsake?.removeEventListener("pointerenter", replay);
-      keepsake?.removeEventListener("focus", replay);
     };
   }, []);
 

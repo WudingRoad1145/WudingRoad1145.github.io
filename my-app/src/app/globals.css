@@ -1853,7 +1853,7 @@ p {
 }
 .desk-runner > img.runner-moving {
   transform-origin: 55% 65%;
-  animation: runner-wiggle 0.4s ease-in-out 6;
+  animation: runner-wiggle 0.4s ease-in-out 3;
 }
 .desk-runner:active > img {
   animation-play-state: paused;
