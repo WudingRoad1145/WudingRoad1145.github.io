@@ -49,9 +49,7 @@ export default function AboutPage() {
             If you want to talk about fun things, play sports, or plan an
             adventure, please say hello
           </p>
-          <a className="text-link" href="mailto:yanffyy@gmail.com">
-            yanffyy@gmail.com
-          </a>
+          <span>yanffyy at gmail dot com</span>
           <div className="about-more">
             <Link href="/adventures">Adventures</Link>
             <Link href="/humans">Humans</Link>

@@ -406,7 +406,7 @@ p {
   color: var(--muted);
   font-size: 13px;
 }
-.site-footer > div:nth-child(2) > a {
+.site-footer .footer-contact {
   display: block;
   margin-top: 9px;
   text-decoration: none;

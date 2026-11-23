@@ -91,7 +91,7 @@ export default function SiteChrome({
           </div>
           <div>
             <span className="small-label">Leave a little hello</span>
-            <a href="mailto:yanffyy@gmail.com">yanffyy@gmail.com</a>
+            <span className="footer-contact">yanffyy at gmail dot com</span>
           </div>
           <a href="#page-content" className="back-to-top">
             Back to top
