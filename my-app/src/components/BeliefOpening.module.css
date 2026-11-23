@@ -288,6 +288,15 @@
   color: #73736d;
   padding-top: 20px;
 }
+.conversation.floating {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: min(350px, calc(100vw - 40px));
+  max-height: calc(100dvh - 56px);
+  overflow-y: auto;
+  z-index: 100;
+}
 @keyframes unfold {
   from {
     opacity: 0;
@@ -317,6 +326,11 @@
   }
 }
 @media (max-width: 700px) {
+  .conversation.floating {
+    right: 20px;
+    bottom: 20px;
+    max-height: calc(100dvh - 40px);
+  }
   .opening {
     min-height: calc(100svh - 84px);
     padding: 25px 0 30px;

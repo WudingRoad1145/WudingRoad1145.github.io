@@ -44,3 +44,9 @@ node node_modules/typescript/bin/tsc --noEmit --incremental false
 The script uses only temporary files and a mocked shared-service transport. It checks normalization, real prior-response order, duplicate exclusion, idempotency, cooldown, concurrent local writes, production fail-closed behavior, and the server-only REST adapter. It does not claim to test a real Supabase database.
 
 Browser checks cover initial hidden state, hover and keyboard/touch entry, successful saves across independent browser contexts, error retention, last-three ordering, Escape/focus return, 320/390/1080/1440px layouts, reduced motion, and continued drag/navigation behavior. Stop dev before `next build` since they share `.next`.
+
+## Scroll discovery
+
+If a visitor has seen the opening but scrolls past almost all of it without opening Good, show the same blue note once as a fixed corner invitation. Do not steal focus or scroll the page. Hover/click/keyboard discovery and automatic discovery both set the tab-session flag `portfolio-good-note-seen`; subsequent scrolling, reloads, or navigation back in that tab do not auto-open it again. Storage failures fall back to the mounted component’s in-memory guard. Direct entry below the opening does not auto-open the note until the visitor has actually seen the opening.
+
+The note remains manually available through Good. Escape or its close control dismisses it; closing a floating note restores prior focus without scrolling. Open native dialogs retain Escape priority. The response form and backend contract are unchanged. Browser submission checks use a mocked response so the real local notebook is not polluted.

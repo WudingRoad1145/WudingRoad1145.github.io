@@ -1900,6 +1900,68 @@ p {
   transform-origin: left center;
   margin-top: 30px;
 }
+.desk-play-prompt em {
+  display: block;
+  font-style: normal;
+  color: #a1384b;
+  margin-top: 7px;
+}
+.keepsakes-section .desk-photo span > small {
+  display: block;
+  font:
+    22px / 1 PersonalHand,
+    cursive;
+  color: #3b4d82;
+  margin-top: 8px;
+}
+.keepsakes-section .desk-runner {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.desk-runner > img {
+  filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)
+    drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
+    drop-shadow(3px 7px 5px #51422d20);
+}
+.keepsakes-section .desk-runner > .runner-tag {
+  position: absolute;
+  right: -5%;
+  bottom: 17%;
+  width: 85%;
+  padding: 12px 8px;
+  background: #edb5be;
+  border: 3px solid #fff9f0;
+  border-radius: 48%;
+  box-shadow: 2px 4px 0 #7c5d4720;
+  font-size: clamp(25px, 2.5vw, 36px);
+  transform: rotate(-12deg);
+}
+.desk-runner .runner-tag small {
+  display: block;
+  font:
+    22px / 1 PersonalHand,
+    cursive;
+}
+.keepsakes-section .desk-runner > .runner-caption {
+  font:
+    28px / 1 PersonalHand,
+    cursive;
+  color: #3b4d82;
+  margin-top: 8px;
+  transform: rotate(-8deg);
+}
+.keepsakes-section .desk-runner > .runner-spark {
+  position: absolute;
+  top: 8%;
+  left: -8%;
+  font:
+    42px / 1 PersonalHand,
+    cursive;
+  color: #d79a26;
+}
 .keepsakes-section .desk-milu {
   width: 20%;
 }
@@ -1959,6 +2021,26 @@ p {
     --object-x: 7%;
     --object-y: 67%;
   }
+  .keepsakes-section .desk-runner {
+    --object-y: 52%;
+  }
+  .keepsakes-section .desk-runner > .runner-tag {
+    font-size: clamp(17px, 5vw, 26px);
+    padding: 10px 5px;
+    bottom: 50px;
+  }
+  .desk-runner .runner-tag small {
+    font-size: 16px;
+  }
+  .keepsakes-section .desk-runner > .runner-caption {
+    width: 125%;
+    margin-left: -12.5%;
+    font-size: 23px;
+    white-space: nowrap;
+  }
+  .keepsakes-section .desk-letter {
+    --object-y: 51%;
+  }
 }
 @media (max-width: 700px) {
   .keepsakes-section {
@@ -1980,7 +2062,7 @@ p {
   .keepsakes-section .desk-letter {
     width: 34%;
     --object-x: 54%;
-    --object-y: 40%;
+    --object-y: 51%;
   }
   .keepsakes-section .desk-letter > span:not(.sr-only) {
     font-size: 23px;

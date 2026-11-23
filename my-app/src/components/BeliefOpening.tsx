@@ -1,6 +1,12 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+} from "react";
 import styles from "./BeliefOpening.module.css";
 
 type SharedReply = {
@@ -11,14 +17,82 @@ type SharedReply = {
 
 export default function BeliefOpening() {
   const [open, setOpen] = useState(false);
+  const [floating, setFloating] = useState(false);
   const [answer, setAnswer] = useState("");
   const [reply, setReply] = useState<SharedReply | null>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const input = useRef<HTMLInputElement>(null);
   const good = useRef<HTMLButtonElement>(null);
+  const opening = useRef<HTMLElement>(null);
+  const discovered = useRef(false);
+  const previousFocus = useRef<HTMLElement | null>(null);
+
+  const rememberNote = useCallback(() => {
+    discovered.current = true;
+    try {
+      sessionStorage.setItem("portfolio-good-note-seen", "yes");
+    } catch {
+      /* The in-memory guard still works when storage is unavailable */
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      discovered.current =
+        sessionStorage.getItem("portfolio-good-note-seen") === "yes";
+    } catch {
+      /* Storage is optional */
+    }
+    let sawOpening = false;
+    const check = (allowReveal: boolean) => {
+      const rect = opening.current?.getBoundingClientRect();
+      if (!rect) return;
+      if (rect.bottom > 0 && rect.top < innerHeight) sawOpening = true;
+      if (
+        allowReveal &&
+        sawOpening &&
+        rect.bottom <= Math.min(100, innerHeight * 0.15) &&
+        !discovered.current
+      ) {
+        rememberNote();
+        previousFocus.current =
+          document.activeElement instanceof HTMLElement
+            ? document.activeElement
+            : null;
+        setFloating(true);
+        setOpen(true);
+      }
+    };
+    const onScroll = () => check(true);
+    check(false);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [rememberNote]);
+
+  const dismiss = useCallback(() => {
+    setOpen(false);
+    if (floating) previousFocus.current?.focus({ preventScroll: true });
+    else good.current?.focus();
+  }, [floating]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (
+        event.key === "Escape" &&
+        !event.defaultPrevented &&
+        !document.querySelector("dialog[open]")
+      )
+        dismiss();
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [open, dismiss]);
 
   function reveal(focus = false) {
+    rememberNote();
+    setFloating(false);
     setOpen(true);
     if (focus) requestAnimationFrame(() => input.current?.focus());
   }
@@ -52,7 +126,11 @@ export default function BeliefOpening() {
   }
 
   return (
-    <section className={styles.opening} aria-labelledby="intro-title">
+    <section
+      ref={opening}
+      className={styles.opening}
+      aria-labelledby="intro-title"
+    >
       <div className={styles.page}>
         <div className={styles.makeNote}>
           <span className={styles.connect}>
@@ -99,25 +177,16 @@ export default function BeliefOpening() {
         <div className={styles.goodSpace}>
           {open && (
             <div
-              className={styles.conversation}
+              className={`${styles.conversation} ${floating ? styles.floating : ""}`}
               id="good-conversation"
               role="region"
               aria-labelledby="good-question"
-              onKeyDown={(event) => {
-                if (event.key === "Escape") {
-                  setOpen(false);
-                  good.current?.focus();
-                }
-              }}
             >
               <button
                 className={styles.close}
                 type="button"
                 aria-label="Close this note"
-                onClick={() => {
-                  setOpen(false);
-                  good.current?.focus();
-                }}
+                onClick={dismiss}
               >
                 ×
               </button>
@@ -214,6 +283,11 @@ export default function BeliefOpening() {
           </p>
         </div>
       </div>
+      <span className="sr-only" role="status">
+        {open && floating
+          ? "A little question from Yan: what is good to you?"
+          : ""}
+      </span>
       <a href="#my-world" className={styles.below}>
         a little of my world, below
       </a>
