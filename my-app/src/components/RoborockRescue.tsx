@@ -44,6 +44,7 @@ export default function RoborockRescue() {
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const load = manual || (near && !reduced && !saveData);
   const active = Math.max(
     0,
@@ -95,17 +96,26 @@ export default function RoborockRescue() {
     update();
     document.addEventListener("visibilitychange", update);
     return () => document.removeEventListener("visibilitychange", update);
-  }, [visible, paused, reduced, saveData, manual, load]);
+  }, [visible, paused, reduced, saveData, manual, load, attempt]);
+
+  function retry() {
+    setFailed(false);
+    setManual(true);
+    setPaused(false);
+    if (load) video.current?.load();
+    setAttempt((value) => value + 1);
+  }
 
   function seek(seconds: number) {
     setManual(true);
     setPaused(false);
     seekWhenReady.current = seconds;
-    if (video.current && video.current.readyState >= 1) {
+    if (!failed && video.current && video.current.readyState >= 1) {
       video.current.currentTime = seconds;
       seekWhenReady.current = null;
     }
     setTime(seconds);
+    if (failed) retry();
   }
 
   return (
@@ -150,10 +160,20 @@ export default function RoborockRescue() {
                   }
                 }
               }}
+              onLoadedData={() => setFailed(false)}
+              onPlaying={() => {
+                setFailed(false);
+                setPlaying(true);
+              }}
               onTimeUpdate={() => setTime(video.current?.currentTime || 0)}
               onPlay={() => setPlaying(true)}
               onPause={() => setPlaying(false)}
-              onError={() => setFailed(true)}
+              onError={(event) => {
+                if (load && event.currentTarget.error) {
+                  setFailed(true);
+                  setPlaying(false);
+                }
+              }}
             />
             <svg
               className={s.doodle}
@@ -183,9 +203,9 @@ export default function RoborockRescue() {
             )}
           </div>
           {failed && (
-            <p className={s.fallback}>
-              The film couldn’t load — the repair notes are still here
-            </p>
+            <button className={s.retry} type="button" onClick={retry}>
+              Give the film another try <span aria-hidden="true">↻</span>
+            </button>
           )}
         </div>
         <div className={s.notes}>

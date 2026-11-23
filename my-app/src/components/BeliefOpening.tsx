@@ -267,7 +267,7 @@ export default function BeliefOpening() {
         <div className={styles.humanNote}>
           <p>why we make, pursue, exist</p>
           <p>
-            The one thing we are and will always be better at: being human &amp;
+            The one thing we are and will always be better at: being human and
             loving humanity
           </p>
         </div>

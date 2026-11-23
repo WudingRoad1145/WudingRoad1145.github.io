@@ -205,9 +205,18 @@
 .bigWoman:hover strong {
   transform: rotate(2deg);
 }
-.fallback {
-  font-size: 14px;
-  margin-top: 15px;
+.retry {
+  display: block;
+  margin: 15px auto 0;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: none;
+  color: inherit;
+  font:
+    24px/1.1 PersonalHand,
+    cursive;
+  cursor: pointer;
 }
 .rescue :focus-visible {
   outline-color: #fffce8;

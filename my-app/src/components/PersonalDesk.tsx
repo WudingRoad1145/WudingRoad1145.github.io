@@ -14,7 +14,6 @@ export default function PersonalDesk() {
   return (
     <div className="desk-wrap">
       <div className="desk-introduction">
-        <span className="desk-welcome">welcome to my little corner</span>
         <h2 id="keepsakes-title">
           hi, I’m Yán Fēng <span lang="zh">颜丰</span>
         </h2>
@@ -49,11 +48,14 @@ export default function PersonalDesk() {
           <a href="https://www.google.com/maps/search/?api=1&query=Aquatic+Park+Cove+San+Francisco">
             Aquatic Park
           </a>{" "}
-          (and GGTC friends who are probably faster)
+          (and <a href="https://ggtc.org/">GGTC</a> friends who are probably
+          faster)
         </p>
-        <p className="desk-invitation">Recently: my first IRONMAN 70.3!</p>
         <div className="desk-intro-links">
-          <a href="mailto:yanffyy@gmail.com">Say hello</a>
+          <span>
+            Say hi any time — or{" "}
+            <a href="mailto:yanffyy@gmail.com">shoot me a message here</a>
+          </span>
         </div>
         <span className="desk-play-prompt">
           psst — click things, drag things, have a little play
@@ -111,7 +113,7 @@ export default function PersonalDesk() {
             src="/images/notes/note1.jpg"
             alt="A green handwritten letter that says Yen the Queen"
           />
-          <span>something i’m never forgetting</span>
+          <span>inner strength that kept me going</span>
         </Movable>
         <Movable
           label="Open Big Woman"

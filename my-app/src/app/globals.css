@@ -1747,19 +1747,11 @@ p {
   grid-area: 1 / 1;
   position: relative;
   align-self: start;
-  margin: 135px 0 60px 26%;
+  margin: 120px 0 60px 26%;
   width: 48%;
   padding: 20px;
   z-index: 2;
   background: #fff;
-}
-.desk-welcome {
-  display: block;
-  font:
-    28px/1 PersonalHand,
-    cursive;
-  transform: rotate(-3deg);
-  margin-bottom: 18px;
 }
 .desk-introduction h2 {
   font:
@@ -1795,18 +1787,13 @@ p {
   color: #3b4d82;
   text-decoration-color: currentColor;
 }
-.desk-introduction > .desk-invitation {
-  font:
-    27px/1.1 PersonalHand,
-    cursive;
-  margin-top: 22px;
-}
 .desk-intro-links {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
   margin-top: 20px;
   font-size: 14px;
+  line-height: 1.8;
 }
 .desk-intro-links a {
   text-decoration: none;

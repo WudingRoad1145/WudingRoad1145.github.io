@@ -19,3 +19,7 @@ The MP4 has no source URL until its section is nearby. Playback is muted, pauses
 Chapter notes follow visible stages at 0, 6, 16, and 22 seconds: underside cover/screws, removed bumper and covers laid out, access inside the shell, and returning to the housing. The diagrams are illustrative stage annotations, not tracked component highlights or a procedural repair guide.
 
 [The iFixit Q Revo teardown](https://www.ifixit.com/Teardown/Roborock+Q+Revo:+Teardown/177533) informed component terminology and screw organization. It covers the Q Revo, not a verified Qrevo Pro repair or radar replacement, and is linked as a reference only. Yan confirmed the radar servo broke and she replaced the radar. The exact replacement timestamp and final functional test were not supplied; neither is claimed by the timed captions.
+
+## Loading recovery
+
+Media errors are handled only after a source is attached and the video reports a real `MediaError`. Loaded data or active playback clears a previous failure, so an old error cannot linger over recovered footage. A real failure shows a handwritten retry button in place of the old dead-end message. Retry reloads the same verified MP4 and resumes playback when visible; selecting a chapter after failure also retries while retaining the requested seek. Browser QA intercepts the MP4 to exercise failure and recovery without altering the source file.
