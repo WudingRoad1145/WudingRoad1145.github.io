@@ -1,7 +1,7 @@
 import Image from "next/image";
 import MemoryDrawer from "@/components/MemoryDrawer";
 import { memories } from "@/data/memories";
-export const metadata = { title: "Adventures — Yán Fēng" };
+export const metadata = { title: "Courage — Yán Fēng" };
 export default function AdventuresPage() {
   return (
     <main className="notebook-page">

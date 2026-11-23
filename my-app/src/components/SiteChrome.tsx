@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  ["/projects", "Work"],
-  ["/adventures", "Adventures"],
+  ["/projects", "Make"],
+  ["/adventures", "Courage"],
   ["/humans", "Humans"],
 ];
 
@@ -22,13 +22,6 @@ export default function SiteChrome({
   }, [path]);
   const milu = path === "/projects/babymilu";
   const home = path === "/";
-  const navigation = home
-    ? [
-        ["/projects", "Projects"],
-        ["/adventures", "Adventures"],
-        ["/humans", "Humans"],
-      ]
-    : links;
   return (
     <div className={home ? "home-canvas" : undefined}>
       <a className="skip-link" href="#page-content">
@@ -60,7 +53,7 @@ export default function SiteChrome({
             }
           }}
         >
-          {navigation.map(([href, label]) => (
+          {links.map(([href, label]) => (
             <Link
               key={href}
               href={href}
