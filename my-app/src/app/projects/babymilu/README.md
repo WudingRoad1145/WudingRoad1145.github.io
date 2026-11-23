@@ -31,7 +31,7 @@ Selected web assets live in `public/babymilu/`. Images were resized and encoded 
 | --- | --- | --- |
 | `logo.svg`, `sneakers-pro-medium.ttf` | BabyMilu website wordmark and Sneakers Pro Medium font | Existing brand assets. |
 | `hero.webp` | Website `companion-plushies.webp` | Studio photograph of two plush designs; shoot date is unrecorded. |
-| `plush-body.webp`, `day-plush-body.webp` | Archived marketing site `v3/No_Face.png` | Original transparent white/gray plush body with an open face aperture. The hero adds a new illustrated face; the daily-life sequence uses original character artwork. |
+| `plush-body.webp`, `day-plush-body.webp` | Archived marketing site `v3/No_Face.png` | Original transparent white/gray plush body with an open face aperture. Used in the daily-life sequence with original character artwork. The former custom illustrated hero face has been removed. |
 | `day-morning.webp`, `day-night.webp` | Website `morning-alarm.webp`, `late-night-companion.webp` | Staged use-case photographs. These illustrate early explorations, rather than documenting participant tests. |
 | `day-outside.webp` | Website `companion-bag.webp` | Product photograph of the plush with a backpack. |
 | `day-face-morning.webp`, `day-face-morning-still.webp` | Website character library `gojo.webp` | Original smiling character animation and its first frame. |
@@ -56,7 +56,7 @@ The original animated BabyMilu homepage is preserved in marketing-site history a
 
 This portfolio adapts the persistent plush and changing expressions into a natural-scroll reading sequence. The stage caption, **Early use-case explorations**, distinguishes the visual scenarios from documented product outcomes. Morning, daytime, and evening have direct button controls; desktop scrolling follows the paragraph being read. Arrow keys, Home, and End operate the controls. On mobile, the controls select one scene and its associated paragraph.
 
-With reduced motion enabled, the daily-life scene loads static first frames, removes crossfades, and navigates without smooth scrolling. The evening face is static for all visitors. The new hero face is an interactive illustration rather than archived device behavior.
+With reduced motion enabled, the daily-life scene loads static first frames, removes crossfades, and navigates without smooth scrolling. The evening face is static for all visitors. The custom illustrated hero face has been removed; the opening now uses the original marketing film and original plush artwork.
 
 Original franchise-character artwork appears as part of the historical BabyMilu marketing asset library. The portfolio's authorship claims concern product, interaction, hardware, and system design.
 
@@ -68,6 +68,21 @@ Exact implementation values come from the app's `constants/Colors.ts` and bundle
 
 The daily-life stage offers a Pause/Play control for repeating faces. Reduced-motion preferences always select still frames and omit animation controls. The archive dialog supports Escape and restores focus to the opening artifact.
 
-## Shared portfolio shell
+## V3 film opening and original artwork
 
-The portfolio refinement uses Geist for the editorial narrative, with the same navigation as the other pages. BabyMilu’s existing pink, wordmark, Sneakers lettering, Poltawski Nowy, and app colors remain in its branded elements. `MiluBuddy` is shared with the homepage; the original story scenes and artifact interactions remain intact.
+The November 23 revision removes the custom illustrated Milu face entirely. The opening now adapts the historical section-based film sequence from `Good-Humans-Inc/babymilu-marketing-website`, pinned to February 27, 2026 commit `3dbc38dd3056`. The source files inspected were `src/routes/index.tsx`, `src/components/types/types.ts`, and the `public/v3/` tree. `dev-v3` was also inspected, but the February main revision is the media source for this adaptation.
+
+| Local asset | Original source | Use |
+| --- | --- | --- |
+| `cinema/landing.mp4` | `public/v3/videos/00_1.mp4` at `3dbc38dd3056` | Original lavender title film, including its original animated character. |
+| `cinema/train.mp4` | `public/v3/videos/02.mp4` at the same revision | Original moving train-window background. |
+| `cinema/garden.mp4` | `public/v3/videos/03.mp4` at the same revision | Original garden background. |
+| `cinema/*.jpg` | One-second frames extracted from the corresponding clips | Posters and reduced-motion stills. |
+| `original-plush.png` | Existing marketing library `plushie/og-babymilu.png` | Unmodified original character/plush artwork, used on the homepage and in the train/garden scenes. |
+| `/personal/ReenieBeanie.ttf` | Marketing repo `public/fonts/ReenieBeanie-Regular.ttf` | Existing annotation font. |
+
+The [requested Website v3 canvas](https://www.figma.com/design/zpqkQTMVaesnnxu3RD8pKc/Website?node-id=764-532) was inspected in the browser, including the landing, bag charm, character switch, speaking scenes, outfit, and preorder frames. The Figma connector remained quota-limited; this is a source-based portfolio adaptation, not a claimed pixel-exact Figma export.
+
+The three scenes are tied to ordinary document scrolling, with direct scene buttons and a skip-to-story link. Only the selected video plays, films pause offscreen, and the pause preference persists across scenes. Reduced motion renders still images and disables animated scrolling. Films are silent; no soundtrack starts automatically. The train and garden scenes illustrate the historical product invitation and are not documentary footage or claimed user research.
+
+The original daily-life sequence and documentary chapters remain. The factory chapter uses a darker background as a visual transition into the making process. Existing dates, evidence qualifications, and Tammy Chen’s app-design credit are preserved.

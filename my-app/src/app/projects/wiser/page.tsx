@@ -14,6 +14,7 @@ export default function WiserPage() {
       <div className="essay-content">
         {/* Title Section */}
         <h1 className="col-span-12 text-6xl text-left mb-8">Wiser</h1>
+        <WiserNotes />
         <figure className="essay-hero essay-hero-wiser">
           <img
             src="/images/wiser.jpg"
@@ -79,7 +80,6 @@ export default function WiserPage() {
           I am constantly working on viable ways to do more, please contact me
           if you would like to be part of the effort!
         </p>
-        <WiserNotes />
       </div>
     </main>
   );

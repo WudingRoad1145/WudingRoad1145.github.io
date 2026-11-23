@@ -1,0 +1,17 @@
+export const memories = [
+  "Fortunate enough to have roadtripped to 31/34 provinces in China with my parents",
+  "Climbed the ABC treks in Nepal with my parents and survived 7 days without showering",
+  "Solo traveled from Nairobi to Moshi, Tanzania through border points in a sketchy van that had no doors",
+  "Crossing the Kenya-Tanzania border with my pika buddy to teach elementary school students",
+  "Climbed mountain Kilimanjaro with a very dear but at that time random friend",
+  "Ran a 5k in under 22 minutes",
+  "Finished my first utmb at the Canyons Endurance Runs in the 2023",
+  "Fell in a well in Tulum and had army coming to send me to the hospital",
+  "Kayaked in Venice and attended the 2021 La Biennale di Venezia",
+  "As an Ethereum Scholar, attended Devcon 6 in Bogotá, Colombia and stayed with an amazing hacker house",
+  "Living in a tent in kville instead of my dear dorm room for 5 weeks cuz we bleed blue",
+  "Trained muay thai in Phuket and lost a fight, still proud",
+  "Meditated 7 days in a buddhist temple",
+  "Guided my grandma through her first snorkeling experience, where she saw the tropical fish in her childhood dreams",
+  "Had Yıldırım usta fish wrap four days in a row in Istanbul",
+];

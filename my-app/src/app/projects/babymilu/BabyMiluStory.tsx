@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import MiluBuddy from "@/components/MiluBuddy";
+import CinemaOpening from "./CinemaOpening";
 import DailyLife from "./DailyLife";
 import s from "./story.module.css";
 
@@ -260,33 +260,8 @@ export default function BabyMiluStory() {
         Skip to the story
       </a>
       <main>
-        <section className={s.hero} aria-labelledby="story-title">
-          <div className={s.heroCopy}>
-            <img
-              className={s.logo}
-              src={asset("logo.svg")}
-              alt="BabyMilu"
-              width="148"
-              height="81"
-            />
-            <h1 id="story-title">
-              Bringing a<br />
-              character <em>home.</em>
-            </h1>
-            <p className={s.dek}>
-              A soft little companion.
-              <br />A very real journey of making it.
-            </p>
-            <p className={s.heroDescription}>
-              Designing AI to feel delightful and helpful in everyday life. From
-              a GoPro inside a plushie to factory floors, first homes, and the
-              promises we kept working toward.
-            </p>
-            <a href="#beginning" className={s.readStory}>
-              Step into the story <span aria-hidden="true">✳</span>
-            </a>
-          </div>
-          <MiluBuddy />
+        <CinemaOpening />
+        <section className={s.filmCredits} aria-label="Project credits">
           <div className={s.projectMeta}>
             <span>
               <strong>My role</strong>Cofounder & CTO

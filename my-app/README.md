@@ -20,19 +20,22 @@ npm run build
 
 The existing Vercel integration handles deployment after a merge to the production branch. A local preview or build does not update production.
 
-## Visual system
+## Visual direction and components
 
-The editorial direction draws on [ShaoBo’s portfolio](https://portfolio.shaobo.co/) for typographic restraint and [bo.haus](https://www.bo.haus/) for an object-led, lightly tactile presentation. All images and project content are from this portfolio’s own archive; no reference-site assets are copied.
+The current draft is a personal, tactile collection inspired by the object navigation on [Chloe Rastatter’s site](https://www.chloerastatter.com/) and [Natalia Chen’s site](https://www.jnatchen.com/), including her [ongoing useless-inventions notebook](https://www.jnatchen.com/not-work). Reference-site artwork and text are not copied.
 
-- `src/app/globals.css`: shared typography, spacing, responsive layouts, focus states, and reduced-motion behavior.
-- `src/components/SiteChrome.tsx`: shared navigation, mobile menu, skip link, and footer.
-- `src/data/projects.ts`: project index and homepage captions.
-- `src/components/MiluBuddy.tsx`: shared interactive companion. Tap or use the keyboard to change expression; pointer tracking respects reduced motion.
-- `src/components/WiserNotes.tsx`: native-dialog keepsake viewer. The explicit asset list excludes `note9.jpg`, which is absent from the archive. Escape closes and restores focus.
-- `src/app/projects/babymilu/`: the longer BabyMilu story, scenes, artifact archive, and [asset provenance](src/app/projects/babymilu/README.md).
+- `PersonalDesk.tsx`: movable keepsakes link to BabyMilu, Adventures, Wiser, and Big Woman.
+- `Movable.tsx`: bounded pointer dragging and arrow-key movement, click-vs-drag detection, resize clamping, and keyboard opening.
+- `WiserNotes.tsx`: 13 original handwritten keepsakes scattered on the homepage and Wiser page. Tap opens a native dialog with paging; Escape restores focus. An alternate “read one by one” control makes every letter accessible without dragging. The explicit asset list excludes absent `note9.jpg`.
+- `BigWomanPlay.tsx`: a personal strength notebook. The title-spacing slider, photograph reverse, and sports choices use Yan’s existing story; they do not represent new products or achievements.
+- `MemoryDrawer.tsx` and `data/memories.ts`: draw from the existing adventure memories, with the complete list still available.
+- `SiteChrome.tsx`: shared navigation, mobile menu, skip link, and footer.
+- `projects/babymilu/CinemaOpening.tsx`: three original v3 marketing clips in a scroll-driven opening, with manual scene selection, pause, offscreen pausing, and reduced-motion stills. Marketing scenes are identified separately from documentary factory photos.
 
-The homepage uses ordinary document scrolling. Project cards lead to their local case studies. Existing essay prose remains in each route; sparse stories are presented honestly without invented project details.
+The custom illustrated Milu face and its cursor tracking have been removed. The homepage and film overlays use the original `og-babymilu.png` asset from the BabyMilu marketing library. Film and brand provenance is documented in [the BabyMilu README](src/app/projects/babymilu/README.md).
+
+`globals.css` contains the shared editorial layout and personal collage styles. The BabyMilu story and opening use CSS modules. Reenie Beanie is from the original marketing repository’s font library; it supplies annotation typography, not a recreation of Yan’s handwriting.
 
 ## Review checklist
 
-Check all 14 routes at desktop and phone widths. Exercise the mobile menu, name pronunciation, Milu expression, Wiser keepsake viewer, wallet gallery, BabyMilu scene controls, reminder choices, and archive dialog. Check reduced motion and keyboard focus. Scroll through lazy-loaded imagery before checking for broken assets or capturing full-page screenshots.
+Check the home, Wiser, Big Woman, Adventures, and BabyMilu pages at desktop, 390px, and 320px. Check all route navigation after shared style changes. Exercise pointer dragging without navigation, arrow-key movement, resize bounds, resetting, dialog paging/Escape/focus return, photo reverse, title slider limits, memory drawing, film selection and pause, scroll-driven film progression, and reduced motion. The earlier daily-life scenes, reminder controls, and archive dialog remain available below the film opening.

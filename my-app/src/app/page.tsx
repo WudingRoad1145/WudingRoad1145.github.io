@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import MiluBuddy from "@/components/MiluBuddy";
+import PersonalDesk from "@/components/PersonalDesk";
+import WiserNotes from "@/components/WiserNotes";
 import NamePronunciation from "@/components/NamePronunciation";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
@@ -11,16 +12,16 @@ export default function HomePage() {
       <section className="home-intro" aria-labelledby="intro-title">
         <div className="intro-copy">
           <span className="small-label">
-            Design, technology & a little stubbornness
+            hi, glad you found your way here :)
           </span>
           <h1 id="intro-title">
-            Making things
+            I’m Yán Fēng.
             <br />
-            more <em>human.</em>
+            <em>Make yourself at home.</em>
           </h1>
           <p>
-            I’m Yan, a builder who cares about how technology feels in people’s
-            lives. I work across product, code, and the things you can hold.
+            I make things, climb things, and care a lot about the humans around
+            me. This is a little corner of the internet for all of that.
           </p>
           <div className="intro-links">
             <Link className="text-link" href="/about">
@@ -29,23 +30,15 @@ export default function HomePage() {
             <NamePronunciation />
           </div>
         </div>
-        <div className="home-worktable">
-          <span className="worktable-label">
-            A small companion. Tap to say hello.
-          </span>
-          <MiluBuddy />
-          <Link className="worktable-caption" href="/projects/babymilu">
-            BabyMilu · made with many hands
-          </Link>
-        </div>
+        <PersonalDesk />
       </section>
       <section className="selected-work" aria-labelledby="work-title">
         <div className="section-heading">
-          <h2 id="work-title">Selected work</h2>
-          <span>Objects, interfaces, and lessons along the way.</span>
+          <h2 id="work-title">Things I’ve put my heart into</h2>
+          <span>Some worked. All of them taught me something.</span>
         </div>
         <div className="project-grid">
-          {projects.slice(0, 4).map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <ProjectCard
               key={project.slug}
               project={project}
@@ -60,6 +53,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      <WiserNotes home />
       <section className="life-section">
         <div className="life-image">
           <Image
