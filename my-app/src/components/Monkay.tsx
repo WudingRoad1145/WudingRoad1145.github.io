@@ -42,7 +42,7 @@ export default function Monkay() {
         <figcaption>
           meet Monkay — ten years old on top of Kilimanjaro
           <small>
-            my <span lang="zh">定心石</span> through the wild things
+            He’s 16 as of 2026, and I’m trying very hard to keep him in good shape.
           </small>
         </figcaption>
       </figure>
