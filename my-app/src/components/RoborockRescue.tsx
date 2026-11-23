@@ -8,13 +8,13 @@ const steps = [
   {
     time: 0,
     title: "open it up",
-    note: "let’s see what’s in here",
+    note: "a broken radar servo",
     path: "M698 390 C650 370 660 470 581 489 M593 472 L577 491 L601 497",
   },
   {
     time: 7,
     title: "keep track of the little things",
-    note: "a floor full of parts",
+    note: "the whole device comes apart",
     path: "M571 284 C659 252 703 347 683 521 C679 623 576 642 556 535 C535 404 544 306 595 288 M545 513 Q510 535 476 509 M482 495 L473 509 L489 519",
   },
   {
@@ -125,11 +125,12 @@ export default function RoborockRescue() {
             rescue
           </h2>
           <p>
-            Me, a Roborock Qrevo Pro,
-            <br />
-            and a floor full of parts
+            The radar servo in my Roborock Qrevo Pro broke, so I took the whole
+            device apart and replaced the radar
           </p>
-          <span className={s.marginNote}>some taking-apart required</span>
+          <span className={s.marginNote}>
+            one broken part, a whole robot in pieces
+          </span>
         </div>
         <div className={s.filmColumn}>
           <div className={s.film}>
