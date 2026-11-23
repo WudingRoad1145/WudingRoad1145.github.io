@@ -118,12 +118,41 @@
 }
 .conversation {
   position: relative;
-  padding: 21px 18px 18px;
-  border: 1px solid #dcdcd5;
-  border-radius: 13px 10px 14px 9px;
-  background: #fffefa;
-  box-shadow: 0 7px 24px #00000009;
+  min-height: 235px;
+  padding: 31px 20px 25px;
+  border: 0;
+  border-radius: 1px 2px 0 2px;
+  color: #193d59;
+  background: linear-gradient(175deg, #b3d4ef 0%, #c3e0f5 34%, #b9d9f1 100%);
+  box-shadow:
+    3px 9px 14px #1c405b20,
+    0 1px 2px #1c405b14;
+  transform: rotate(-2deg);
+  transform-origin: 50% 12px;
   animation: unfold 200ms ease-out;
+}
+.conversation::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 27px;
+  background: #779fbc12;
+  pointer-events: none;
+}
+.conversation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+    135deg,
+    transparent 49%,
+    #9bbfdc 50%,
+    #dbeefb 100%
+  );
+  pointer-events: none;
 }
 .close {
   position: absolute;
@@ -134,7 +163,7 @@
   font-size: 21px;
   border: 0;
   background: none;
-  color: #777;
+  color: #355a76;
   cursor: pointer;
 }
 .threeWords {
@@ -152,13 +181,13 @@
 }
 .answerLine {
   display: flex;
-  border: 1px solid #77776e;
-  border-radius: 6px 8px 5px 7px;
-  background: white;
+  border: 1px solid #668ca8;
+  border-radius: 3px 4px 2px 3px;
+  background: #f4fbff91;
   padding: 3px;
 }
 .answerLine:focus-within {
-  outline: 2px solid #32322e;
+  outline: 2px solid #244b69;
   outline-offset: 3px;
 }
 .answerLine input {
@@ -169,14 +198,18 @@
   border: 0;
   outline: none;
   padding: 10px 8px;
-  color: #171717;
+  color: #193d59;
+}
+.answerLine input::placeholder {
+  color: #476780;
+  opacity: 1;
 }
 .answerLine button {
   width: 38px;
   flex-shrink: 0;
   border: 0;
   border-radius: 4px;
-  background: #292924;
+  background: #244b69;
   color: white;
   cursor: pointer;
   font-size: 23px;
@@ -191,7 +224,7 @@
     12px/1.45 var(--font-geist-sans),
     Arial,
     sans-serif;
-  color: #6b6b60;
+  color: #355a76;
 }
 .error {
   color: #872a2a;
@@ -227,7 +260,7 @@
 }
 .previous {
   margin-top: 20px;
-  border-top: 1px dashed #d2d0c4;
+  border-top: 1px dashed #7fa5c1;
   padding-top: 13px;
 }
 .previous > p {
@@ -258,11 +291,11 @@
 @keyframes unfold {
   from {
     opacity: 0;
-    transform: translateY(-5px) rotate(-1deg);
+    transform: translateY(-5px) rotate(-4deg);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: rotate(-2deg);
   }
 }
 @media (max-width: 1000px) and (min-width: 701px) {
@@ -277,7 +310,7 @@
     font-size: 21px;
   }
   .conversation {
-    padding: 22px 12px 15px;
+    padding: 30px 12px 23px;
   }
   .threeWords {
     font-size: 22px;
@@ -335,7 +368,7 @@
   .conversation {
     max-width: 380px;
     margin: 0 auto;
-    padding: 24px;
+    padding: 31px 24px 25px;
   }
   .below {
     padding-top: 30px;

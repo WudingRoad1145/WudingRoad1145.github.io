@@ -1,6 +1,6 @@
 # The “good” conversation
 
-The homepage follows Yan’s handwritten sketch. “Make” and “humans” have handwritten margin notes. “Good” initially has no definition. Hovering the word opens a small note; clicking, tapping, or pressing Enter also opens it and focuses the answer field. Escape or the close button returns focus to the word.
+The homepage follows Yan’s handwritten sketch. “Make” and “humans” have handwritten margin notes. “Good” initially has no definition. Hovering the word opens a blue sticky note with a slight tilt, paper shadow, and folded corner; clicking, tapping, or pressing Enter also opens it and focuses the answer field. Escape or the close button returns focus to the word.
 
 The note asks “What is good to you?” below “quality, character, virtue.” It explains that submitted words are shared anonymously. Only after a successful save does it reveal Yan’s reflection and up to three previous replies. No example visitor replies are seeded. With fewer than three responses, the copy reflects the actual number.
 
