@@ -7,8 +7,11 @@ export default function AdventuresPage() {
   return (
     <main className={s.page}>
       <header className={s.heading}>
-        <h1>On courage</h1>
-        <p>A few things I want to remember</p>
+        <h1>on courage</h1>
+        <p>
+          an ever-growing list of things that make me human and give me
+          perspective
+        </p>
       </header>
       <ul className={s.memories} aria-label="Personal memories">
         {memories.map((memory) => (
