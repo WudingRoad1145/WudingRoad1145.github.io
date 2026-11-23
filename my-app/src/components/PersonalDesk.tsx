@@ -50,7 +50,6 @@ export default function PersonalDesk() {
             src="/images/notes/note1.jpg"
             alt="A green handwritten letter that says Yen the Queen"
           />
-          <span>the things I kept ♡</span>
         </Movable>
         <Movable
           label="Open Big Woman"
