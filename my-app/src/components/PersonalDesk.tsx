@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import Image from "next/image";
+import RunnerCutout from "./RunnerCutout";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
 import DeskInvitation from "./DeskInvitation";
@@ -121,13 +122,7 @@ export default function PersonalDesk() {
           onOpen={() => router.push("/projects/big-woman")}
           onExplore={uncoverInvitation}
         >
-          <Image
-            src="/images/yan-triathlon-cutout.png"
-            alt="Me smiling and making two peace signs during my first IRONMAN 70.3"
-            width={1024}
-            height={1536}
-            sizes="(max-width: 900px) 35vw, 250px"
-          />
+          <RunnerCutout />
           <span className="runner-spark" aria-hidden="true">
             ✳
           </span>

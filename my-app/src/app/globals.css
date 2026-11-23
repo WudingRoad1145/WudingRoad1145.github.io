@@ -1849,10 +1849,37 @@ p {
     drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
     drop-shadow(3px 7px 5px #51422d20);
 }
+@keyframes runner-wiggle {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-3px, -5px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(0, 1px) rotate(0deg);
+  }
+  75% {
+    transform: translate(3px, -5px) rotate(3deg);
+  }
+}
+.desk-runner > img.runner-moving {
+  transform-origin: 55% 65%;
+  animation: runner-wiggle 0.4s ease-in-out 6;
+}
+.desk-runner:active > img {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .desk-runner > img.runner-moving {
+    animation: none;
+  }
+}
 .keepsakes-section .desk-runner > .runner-tag {
   position: absolute;
   right: -5%;
-  bottom: 17%;
+  bottom: 30%;
   width: 85%;
   padding: 12px 8px;
   background: #edb5be;
@@ -1950,7 +1977,7 @@ p {
   .keepsakes-section .desk-runner > .runner-tag {
     font-size: clamp(17px, 5vw, 26px);
     padding: 10px 5px;
-    bottom: 50px;
+    bottom: 30%;
   }
   .desk-runner .runner-tag small {
     font-size: 16px;

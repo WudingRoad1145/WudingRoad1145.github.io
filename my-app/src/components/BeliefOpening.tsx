@@ -17,7 +17,6 @@ type SharedReply = {
 
 export default function BeliefOpening() {
   const [open, setOpen] = useState(false);
-  const [floating, setFloating] = useState(false);
   const [answer, setAnswer] = useState("");
   const [reply, setReply] = useState<SharedReply | null>(null);
   const [pending, setPending] = useState(false);
@@ -26,7 +25,6 @@ export default function BeliefOpening() {
   const good = useRef<HTMLButtonElement>(null);
   const opening = useRef<HTMLElement>(null);
   const discovered = useRef(false);
-  const previousFocus = useRef<HTMLElement | null>(null);
 
   const rememberNote = useCallback(() => {
     discovered.current = true;
@@ -56,11 +54,6 @@ export default function BeliefOpening() {
         !discovered.current
       ) {
         rememberNote();
-        previousFocus.current =
-          document.activeElement instanceof HTMLElement
-            ? document.activeElement
-            : null;
-        setFloating(true);
         setOpen(true);
       }
     };
@@ -72,9 +65,10 @@ export default function BeliefOpening() {
 
   const dismiss = useCallback(() => {
     setOpen(false);
-    if (floating) previousFocus.current?.focus({ preventScroll: true });
-    else good.current?.focus();
-  }, [floating]);
+    if (document.activeElement?.closest("#good-conversation")) {
+      good.current?.focus({ preventScroll: true });
+    }
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -92,7 +86,6 @@ export default function BeliefOpening() {
 
   function reveal(focus = false) {
     rememberNote();
-    setFloating(false);
     setOpen(true);
     if (focus) requestAnimationFrame(() => input.current?.focus());
   }
@@ -177,7 +170,7 @@ export default function BeliefOpening() {
         <div className={styles.goodSpace}>
           {open && (
             <div
-              className={`${styles.conversation} ${floating ? styles.floating : ""}`}
+              className={styles.conversation}
               id="good-conversation"
               role="region"
               aria-labelledby="good-question"
@@ -209,7 +202,6 @@ export default function BeliefOpening() {
                       maxLength={160}
                       required
                       autoComplete="off"
-                      aria-describedby="sharing-note"
                       disabled={pending}
                     />
                     <button
@@ -224,9 +216,6 @@ export default function BeliefOpening() {
                       {pending ? "↻" : "↵"}
                     </button>
                   </div>
-                  <p className={styles.sharing} id="sharing-note">
-                    Shared here, anonymously Just your words
-                  </p>
                   {error && (
                     <p className={styles.error} role="alert">
                       {error}
@@ -283,11 +272,6 @@ export default function BeliefOpening() {
           </p>
         </div>
       </div>
-      <span className="sr-only" role="status">
-        {open && floating
-          ? "A little question from Yan: what is good to you?"
-          : ""}
-      </span>
       <a href="#my-world" className={styles.below}>
         a little of my world, below
       </a>
