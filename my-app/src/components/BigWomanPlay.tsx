@@ -127,7 +127,7 @@ export default function BigWomanPlay() {
           <small>
             {turned
               ? "turn it back over"
-              : "Thanks Duke for making gym open longer than library! ><"}
+              : "there’s a story on the back"}
           </small>
         </button>
         <div className={`strength-copy ${styles.essay}`}>
