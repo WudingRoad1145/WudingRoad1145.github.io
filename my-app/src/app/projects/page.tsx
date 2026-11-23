@@ -31,7 +31,7 @@ export default function ProjectsPage() {
       <section className="other-work">
         <h2>A few personal pursuits</h2>
         <Link href="/projects/big-woman">
-          <span>Big Woman</span>
+          <span>BIG WOMAN</span>
           <span>Strength, beauty & becoming</span>
         </Link>
         <Link href="/projects/because-it-is-there">
