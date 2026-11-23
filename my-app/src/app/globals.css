@@ -1793,6 +1793,17 @@ p {
   padding: 70px 0 90px;
   scroll-margin-top: 20px;
 }
+.home-canvas {
+  background: #fff;
+}
+.home-canvas .site-header {
+  color: #080808;
+}
+.home-canvas .site-nav a {
+  text-transform: uppercase;
+  color: #171717;
+  font-size: 14px;
+}
 .keepsakes-section .desk-wrap {
   max-width: 840px;
   margin: auto;

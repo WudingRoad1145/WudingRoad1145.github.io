@@ -22,8 +22,17 @@ export default function SiteChrome({
     setOpen(false);
   }, [path]);
   const milu = path === "/projects/babymilu";
+  const home = path === "/";
+  const navigation = home
+    ? [
+        ["/about", "About"],
+        ["/projects", "Projects"],
+        ["/adventures", "Adventures"],
+        ["/humans", "Humans"],
+      ]
+    : links;
   return (
-    <>
+    <div className={home ? "home-canvas" : undefined}>
       <a className="skip-link" href="#page-content">
         Skip to content
       </a>
@@ -53,7 +62,7 @@ export default function SiteChrome({
             }
           }}
         >
-          {links.map(([href, label]) => (
+          {navigation.map(([href, label]) => (
             <Link
               key={href}
               href={href}
@@ -89,6 +98,6 @@ export default function SiteChrome({
           </a>
         </footer>
       )}
-    </>
+    </div>
   );
 }

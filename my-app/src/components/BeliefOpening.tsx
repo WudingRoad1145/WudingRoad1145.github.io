@@ -1,100 +1,219 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import NamePronunciation from "./NamePronunciation";
+import { useRef, useState, type FormEvent } from "react";
 import styles from "./BeliefOpening.module.css";
 
-const beliefs = [
-  {
-    word: "Make",
-    heading: "play. break things. get dirty.",
-    body: "With good intention. Then steadily follow through.",
-    // Loose pieces, a messy workbench, and a line that follows through.
-    path: "M12 65 L37 59 L45 79 L18 86 Z M17 63 L24 77 L43 73 M50 52 L70 27 L84 56 Z M81 72 L94 63 L100 83 L87 86 Z M15 97 Q48 89 33 102 Q17 112 50 101 Q78 91 57 106 M9 40 L2 34 M26 36 L21 22 M42 38 L48 26 M83 14 C125 -1 130 32 114 48 C99 63 121 76 145 65 M134 58 L146 65 L138 77",
-  },
-  {
-    word: "Good",
-    heading: "quality. character. PERMA.",
-    body: "To die knowing I was a good person by my own standard is enough.",
-    // A flower with five petals, tended from its roots.
-    path: "M71 51 C44 65 30 44 48 30 C23 13 51 -5 66 16 C76 -8 102 1 96 23 C124 19 129 46 103 51 C115 77 83 82 77 59 M76 33 C61 30 61 52 77 53 C93 54 93 34 76 33 M77 64 Q68 86 76 103 M75 86 Q47 66 45 85 Q48 96 75 94 M76 82 Q105 66 105 83 Q99 97 75 95 M38 107 Q79 100 116 108 M75 106 L62 118 M78 107 L84 120 M72 111 L47 117 M82 110 L106 118",
-  },
-  {
-    word: "Humans",
-    heading: "why we make. pursue. exist.",
-    body: "What we’ll always be best at: being human, and loving humanity.",
-    // Two people reaching toward the same heart.
-    path: "M28 25 C7 19 6 50 26 51 C47 51 48 25 28 25 M27 52 L26 87 L9 113 M26 87 L43 114 M26 65 L4 83 M27 64 L58 48 M121 24 C99 18 99 50 119 50 C140 51 141 24 121 24 M120 51 L121 87 L105 115 M121 87 L139 114 M120 64 L147 83 M120 65 L90 48 M73 51 C61 41 50 32 55 22 C61 12 71 19 74 24 C81 11 96 16 96 27 C95 38 81 46 73 51 M21 37 L21 39 M33 37 L33 39 M21 44 Q28 49 35 43 M113 36 L113 38 M125 36 L125 38 M113 43 Q120 48 128 42",
-  },
-];
+type SharedReply = {
+  answer: string;
+  previous: string[];
+  mode: "local" | "shared";
+};
 
 export default function BeliefOpening() {
-  const [active, setActive] = useState(0);
-  const [drawing, setDrawing] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [answer, setAnswer] = useState("");
+  const [reply, setReply] = useState<SharedReply | null>(null);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState("");
+  const input = useRef<HTMLInputElement>(null);
+  const good = useRef<HTMLButtonElement>(null);
+
+  function reveal(focus = false) {
+    setOpen(true);
+    if (focus) requestAnimationFrame(() => input.current?.focus());
+  }
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (pending || !answer.trim()) return;
+    setPending(true);
+    setError("");
+    try {
+      const response = await fetch("/api/good-responses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answer }),
+      });
+      const data = await response.json();
+      if (!response.ok)
+        throw new Error(
+          data.error || "Your thought couldn’t be saved. Please try again.",
+        );
+      setReply(data);
+    } catch (reason) {
+      setError(
+        reason instanceof Error
+          ? reason.message
+          : "Your thought couldn’t be saved. Please try again.",
+      );
+    } finally {
+      setPending(false);
+    }
+  }
+
   return (
     <section className={styles.opening} aria-labelledby="intro-title">
-      <p className={styles.hello}>
-        hi, I’m Yán Fēng. this is what I believe in.
-      </p>
-      <div className={styles.manifesto}>
+      <div className={styles.page}>
+        <div className={styles.makeNote}>
+          <span className={styles.connect}>
+            connect! <span>connect!</span> connect!
+          </span>
+          <p>
+            Play! Break things! Put them back together. Get dirty. Talk to
+            people!
+          </p>
+          <p>
+            Mean well. Follow through.
+            <br />
+            My way of loving this world.
+          </p>
+          <svg
+            className={styles.curl}
+            viewBox="0 0 75 85"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M18 3 C-7 42 44 41 29 23 C10 3 9 68 62 70 M49 57 L64 71 L48 78" />
+          </svg>
+        </div>
         <h1 id="intro-title" className={styles.title}>
-          {beliefs.map(({ word }, index) => (
-            <span key={word}>
+          <span>make</span>{" "}
+          <button
+            ref={good}
+            type="button"
+            onPointerEnter={(event) => {
+              if (event.pointerType === "mouse") reveal();
+            }}
+            onClick={() => reveal(true)}
+            aria-expanded={open}
+            aria-controls="good-conversation"
+          >
+            good
+          </button>{" "}
+          <span className={styles.humans}>
+            humans
+            <svg viewBox="0 0 390 26" fill="none" aria-hidden="true">
+              <path d="M4 12 Q185 0 383 11 M8 22 Q201 10 376 23" />
+            </svg>
+          </span>
+        </h1>
+        <div className={styles.goodSpace}>
+          {open && (
+            <div
+              className={styles.conversation}
+              id="good-conversation"
+              role="region"
+              aria-labelledby="good-question"
+              onKeyDown={(event) => {
+                if (event.key === "Escape") {
+                  setOpen(false);
+                  good.current?.focus();
+                }
+              }}
+            >
               <button
+                className={styles.close}
                 type="button"
-                aria-pressed={active === index}
-                aria-controls={`belief-${index}`}
-                aria-describedby={`belief-${index}`}
+                aria-label="Close this note"
                 onClick={() => {
-                  setActive(index);
-                  setDrawing((value) => value + 1);
+                  setOpen(false);
+                  good.current?.focus();
                 }}
               >
-                {word}
-                <svg viewBox="0 0 390 25" fill="none" aria-hidden="true">
-                  <path d="M5 12 Q129 1 383 10 M20 22 Q205 10 361 22" />
-                </svg>
+                ×
               </button>
-              {index < 2 ? " " : null}
-            </span>
-          ))}
-        </h1>
-        <div className={styles.notes}>
-          {beliefs.map(({ word, heading, body, path }, index) => (
-            <div
-              key={word}
-              id={`belief-${index}`}
-              className={styles.note}
-              data-active={active === index}
-            >
-              <svg
-                key={active === index ? drawing : "still"}
-                className={styles.drawing}
-                viewBox="0 0 150 125"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path d={path} pathLength="1" />
-              </svg>
-              <div>
-                <p className={styles.definition}>{heading}</p>
-                <p className={styles.explanation}>{body}</p>
-              </div>
+              {!reply ? (
+                <form onSubmit={submit}>
+                  <p className={styles.threeWords}>
+                    quality, character, virtue
+                  </p>
+                  <label id="good-question" htmlFor="good-answer">
+                    What is good to you?
+                  </label>
+                  <div className={styles.answerLine}>
+                    <input
+                      ref={input}
+                      id="good-answer"
+                      name="answer"
+                      value={answer}
+                      onChange={(event) => setAnswer(event.target.value)}
+                      placeholder="A word, or a few…"
+                      maxLength={160}
+                      required
+                      autoComplete="off"
+                      aria-describedby="sharing-note"
+                      disabled={pending}
+                    />
+                    <button
+                      type="submit"
+                      aria-label="Share your meaning of good"
+                      disabled={pending || !answer.trim()}
+                    >
+                      {pending ? "…" : "↵"}
+                    </button>
+                  </div>
+                  <p className={styles.sharing} id="sharing-note">
+                    Shared here, anonymously. Just your words.
+                  </p>
+                  {error && (
+                    <p className={styles.error} role="alert">
+                      {error}
+                    </p>
+                  )}
+                </form>
+              ) : (
+                <div className={styles.response} aria-live="polite">
+                  <p className={styles.thanks} id="good-question">
+                    Thank you for leaving a little of yourself.
+                  </p>
+                  <blockquote>“{reply.answer}”</blockquote>
+                  <p className={styles.myTurn}>as for me…</p>
+                  <p>
+                    I don’t know. But the idea of knowing I was a good person by
+                    my own standard keeps coming back to me. I’m trying to live
+                    up to my standards, and that has been giving me peace.
+                  </p>
+                  <div className={styles.previous}>
+                    {reply.previous.length ? (
+                      <>
+                        <p>
+                          {reply.previous.length === 3
+                            ? "The last 3 visitors shared:"
+                            : reply.previous.length === 1
+                              ? "The visitor before you shared:"
+                              : "The last 2 visitors shared:"}
+                        </p>
+                        <ul>
+                          {reply.previous.map((thought, i) => (
+                            <li key={i}>“{thought}”</li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <p>You’re the first to leave a thought here.</p>
+                    )}
+                  </div>
+                  {reply.mode === "local" && (
+                    <p className={styles.sharing}>
+                      Local preview · these replies stay on this computer.
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
-          ))}
+          )}
+        </div>
+        <div className={styles.humanNote}>
+          <p>why we make, pursue, exist.</p>
+          <p>
+            The one thing we are and will always be better at: being human &amp;
+            loving humanity.
+          </p>
         </div>
       </div>
-      <div className={styles.footer}>
-        <div>
-          <Link href="/about">A little about me</Link>
-          <NamePronunciation />
-        </div>
-        <a className={styles.invitation} href="#my-world">
-          a little of my world, below <span aria-hidden="true">↓</span>
-        </a>
-      </div>
-      <span className={styles.hint}>tap a word. follow the doodle.</span>
+      <a href="#my-world" className={styles.below}>
+        a little of my world, below
+      </a>
     </section>
   );
 }
