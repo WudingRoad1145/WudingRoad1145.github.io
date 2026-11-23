@@ -71,7 +71,7 @@ export default function PersonalDesk() {
         >
           <img
             src="/images/hiking.jpg"
-            alt="Monkeydokey and me at the top of Kilimanjaro"
+            alt="Monkay and me at the top of Kilimanjaro"
           />
           <span>It’s Monkay’s 10 yo summit day!</span>
         </Movable>

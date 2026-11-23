@@ -2069,21 +2069,6 @@ p {
   color: #3b4d82;
   padding-top: 18px;
 }
-.monkey-toggle {
-  display: block;
-  margin: 12px auto 0;
-  padding: 6px 10px;
-  font-size: 14px;
-  color: #65644f;
-  border: 0;
-  border-bottom: 1px dashed #aaa58c;
-  background: none;
-  cursor: pointer;
-}
-.monkey-toggle:hover {
-  color: #a34737;
-  border-color: currentColor;
-}
 .monkey-copy > .handwritten {
   display: block;
   transform: rotate(-5deg);
@@ -2112,6 +2097,107 @@ p {
 .monkey-copy .life-links {
   margin-top: 27px;
 }
+.humans-keepsake-section {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  column-gap: 9%;
+  padding: 90px 5% 55px;
+  margin: 0 0 100px;
+  background: #faf5ef;
+  border-radius: 48% 3% 6% 4% / 5% 3% 7% 4%;
+}
+.humans-keepsake-heading > .handwritten {
+  display: block;
+  font-size: clamp(25px, 2.6vw, 34px);
+  transform: rotate(-3deg);
+}
+.humans-keepsake-heading h2 {
+  margin: 25px 0;
+  font:
+    650 clamp(40px, 5.5vw, 76px) / 1.02 var(--font-geist-sans),
+    Arial,
+    sans-serif;
+  letter-spacing: -0.065em;
+}
+.humans-keepsake-heading h2 span {
+  display: inline-block;
+  font-family: PersonalHand, cursive;
+  font-weight: 400;
+  color: #ac4739;
+  transform: rotate(12deg);
+}
+.humans-keepsake-heading p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #64665e;
+  margin-bottom: 28px;
+}
+.humans-keepsake-heading .text-link {
+  display: inline-block;
+}
+.humans-thank-you {
+  position: relative;
+  padding-top: 55px;
+  max-width: 360px;
+}
+.humans-note-label {
+  position: absolute;
+  top: -14px;
+  left: -12px;
+  color: #3b4d82;
+  font:
+    29px / 1.1 PersonalHand,
+    cursive;
+  transform: rotate(4deg);
+}
+.humans-note-arrow {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  width: 105px;
+  height: 75px;
+  stroke: #3b4d82;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.humans-parent-note {
+  padding: 28px 30px 15px;
+  background: #fff0ba;
+  box-shadow: 3px 8px 13px #57442116;
+  transform: rotate(4deg);
+  color: #4a4435;
+  font:
+    32px / 1.05 PersonalHand,
+    cursive;
+}
+.humans-parent-note h3 {
+  font: inherit;
+  font-size: 39px;
+  margin: 0 0 20px;
+}
+.humans-parent-note p + p {
+  margin-top: 15px;
+}
+.humans-note-heart {
+  display: block;
+  text-align: right;
+  color: #ac4739;
+  font-size: 65px;
+  line-height: 1;
+}
+.humans-section-postscript {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 65px;
+  font:
+    clamp(27px, 3.2vw, 40px) / 1.1 PersonalHand,
+    cursive;
+  color: #ac4739;
+  transform: rotate(-2deg);
+  text-align: center;
+}
 @media (max-width: 900px) and (min-width: 701px) {
   .monkey-section {
     gap: 5%;
@@ -2119,6 +2205,27 @@ p {
   }
 }
 @media (max-width: 700px) {
+  .humans-keepsake-section {
+    grid-template-columns: 1fr;
+    padding: 55px 7% 35px;
+    margin-bottom: 70px;
+    row-gap: 65px;
+  }
+  .humans-thank-you {
+    width: 90%;
+    justify-self: center;
+  }
+  .humans-parent-note {
+    padding: 24px 22px 12px;
+    font-size: 30px;
+  }
+  .humans-note-label {
+    left: -8px;
+    max-width: 180px;
+  }
+  .humans-section-postscript {
+    margin-top: 0;
+  }
   .monkey-section {
     grid-template-columns: 1fr;
     gap: 55px;
