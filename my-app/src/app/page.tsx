@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
+import Monkeydokey from "@/components/Monkeydokey";
+import PocketDoodle from "@/components/PocketDoodle";
 import PersonalDesk from "@/components/PersonalDesk";
 import WiserNotes from "@/components/WiserNotes";
 import NamePronunciation from "@/components/NamePronunciation";
@@ -11,17 +12,28 @@ export default function HomePage() {
     <main className="portfolio-home">
       <section className="home-intro" aria-labelledby="intro-title">
         <div className="intro-copy">
-          <span className="small-label">
-            hi, glad you found your way here :)
-          </span>
-          <h1 id="intro-title">
-            I’m Yán Fēng.
-            <br />
-            <em>Make yourself at home.</em>
-          </h1>
+          <span className="small-label">hi, I’m Yán Fēng. come on in :)</span>
+          <div className="belief-heading">
+            <h1 id="intro-title" className="belief-title">
+              <span>Make</span>{" "}
+              <span className="belief-good">
+                Good
+                <svg viewBox="0 0 300 110" fill="none" aria-hidden="true">
+                  <path d="M277 85 C174 117 7 105 10 52 C12 1 211 -12 277 23 C321 48 269 102 148 105" />
+                </svg>
+              </span>{" "}
+              <span className="belief-humans">
+                Humans
+                <svg viewBox="0 0 390 30" fill="none" aria-hidden="true">
+                  <path d="M5 12 Q129 1 383 10 M20 22 Q205 10 361 22" />
+                </svg>
+              </span>
+            </h1>
+            <PocketDoodle />
+          </div>
           <p>
-            I make things, climb things, and care a lot about the humans around
-            me. This is a little corner of the internet for all of that.
+            It’s what I believe in. In the things I make, the people I care
+            about, and the person I’m still becoming.
           </p>
           <div className="intro-links">
             <Link className="text-link" href="/about">
@@ -34,7 +46,16 @@ export default function HomePage() {
       </section>
       <section className="selected-work" aria-labelledby="work-title">
         <div className="section-heading">
-          <h2 id="work-title">Things I’ve put my heart into</h2>
+          <h2 id="work-title">
+            Things I’ve put my{" "}
+            <span className="doodle-heart-word">
+              heart
+              <svg viewBox="0 0 100 85" fill="none" aria-hidden="true">
+                <path d="M50 76 C34 62 4 39 9 21 C14 1 42 3 50 23 C58 0 91 4 93 24 C94 45 65 65 50 76" />
+              </svg>
+            </span>{" "}
+            into
+          </h2>
           <span>Some worked. All of them taught me something.</span>
         </div>
         <div className="project-grid">
@@ -54,33 +75,7 @@ export default function HomePage() {
         </div>
       </section>
       <WiserNotes home />
-      <section className="life-section">
-        <div className="life-image">
-          <Image
-            src="/images/hiking.jpg"
-            alt="Yan at the summit sign on Mount Kilimanjaro"
-            fill
-            sizes="(max-width: 700px) 85vw, 36vw"
-          />
-          <span>Outside, somewhere.</span>
-        </div>
-        <div className="life-copy">
-          <span className="small-label">Away from the worktable</span>
-          <h2>
-            There’s a life
-            <br />
-            around the work.
-          </h2>
-          <p>
-            Mountains, basketball, spontaneous cooking, and the people who make
-            me more myself.
-          </p>
-          <div className="life-links">
-            <Link href="/adventures">A few adventures</Link>
-            <Link href="/humans">The humans I’m grateful for</Link>
-          </div>
-        </div>
-      </section>
+      <Monkeydokey />
     </main>
   );
 }

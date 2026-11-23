@@ -17,12 +17,14 @@ export default function AdventuresPage() {
       <figure className="adventure-photo">
         <Image
           src="/images/hiking.jpg"
-          alt="At the summit of Mount Kilimanjaro"
-          width={1400}
-          height={900}
+          alt="Holding Monkeydokey, my ten-year-old stuffed travel companion, at the summit of Mount Kilimanjaro"
+          width={2274}
+          height={1280}
           priority
         />
-        <figcaption>Mount Kilimanjaro · one of the yeses</figcaption>
+        <figcaption>
+          Monkeydokey + me, Kilimanjaro. He was ten already. He made it, too!
+        </figcaption>
       </figure>
       <MemoryDrawer />
       <details className="all-memories">

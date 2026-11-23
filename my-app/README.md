@@ -25,6 +25,8 @@ The existing Vercel integration handles deployment after a merge to the producti
 The current draft is a personal, tactile collection inspired by the object navigation on [Chloe Rastatter’s site](https://www.chloerastatter.com/) and [Natalia Chen’s site](https://www.jnatchen.com/), including her [ongoing useless-inventions notebook](https://www.jnatchen.com/not-work). Reference-site artwork and text are not copied.
 
 - `PersonalDesk.tsx`: movable keepsakes link to BabyMilu, Adventures, Wiser, and Big Woman.
+- The homepage leads with Yan’s belief, “Make Good Humans,” with drawn circles, underlines, and a heart annotation. `PocketDoodle.tsx` cycles a flower, star, and two humans on click or keyboard activation; drawing motion respects reduced-motion preferences.
+- `Monkeydokey.tsx`: the mountain photograph tells the story of Yan’s stuffed travel companion, already ten years old when they summited Kilimanjaro. A hand-drawn circle marks him in the original photograph, with a reversible CSS close-up. The photograph is unaltered and retains its original aspect ratio so the annotation stays aligned at every width. The desk and Adventures captions carry the same context.
 - `Movable.tsx`: bounded pointer dragging and arrow-key movement, click-vs-drag detection, resize clamping, and keyboard opening.
 - `WiserNotes.tsx`: 13 original handwritten keepsakes scattered on the homepage and Wiser page. Tap opens a native dialog with paging; Escape restores focus. An alternate “read one by one” control makes every letter accessible without dragging. The explicit asset list excludes absent `note9.jpg`.
 - `BigWomanPlay.tsx`: a personal strength notebook. The title-spacing slider, photograph reverse, and sports choices use Yan’s existing story; they do not represent new products or achievements.
@@ -39,3 +41,5 @@ The custom illustrated Milu face and its cursor tracking have been removed. The 
 ## Review checklist
 
 Check the home, Wiser, Big Woman, Adventures, and BabyMilu pages at desktop, 390px, and 320px. Check all route navigation after shared style changes. Exercise pointer dragging without navigation, arrow-key movement, resize bounds, resetting, dialog paging/Escape/focus return, photo reverse, title slider limits, memory drawing, film selection and pause, scroll-driven film progression, and reduced motion. The earlier daily-life scenes, reminder controls, and archive dialog remain available below the film opening.
+
+On the homepage, also check the doodle cycle and Monkeydokey close-up with mouse and keyboard. Confirm the yellow circle stays over Monkeydokey and the zoom can be hidden without removing the original photograph.

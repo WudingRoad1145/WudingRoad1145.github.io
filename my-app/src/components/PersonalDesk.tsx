@@ -35,8 +35,11 @@ export default function PersonalDesk() {
           className="desk-photo"
           onOpen={() => router.push("/adventures")}
         >
-          <img src="/images/hiking.jpg" alt="At the top of Kilimanjaro" />
-          <span>because it’s there.</span>
+          <img
+            src="/images/hiking.jpg"
+            alt="Monkeydokey and me at the top of Kilimanjaro"
+          />
+          <span>Monkeydokey + me</span>
         </Movable>
         <Movable
           label="Read the Wiser letters"
@@ -54,7 +57,7 @@ export default function PersonalDesk() {
         <Movable
           label="Open Big Woman"
           x={5}
-          y={63}
+          y={70}
           angle={6}
           className="desk-sticker"
           onOpen={() => router.push("/projects/big-woman")}
