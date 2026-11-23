@@ -44,7 +44,11 @@ export default function HumansPage() {
         <li>Steve Jobs</li>
         <li>Jared Maccain</li>
         <li>Ming Yao</li>
-        <li></li>
+        <li>Jackson Xie</li>
+        <li>Mr. Angel from Sports Basement Presidio</li>
+        <li>Evan Tana</li>
+        <li>Gopal Raman</li>
+        <li>Kevin Asato</li>
       </ul>
     </main>
   );
