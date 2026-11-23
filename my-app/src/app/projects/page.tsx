@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { archivedProjects, projects } from "@/data/projects";
 export const metadata = { title: "Work — Yán Fēng" };
 export default function ProjectsPage() {
   return (
@@ -40,6 +40,17 @@ export default function ProjectsPage() {
           <span>无用之用</span>
           <span>Art & other experiments</span>
         </Link>
+      </section>
+      <section className="other-work" aria-labelledby="archive-title">
+        <h2 id="archive-title">Archive</h2>
+        {archivedProjects.map((project) => (
+          <Link key={project.slug} href={`/projects/${project.slug}`}>
+            <span>{project.title}</span>
+            <span>
+              {project.category} · {project.subtitle}
+            </span>
+          </Link>
+        ))}
       </section>
     </main>
   );

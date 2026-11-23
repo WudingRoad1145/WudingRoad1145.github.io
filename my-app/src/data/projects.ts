@@ -24,18 +24,6 @@ export const projects = [
     tone: "milu",
   },
   {
-    slug: "rabbit-r1",
-    title: "rabbit r1",
-    subtitle: "A different way to meet a computer",
-    description:
-      "Product development for a pocket-sized AI device, exploring a different relationship with technology",
-    image: "/images/rabbit.jpg",
-    alt: "The orange rabbit r1 held in a hand",
-    category: "Product development",
-    medium: "AI hardware",
-    tone: "rabbit",
-  },
-  {
     slug: "hipo",
     title: "HiPo",
     subtitle: "A little room for another perspective",
@@ -60,18 +48,6 @@ export const projects = [
     tone: "wiser",
   },
   {
-    slug: "AA",
-    title: "Porton Wallet",
-    subtitle: "Making a wallet feel familiar",
-    description:
-      "Exploring a simpler way to use crypto through device-native authentication and account abstraction",
-    image: "/images/aa.jpg",
-    alt: "Account abstraction wallet system diagram",
-    category: "Hackathon project",
-    medium: "Product · Web3",
-    tone: "wallet",
-  },
-  {
     slug: "multi-agent",
     title: "Getting agents to cooperate",
     subtitle: "Can a commitment change the outcome?",
@@ -82,6 +58,20 @@ export const projects = [
     category: "Research",
     medium: "Multi-agent systems",
     tone: "agents",
+  },
+];
+export const archivedProjects = [
+  {
+    slug: "AA",
+    title: "Porton Wallet",
+    subtitle: "Making a wallet feel familiar",
+    description:
+      "Exploring a simpler way to use crypto through device-native authentication and account abstraction",
+    image: "/images/aa.jpg",
+    alt: "Account abstraction wallet system diagram",
+    category: "Hackathon project",
+    medium: "Product · Web3",
+    tone: "wallet",
   },
 ];
 export type Project = (typeof projects)[number];
