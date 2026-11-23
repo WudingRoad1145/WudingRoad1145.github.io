@@ -34,10 +34,6 @@ export default function ProjectsPage() {
           <span>BIG WOMAN</span>
           <span>Strength, beauty & becoming</span>
         </Link>
-        <Link href="/projects/because-it-is-there">
-          <span>Because it is there</span>
-          <span>Notes from the mountains</span>
-        </Link>
         <Link href="/projects/miscellaneous">
           <span>无用之用</span>
           <span>Art & other experiments</span>
