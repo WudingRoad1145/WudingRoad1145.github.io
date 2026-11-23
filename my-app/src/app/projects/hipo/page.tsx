@@ -35,9 +35,9 @@ export default function ProjectPage() {
         {/* Intro Section */}
         <p className="col-span-12 text-lg text-left mb-10">
           HiPo is a Chrome extension designed to help users identify hidden
-          biases and polarized viewpoints in online content By offering quick,
+          biases and polarized viewpoints in online content. By offering quick,
           actionable insights, it empowers users to navigate the overwhelming
-          sea of information with clarity and fairness
+          sea of information with clarity and fairness.
         </p>
 
         {/* Graphics Section */}

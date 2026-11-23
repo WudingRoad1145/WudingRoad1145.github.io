@@ -20,7 +20,7 @@ export default function RabbitPage() {
         </figure>
         <p>
           Leading product development for r1, a first-of-its-kind AI hardware
-          device, reimagining human–machine interaction
+          device, reimagining human–machine interaction.
         </p>
         <p>
           <a className="text-link" href="https://www.rabbit.tech/">

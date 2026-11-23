@@ -230,9 +230,9 @@ export default function BeliefOpening() {
                   <blockquote>“{reply.answer}”</blockquote>
                   <p className={styles.myTurn}>as for me</p>
                   <p>
-                    I don’t know But the idea of knowing I was a good person by
-                    my own standard keeps coming back to me I’m trying to live
-                    up to my standards, and that has been giving me peace
+                    I don’t know. But the idea of knowing I was a good person by
+                    my own standard keeps coming back to me. I’m trying to live
+                    up to my standards, and that has been giving me peace.
                   </p>
                   <div className={styles.previous}>
                     {reply.previous.length ? (
@@ -251,12 +251,12 @@ export default function BeliefOpening() {
                         </ul>
                       </>
                     ) : (
-                      <p>You’re the first to leave a thought here</p>
+                      <p>You’re the first to leave a thought here.</p>
                     )}
                   </div>
                   {reply.mode === "local" && (
                     <p className={styles.sharing}>
-                      Local preview · these replies stay on this computer
+                      Local preview · these replies stay on this computer.
                     </p>
                   )}
                 </div>

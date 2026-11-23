@@ -8,7 +8,7 @@ const scenes = [
   {
     label: "Morning",
     title: "A reason to begin",
-    copy: "A character alarm gave us a moment to design around: a familiar voice helping someone start the day We explored how timing, tone, and room for a response could make waking up feel personal",
+    copy: "A character alarm gave us a moment to design around: a familiar voice helping someone start the day. We explored how timing, tone, and room for a response could make waking up feel personal.",
     image: "/babymilu/day-morning.webp",
     alt: "Morning use-case image: a person in a white hoodie asleep under a blanket",
     face: "/babymilu/day-face-morning.webp",
@@ -19,7 +19,7 @@ const scenes = [
   {
     label: "During the day",
     title: "A little encouragement",
-    copy: "We imagined a companion for things someone already wanted to do—a check-in before heading out, or a nudge to follow through The question was whether it helped in that moment",
+    copy: "We imagined a companion for things someone already wanted to do—a check-in before heading out, or a nudge to follow through. The question was whether it helped in that moment.",
     image: "/babymilu/day-outside.webp",
     alt: "A pink backpack with BabyMilu in its pocket and charms attached",
     face: "/babymilu/day-face-day.webp",
@@ -29,7 +29,7 @@ const scenes = [
   {
     label: "Evening",
     title: "Company, on your terms",
-    copy: "A goodnight, a quiet presence, or nothing at all Early conversations with users reminded us that feeling accompanied did not have to mean keeping a conversation going",
+    copy: "A goodnight, a quiet presence, or nothing at all. Early conversations with users reminded us that feeling accompanied did not have to mean keeping a conversation going.",
     image: "/babymilu/day-night.webp",
     alt: "Evening use-case image: a seated person with their knees drawn close",
     face: "/babymilu/day-face-night-still.webp",
@@ -153,7 +153,7 @@ export default function DailyLife() {
         <h2 id={headingId}>A familiar voice An ordinary day</h2>
         <p>
           Three early explorations of where a character might fit into everyday
-          life
+          life.
         </p>
       </header>
 

@@ -54,7 +54,7 @@ export default function Monkay() {
         </h2>
         <p>
           I cherish courage and a beginner’s mind — staying curious, trying
-          things, and being willing to begin again
+          things, and being willing to begin again.
         </p>
         <span className="monkey-postscript">
           set yourself free as if it is day one, always

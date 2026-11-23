@@ -6,19 +6,19 @@ const scenes = [
     clip: "landing",
     title: "What if a character\ncould come home?",
     caption: "The invitation",
-    body: "We wanted AI to feel delightful and helpful in everyday life",
+    body: "We wanted AI to feel delightful and helpful in everyday life.",
   },
   {
     clip: "train",
     title: "Someone to take\nalong with you",
     caption: "The possibility",
-    body: "A familiar character A voice A little company through an ordinary day",
+    body: "A familiar character. A voice. A little company through an ordinary day.",
   },
   {
     clip: "garden",
     title: "Then we had to\nmake it real",
     caption: "The work behind it",
-    body: "A GoPro in a plushie Five prototypes A hundred beta units Many trips to the factory",
+    body: "A GoPro in a plushie. Five prototypes. A hundred beta units. Many trips to the factory.",
   },
 ];
 export default function CinemaOpening() {

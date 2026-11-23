@@ -135,7 +135,7 @@ export default function RoborockRescue() {
           </h2>
           <p>
             The radar servo in my Roborock Qrevo Pro broke, so I took the whole
-            device apart and replaced the radar
+            device apart and replaced the radar.
           </p>
           <span className={s.marginNote}>
             one broken part, a whole robot in pieces

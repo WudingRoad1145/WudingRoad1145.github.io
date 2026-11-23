@@ -14,9 +14,9 @@ export default function HumansILove() {
           <br />I love
         </h2>
         <p>
-          I’m grateful to the people I’ve felt love from
+          I’m grateful to the people I’ve felt love from.
           <br />
-          Some whose names I know, and some whose names I don’t
+          Some whose names I know, and some whose names I don’t.
         </p>
         <Link className="text-link" href="/humans">
           Meet the humans who made me, me <span aria-hidden="true">↗</span>

@@ -10,7 +10,7 @@ export default function AdventuresPage() {
         <h1>on courage</h1>
         <p>
           an ever-growing list of things that make me human and give me
-          perspective
+          perspective.
         </p>
       </header>
       <ul className={s.memories} aria-label="Personal memories">

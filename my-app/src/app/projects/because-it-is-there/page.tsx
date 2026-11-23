@@ -24,11 +24,12 @@ export default function MountainPage() {
           “Because it’s there”<cite>George Herbert Leigh Mallory</cite>
         </blockquote>
         <p>
-          This story is still being written In the meantime, a few memories from
-          the journey are in my{" "}
+          This story is still being written. In the meantime, a few memories
+          from the journey are in my{" "}
           <Link className="text-link" href="/adventures">
             adventure notebook
           </Link>
+          .
         </p>
       </div>
     </main>

@@ -92,9 +92,9 @@ export default function BigWomanPlay() {
             <span aria-hidden="true">a little / a lot</span>
           </div>
           <p className="big-dek">
-            Aesthetics are learned
+            Aesthetics are learned.
             <br />
-            I’m still unlearning a few things
+            I’m still unlearning a few things.
           </p>
         </div>
       </header>
@@ -125,9 +125,7 @@ export default function BigWomanPlay() {
             />
           )}
           <small>
-            {turned
-              ? "turn it back over"
-              : "there’s a story on the back"}
+            {turned ? "turn it back over" : "there’s a story on the back"}
           </small>
         </button>
         <div className={`strength-copy ${styles.essay}`}>
@@ -144,19 +142,19 @@ export default function BigWomanPlay() {
             70.3 — thank you
           </p>
           <p>
-            Growing up in China, I was often called “boyish” or “壮” Remarks
-            that were meant as harmless jokes became things I wanted to change
-            about myself
+            Growing up in China as a naturally athletic girl who loved movement,
+            I was often called “boyish” or “壮” (big). Remarks that were meant
+            as harmless jokes became things I wanted to change about myself.
           </p>
           <p>
-            Over time, I came to appreciate my body for what it could do During
+            Over time, I came to appreciate my body for what it could do. During
             my gap year, I began introducing strength training to my mother’s
-            life Together, we discovered the freedom and confidence that comes
-            with building strength
+            life. Together, we discovered the freedom and confidence that comes
+            with building strength.
           </p>
           <p>
-            To me, strength is beauty I want to redefine femininity for myself,
-            and share the joy of being strong with others
+            To me, strength is beauty. I want to redefine femininity for myself,
+            and share the joy of being strong with others.
           </p>
         </div>
       </section>
@@ -176,13 +174,13 @@ export default function BigWomanPlay() {
           <div>
             <p>
               While building BabyMilu, I grew close to some of our earliest
-              supporters They weren’t just backing a little AI companion They
-              wanted to support girls being techy, doing the hardcore things
+              supporters. They weren’t just backing a little AI companion. They
+              wanted to support girls being techy, doing the hardcore things.
             </p>
             <p>
               One supporter shared that she had grown up discouraged from
               electronics, and it had left her feeling unsure of herself around
-              technology
+              technology.
             </p>
             <p className="handwritten">
               What if seeing another girl take it apart made it easier to try?
@@ -216,12 +214,12 @@ export default function BigWomanPlay() {
             <h3>We can do it all!</h3>
             <p>
               I’ve been setting up a TikTok account to share videos of fixing
-              everyday electronics at home Taking things apart, figuring them
-              out, and showing the process
+              everyday electronics at home. Taking things apart, figuring them
+              out, and showing the process.
             </p>
             <p>
-              Here’s my Roborock Qrevo Pro The radar servo broke, so I took the
-              whole device apart and replaced the radar
+              Here’s my Roborock Qrevo Pro. The radar servo broke, so I took the
+              whole device apart and replaced the radar.
             </p>
             <p className="handwritten">
               It is not that hard at all
@@ -232,14 +230,53 @@ export default function BigWomanPlay() {
               className={styles.repairList}
               aria-label="Things to figure out together"
             >
-              <span>a dryer</span>
+              <a href="#dryer-repair">a dryer</a>
               <span>a sink</span>
               <span>a dripping fountain head</span>
               <span>a robot cleaner</span>
             </div>
-            <p>For anyone wondering where to start — this is for you</p>
+            <p>For anyone wondering where to start — this is for you.</p>
           </div>
         </div>
+        <section
+          id="dryer-repair"
+          className={styles.dryerStory}
+          aria-labelledby="dryer-title"
+        >
+          <header className={styles.dryerHeading}>
+            <div>
+              <span className="handwritten">a household effort</span>
+              <h3 id="dryer-title">A dryer, a few roommates</h3>
+              <p>
+                My roommates and I took apart a dryer and fixed it together.
+              </p>
+            </div>
+            <span className={styles.comingSoon}>photos and videos to come</span>
+          </header>
+          {/* Replace these reserved frames with the original media when supplied.
+              No stock imagery, fake playback controls or invented repair steps. */}
+          <div
+            className={styles.dryerAlbum}
+            aria-label="Space for our dryer repair film and photographs"
+          >
+            <div className={styles.dryerFilmSpace}>
+              <span>the repair film</span>
+              <span className={styles.frameCorner} aria-hidden="true">
+                01
+              </span>
+            </div>
+            <div className={styles.dryerPhotoStack} aria-hidden="true">
+              <div className={styles.dryerPhotoSpace}>
+                <span>a few moments along the way</span>
+                <span className={styles.frameCorner}>02</span>
+              </div>
+              <div className={styles.dryerPhotoSpace}>
+                <span>figuring it out together</span>
+                <span className={styles.frameCorner}>03</span>
+              </div>
+            </div>
+          </div>
+        </section>
         <p className={styles.signoff}>
           Strong enough to try
           <br />

@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         </h1>
         <p>
           Across hardware, interfaces, and research, I keep coming back to how
-          we live with technology—and with one another
+          we live with technology—and with one another.
         </p>
       </header>
       <div className="project-grid">

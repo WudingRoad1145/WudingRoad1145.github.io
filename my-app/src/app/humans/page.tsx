@@ -10,23 +10,23 @@ export default function HumansPage() {
           <em>you</em>
         </h1>
         <p>
-          I’m grateful to the people I’ve felt love from Some whose names I
-          know, and some whose names I don’t
+          I’m grateful to the people I’ve felt love from. Some whose names I
+          know, and some whose names I don’t.
         </p>
       </header>
       <section className="gratitude">
         <div>
           <h2>Robin & Shally Yan</h2>
           <p>
-            Thank you, Mum and Dad, for making me a human to begin with And for
-            making me unapologetically myself
+            Thank you, Mum and Dad, for making me a human to begin with. And for
+            making me unapologetically myself.
           </p>
         </div>
       </section>
       <div className="humans-intro">
         <p>
           Friends, teachers, collaborators, and people whose work has stayed
-          with me
+          with me.
         </p>
         <span>Thank you for making me a better human</span>
       </div>
