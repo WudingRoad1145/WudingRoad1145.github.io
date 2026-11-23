@@ -1789,95 +1789,69 @@ p {
   isolation: isolate;
 }
 
+.keepsakes-section {
+  padding: 70px 0 90px;
+  scroll-margin-top: 20px;
+}
+.keepsakes-section .desk-wrap {
+  max-width: 840px;
+  margin: auto;
+}
+.keepsakes-section .desk {
+  height: 760px;
+}
+.keepsakes-section .desk-scribble {
+  font-size: 32px;
+  color: #34342d;
+}
+.keepsakes-section .desk-milu {
+  width: 30%;
+}
+.keepsakes-section .desk-photo {
+  width: 38%;
+}
+.keepsakes-section .desk-letter {
+  width: 25%;
+}
+.keepsakes-section .desk-letter > span:not(.sr-only) {
+  padding: 12px 8px;
+  font-size: 26px;
+  line-height: 0.95;
+}
+.keepsakes-section .desk-sticker {
+  width: 31%;
+}
+@media (max-width: 700px) {
+  .keepsakes-section {
+    padding: 55px 0 65px;
+  }
+  .keepsakes-section .desk {
+    height: 650px;
+  }
+  .keepsakes-section .desk-scribble {
+    font-size: 26px;
+  }
+  .keepsakes-section .desk-milu {
+    width: 35%;
+  }
+  .keepsakes-section .desk-photo {
+    width: 44%;
+  }
+  .keepsakes-section .desk-photo > span:not(.sr-only) {
+    font-size: 23px;
+  }
+  .keepsakes-section .desk-letter {
+    width: 34%;
+  }
+  .keepsakes-section .desk-letter > span:not(.sr-only) {
+    font-size: 23px;
+  }
+  .keepsakes-section .desk-sticker {
+    width: 37%;
+  }
+}
+
 /* A belief, a few scribbles, and the companion in the photograph. */
-.belief-heading {
-  position: relative;
-  margin: 25px 0 34px;
-}
-.intro-copy h1.belief-title {
-  font:
-    750 clamp(68px, 8.1vw, 112px) / 0.94 var(--font-geist-sans),
-    Arial,
-    sans-serif;
-  letter-spacing: -0.075em;
-  margin: 0;
-}
-.belief-title > span {
-  display: table;
-  position: relative;
-}
-.belief-title > span:first-child {
-  transform: rotate(-3deg);
-  color: #3b4d82;
-}
-.belief-title .belief-good {
-  color: #6b7547;
-  transform: rotate(2deg);
-  margin: 6px 0 12px 7px;
-  padding: 0 10px;
-}
-.belief-good svg {
-  position: absolute;
-  inset: -9% -8%;
-  width: 116%;
-  height: 122%;
-  stroke: #b14c3e;
-  stroke-width: 2.5;
-  overflow: visible;
-  pointer-events: none;
-}
-.belief-humans svg {
-  position: absolute;
-  left: 0;
-  bottom: -18px;
-  width: 100%;
-  height: 25px;
-  stroke: #d29a37;
-  stroke-width: 4;
-  stroke-linecap: round;
-}
-.pocket-doodle {
-  position: absolute;
-  right: 7%;
-  top: 5%;
-  width: 95px;
-  padding: 5px;
-  border: 0;
-  background: transparent;
-  color: #a34737;
-  cursor: pointer;
-  transform: rotate(9deg);
-}
-.pocket-doodle svg {
-  width: 100%;
-  height: 105px;
-  stroke: currentColor;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform 200ms;
-}
-.pocket-doodle:hover svg {
-  transform: rotate(-12deg);
-}
-.pocket-doodle path {
-  stroke-dasharray: 1;
-  animation: pencil-drawing 700ms ease-out both;
-}
-.pocket-doodle span {
-  display: block;
-  font:
-    22px/0.85 PersonalHand,
-    cursive;
-}
-@keyframes pencil-drawing {
-  from {
-    stroke-dashoffset: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 .doodle-heart-word {
   position: relative;
 }
@@ -2021,33 +1995,12 @@ p {
   margin-top: 27px;
 }
 @media (max-width: 900px) and (min-width: 701px) {
-  .pocket-doodle {
-    right: 2%;
-    width: 75px;
-  }
   .monkey-section {
     gap: 5%;
     grid-template-columns: 1.25fr 1fr;
   }
 }
 @media (max-width: 700px) {
-  .intro-copy h1.belief-title {
-    font-size: clamp(64px, 17.5vw, 104px);
-  }
-  .home-intro .intro-copy > p {
-    max-width: 390px;
-  }
-  .belief-heading {
-    max-width: 420px;
-  }
-  .pocket-doodle {
-    right: 3%;
-    top: 0;
-    width: 85px;
-  }
-  .pocket-doodle svg {
-    height: 80px;
-  }
   .monkey-section {
     grid-template-columns: 1fr;
     gap: 55px;

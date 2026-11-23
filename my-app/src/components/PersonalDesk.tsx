@@ -15,7 +15,7 @@ export default function PersonalDesk() {
         <span className="desk-scribble">a few things from my world</span>
         <Movable
           label="Open BabyMilu’s story"
-          x={7}
+          x={8}
           y={14}
           angle={-12}
           className="desk-milu"
@@ -39,12 +39,12 @@ export default function PersonalDesk() {
             src="/images/hiking.jpg"
             alt="Monkeydokey and me at the top of Kilimanjaro"
           />
-          <span>Monkeydokey + me</span>
+          <span>It’s Monkay’s 10 yo summit day!</span>
         </Movable>
         <Movable
           label="Read the Wiser letters"
           x={54}
-          y={46}
+          y={40}
           angle={-9}
           className="desk-letter"
           onOpen={() => router.push("/projects/wiser")}
@@ -53,6 +53,7 @@ export default function PersonalDesk() {
             src="/images/notes/note1.jpg"
             alt="A green handwritten letter that says Yen the Queen"
           />
+          <span>something i’m never forgetting</span>
         </Movable>
         <Movable
           label="Open Big Woman"
