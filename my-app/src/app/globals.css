@@ -1813,6 +1813,7 @@ p {
   height: 900px;
 }
 .desk-introduction {
+  container-type: inline-size;
   position: absolute;
   left: 26%;
   top: 15%;
@@ -1875,9 +1876,11 @@ p {
 .desk-play-prompt {
   display: block;
   font:
-    27px/1.1 PersonalHand,
+    clamp(14px, 5cqw, 27px) / 1.1 PersonalHand,
     cursive;
-  transform: rotate(-3deg);
+  white-space: nowrap;
+  transform: rotate(3deg);
+  transform-origin: left center;
   margin-top: 30px;
 }
 .keepsakes-section .desk-milu {
