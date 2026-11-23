@@ -1,0 +1,121 @@
+.secret {
+  position: absolute;
+  left: 5%;
+  top: 68%;
+  width: 16%;
+  min-height: 60px;
+  padding: 8px;
+  border: 0;
+  background: #d8eaff;
+  color: #294b78;
+  box-shadow: 2px 4px 6px #273b581c;
+  font:
+    27px / 0.95 PersonalHand,
+    cursive;
+  transform: rotate(-5deg);
+  cursor: pointer;
+  z-index: 0;
+}
+.secret[hidden] {
+  display: none;
+}
+.secret:focus-visible {
+  outline: 2px dashed #294b78;
+  outline-offset: 4px;
+}
+.dialog {
+  width: min(510px, calc(100vw - 32px));
+  max-height: calc(100dvh - 40px);
+  padding: 0;
+  border: 0;
+  background: #d8eaff;
+  color: #233e63;
+  box-shadow: 5px 14px 45px #132e4b38;
+  overflow: auto;
+}
+.dialog::backdrop {
+  background: #19263855;
+  backdrop-filter: blur(3px);
+}
+.note {
+  position: relative;
+  padding: 44px 36px 36px;
+  border-top: 22px solid #c5dcf6;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.eyebrow {
+  display: block;
+  font:
+    27px / 1 PersonalHand,
+    cursive;
+  transform: rotate(-3deg);
+}
+.note h2 {
+  font:
+    64px / 1 PersonalHand,
+    cursive;
+  margin: 20px 0;
+}
+.note p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+.activities button {
+  padding: 8px 12px;
+  border: 1px solid #6b88ac80;
+  border-radius: 5px 8px 4px 6px;
+  background: #f5f9ff66;
+  font-size: 14px;
+  cursor: pointer;
+}
+.activities button[aria-pressed="true"] {
+  color: white;
+  background: #2a4c79;
+  border-color: #2a4c79;
+}
+.note .handwritten {
+  font:
+    34px / 1.05 PersonalHand,
+    cursive;
+  margin: 18px 0 28px;
+}
+.hello {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 5px;
+}
+@media (max-width: 900px) {
+  .secret {
+    left: 10%;
+    top: 70%;
+    width: 26%;
+    font-size: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .note {
+    padding: 38px 22px 28px;
+  }
+  .note h2 {
+    font-size: 54px;
+  }
+  .secret {
+    font-size: 23px;
+  }
+}

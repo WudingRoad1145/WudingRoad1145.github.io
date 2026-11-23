@@ -18,6 +18,7 @@ export default function Movable({
   angle = 0,
   className = "",
   onOpen,
+  onExplore,
 }: {
   children: ReactNode;
   label: string;
@@ -26,6 +27,7 @@ export default function Movable({
   angle?: number;
   className?: string;
   onOpen: () => void;
+  onExplore?: () => void;
 }) {
   const ref = useRef<HTMLButtonElement>(null);
   const helpId = useId();
@@ -39,6 +41,9 @@ export default function Movable({
     moved: boolean;
   } | null>(null);
   const suppressClick = useRef(false);
+  useEffect(() => {
+    if (Math.hypot(position.x, position.y) >= 64) onExplore?.();
+  }, [position, onExplore]);
   const clamp = useCallback((x: number, y: number) => {
     const el = ref.current;
     if (!el?.parentElement) return { x, y };

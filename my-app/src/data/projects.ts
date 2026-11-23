@@ -1,5 +1,17 @@
 export const projects = [
   {
+    slug: "robotics",
+    title: "A little arm, some big questions",
+    subtitle: "On my workbench right now",
+    description:
+      "MuJoCo policy training and SO101 arm safety exploration Learning to act, and exploring when to pause",
+    image: "/robotics/real-arm.png",
+    alt: "My pink SO101 robot arm beside blue tape and a paper target",
+    category: "Ongoing exploration",
+    medium: "Robotics · Learning · Safety",
+    tone: "agents",
+  },
+  {
     slug: "babymilu",
     title: "BabyMilu",
     subtitle: "Bringing a character home",

@@ -1805,18 +1805,26 @@ p {
   font-size: 14px;
 }
 .keepsakes-section .desk-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   max-width: 1280px;
   margin: auto;
   position: relative;
 }
 .keepsakes-section .desk {
-  height: 900px;
+  grid-area: 1 / 1;
+  height: auto;
+  min-height: 900px;
+}
+.keepsakes-section .desk-instructions {
+  grid-area: 2 / 1;
 }
 .desk-introduction {
   container-type: inline-size;
-  position: absolute;
-  left: 26%;
-  top: 15%;
+  grid-area: 1 / 1;
+  position: relative;
+  align-self: start;
+  margin: 135px 0 60px 26%;
   width: 48%;
   padding: 20px;
   z-index: 2;
@@ -1854,6 +1862,15 @@ p {
   font-size: 16px;
   line-height: 1.65;
   margin: 16px 0;
+}
+.desk-introduction > p a {
+  text-decoration: underline;
+  text-decoration-color: #a8b4c4;
+  text-underline-offset: 3px;
+}
+.desk-introduction > p a:hover {
+  color: #3b4d82;
+  text-decoration-color: currentColor;
 }
 .desk-introduction > .desk-invitation {
   font:
@@ -1904,6 +1921,9 @@ p {
   font-size: clamp(28px, 3vw, 43px);
 }
 @media (max-width: 900px) {
+  .keepsakes-section .desk-wrap {
+    display: block;
+  }
   .desk-introduction {
     position: relative;
     top: auto;
@@ -1915,6 +1935,7 @@ p {
   }
   .keepsakes-section .desk {
     height: 650px;
+    min-height: 0;
     max-width: 600px;
     margin: auto;
   }

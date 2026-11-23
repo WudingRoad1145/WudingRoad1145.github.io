@@ -1,12 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
+import DeskInvitation from "./DeskInvitation";
 export default function PersonalDesk() {
   const router = useRouter();
   const [reset, setReset] = useState(0);
+  const [foundInvitation, setFoundInvitation] = useState(false);
+  const uncoverInvitation = useCallback(() => setFoundInvitation(true), []);
   return (
     <div className="desk-wrap">
       <div className="desk-introduction">
@@ -27,13 +31,27 @@ export default function PersonalDesk() {
           with roots in computer science at Duke
         </p>
         <p>
-          Ideally, I’m one or several of these: enthusiastic mountaineer, avid
-          basketball player, spontaneous painter, adventurous cook, unreasonable
-          dog person, and a first-time IRONMAN 70.3 finisher
+          You can catch me prototyping crazy stuff in my attic and at{" "}
+          <a href="https://joininteract.com/">Interact Studio</a>, asking stupid
+          questions at <a href="https://www.southparkcommons.com/">SPC</a>, or
+          simping over dogs on the street
         </p>
-        <p className="desk-invitation">
-          Come talk about fun things, play sports, or plan an adventure with me
+        <p>
+          Otherwise, I’m hooping at{" "}
+          <a href="https://www.google.com/maps/search/?api=1&query=Koret+Health+and+Recreation+Center+San+Francisco">
+            Koret
+          </a>
+          , hanging out with my CrossFit friends at{" "}
+          <a href="https://www.google.com/maps/search/?api=1&query=3545+Geary+Boulevard+San+Francisco+CA+94118">
+            TC Fitness
+          </a>
+          , or swimming with seals at{" "}
+          <a href="https://www.google.com/maps/search/?api=1&query=Aquatic+Park+Cove+San+Francisco">
+            Aquatic Park
+          </a>{" "}
+          (and GGTC friends who are probably faster)
         </p>
+        <p className="desk-invitation">Recently: my first IRONMAN 70.3!</p>
         <div className="desk-intro-links">
           <Link href="/about">A little more about me</Link>
           <a href="mailto:yanffyy@gmail.com">Say hello</a>
@@ -62,18 +80,24 @@ export default function PersonalDesk() {
           <span>our baby, Milu</span>
         </Movable>
         <Movable
-          label="Open my adventures"
+          label="Open my robotics explorations"
           x={76}
           y={8}
           angle={9}
           className="desk-photo"
-          onOpen={() => router.push("/adventures")}
+          onOpen={() => router.push("/projects/robotics")}
         >
-          <img
-            src="/images/hiking.jpg"
-            alt="Monkay and me at the top of Kilimanjaro"
+          <Image
+            src="/robotics/real-arm.png"
+            alt="My pink SO101 robot arm, blue tape, and a paper target on the workbench"
+            width={1000}
+            height={1000}
+            sizes="(max-width: 700px) 40vw, (max-width: 900px) 240px, 250px"
           />
-          <span>It’s Monkay’s 10 yo summit day!</span>
+          <span>
+            teaching this little arm
+            <br />a few things
+          </span>
         </Movable>
         <Movable
           label="Read the Wiser letters"
@@ -96,6 +120,7 @@ export default function PersonalDesk() {
           angle={6}
           className="desk-sticker"
           onOpen={() => router.push("/projects/big-woman")}
+          onExplore={uncoverInvitation}
         >
           <span>
             BIG
@@ -104,10 +129,17 @@ export default function PersonalDesk() {
           </span>
           <small>takes up space</small>
         </Movable>
+        <DeskInvitation found={foundInvitation} />
       </div>
       <div className="desk-instructions">
         <span>Move things around Click to wander</span>
-        <button type="button" onClick={() => setReset((r) => r + 1)}>
+        <button
+          type="button"
+          onClick={() => {
+            setReset((r) => r + 1);
+            setFoundInvitation(false);
+          }}
+        >
           Put everything back
         </button>
       </div>
