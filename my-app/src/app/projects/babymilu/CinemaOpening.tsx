@@ -4,9 +4,11 @@ import s from "./cinema.module.css";
 const scenes = [
   {
     clip: "landing",
-    title: "What if a character\ncould come home?",
-    caption: "The invitation",
-    body: "We wanted AI to feel delightful and helpful in everyday life.",
+    title: "Milu\nTo see, to wonder",
+    caption: "A name, a question",
+    body: "Japanese miru means “to see”; Latin mirari means “to wonder at.” A pleasant echo across space and time.",
+    question:
+      "Behind it is our deeper question: how could AI truly understand everyday consumers and become helpful in everyday life?",
   },
   {
     clip: "train",
@@ -127,9 +129,9 @@ export default function CinemaOpening() {
               <span>{scene.caption}</span>
               {i === 0 ? (
                 <h1 id="story-title">
-                  What if a character
+                  Milu
                   <br />
-                  <em>could come home?</em>
+                  <em>To see, to wonder</em>
                 </h1>
               ) : (
                 <h2>
@@ -142,6 +144,7 @@ export default function CinemaOpening() {
                 </h2>
               )}
               <p>{scene.body}</p>
+              {scene.question && <p className={s.question}>{scene.question}</p>}
             </div>
           ))}
           <div className={s.controls}>

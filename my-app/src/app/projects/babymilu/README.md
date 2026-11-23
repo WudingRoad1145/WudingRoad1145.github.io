@@ -92,3 +92,9 @@ The original daily-life sequence and documentary chapters remain. The factory ch
 The footer lists Lanruo Xie first as Cofounder & CEO, then Yán Fēng as Cofounder & CTO, Tammy Chen for App design, Jackson Xie for Engineering, and Blossom Okonkwo for Marketing
 The supporter thank-you names Gopal, Evan, Lizz, Joy, Miffy, Jiayue, Aaron, Anwei, Charlotte, David, and Elaina as supplied by Yan
 The display name follows the homepage’s family-name-first order consistently
+
+## Opening name story
+
+The opening introduces “Milu — To see, to wonder”, followed by the question of how AI could understand everyday consumers and help in everyday life. It describes an echo between Japanese *miru* (to see) and Latin *mirari* (to wonder at), not a claim that Milu literally means “to see” in both languages. References: [Japanese dictionary](https://www.romajidesu.com/dictionary/meaning-of-%E8%A6%8B%E3%82%8B.html) and [Lewis & Short via Logeion](https://logeion.org/miror).
+
+The opening stacks below 900px and uses content-sized rows so the longer introduction and controls remain accessible. Compact desktop spacing applies to short viewports.
