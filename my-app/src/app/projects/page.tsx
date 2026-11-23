@@ -23,6 +23,7 @@ const ProjectsPage = () => {
       <div>
         <h1 className="text-6xl mb-8">Projects</h1>
         <ul className="list-disc ml-8 space-y-4">
+          <li><Link href="/projects/babymilu" className="text-black hover:underline">BabyMilu — Bringing a character home</Link></li>
           <li><Link href="/projects/hipo" className="text-black hover:underline">HiPo</Link></li>
           <li><Link href="https://rabbit.tech/" className="text-black hover:underline">rabbit r1</Link></li>
           <li><Link href="/projects/multi-agent" className="text-black hover:underline">Multi-agent Collaboration Research</Link></li>
