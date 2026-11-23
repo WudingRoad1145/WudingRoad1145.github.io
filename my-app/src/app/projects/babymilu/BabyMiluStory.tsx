@@ -301,7 +301,7 @@ export default function BabyMiluStory() {
               />
               <figcaption>The first prototype Yes, that’s a GoPro</figcaption>
             </figure>
-            <span className={s.photoNote}>poor Kuromi ♡</span>
+            <span className={s.photoNote}>poor Kuromi</span>
           </div>
           <div className={s.prose}>
             <span className={s.eyebrow}>San Francisco · The beginning</span>

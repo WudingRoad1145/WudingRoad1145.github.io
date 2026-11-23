@@ -15,9 +15,6 @@ export default function HumansPage() {
         </p>
       </header>
       <section className="gratitude">
-        <div className="gratitude-mark" aria-hidden="true">
-          ♡
-        </div>
         <div>
           <h2>Robin & Shally Yan</h2>
           <p>

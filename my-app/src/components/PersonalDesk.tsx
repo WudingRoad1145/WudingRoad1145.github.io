@@ -18,7 +18,14 @@ export default function PersonalDesk() {
           hi, I’m Yán Fēng <span lang="zh">颜丰</span>
         </h2>
         <div className="desk-name">
-          <span>Yan is my family name, Feng is my given name</span>
+          <span>
+            Yan is my family name, Feng is my given name — so you’ve probably
+            come across my name in English as Feng Yan
+          </span>
+          <span>
+            But this is my little corner of the internet, so bear with my
+            stubbornness about keeping the original order
+          </span>
           <NamePronunciation />
         </div>
         <p>

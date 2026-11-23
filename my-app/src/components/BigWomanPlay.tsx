@@ -189,7 +189,6 @@ export default function BigWomanPlay() {
             </p>
           </div>
           <figure className={styles.messagePlaceholder}>
-            <span aria-hidden="true">♡</span>
             <figcaption>A message that stayed with me</figcaption>
             <p>Space for the original Discord screenshot</p>
             <small>From an early BabyMilu supporter</small>

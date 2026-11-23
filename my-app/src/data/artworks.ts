@@ -15,7 +15,7 @@ export const artworks = [
     medium: "Electrical circuits, Arduino, code, paper and pen",
     size: "35 × 48 cm",
     feature: true,
-    note: "mum, my model ♡",
+    note: "mum, my model",
     story: [
       "Can a computer be an artist? I used a neural network to process portraits and built a drawing machine with Arduino, circuits, paper and pen — my mum sat for it",
       "If people learn to make art by copying, what separates our learning from a computer’s? This experiment put that question on a drawing board",

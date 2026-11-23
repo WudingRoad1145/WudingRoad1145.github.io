@@ -502,8 +502,7 @@ p {
   padding-bottom: 130px;
 }
 .gratitude {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: block;
   align-items: center;
   gap: 50px;
   border-top: 1px solid var(--line);
@@ -1770,6 +1769,7 @@ p {
   display: grid;
   gap: 10px;
   font-size: 13px;
+  line-height: 1.65;
   color: #6d6c61;
   margin-bottom: 25px;
 }
@@ -2109,6 +2109,12 @@ p {
   color: #3b4d82;
   padding-top: 18px;
 }
+.monkey-keepsake figcaption small {
+  display: block;
+  font: 13px/1.6 var(--font-geist-sans), sans-serif;
+  color: #64665e;
+  margin-top: 12px;
+}
 .monkey-copy > .handwritten {
   display: block;
   transform: rotate(-5deg);
@@ -2223,13 +2229,6 @@ p {
 }
 .humans-parent-note p + p {
   margin-top: 15px;
-}
-.humans-note-heart {
-  display: block;
-  text-align: right;
-  color: #ac4739;
-  font-size: 65px;
-  line-height: 1;
 }
 .humans-section-postscript {
   grid-column: 1 / -1;
