@@ -292,7 +292,8 @@ p {
     transform 0.2s;
 }
 .project-card:hover .project-open,
-.project-card:focus-visible .project-open {
+.project-card:focus-visible .project-open,
+.workbench-film-link:focus-visible .project-open {
   opacity: 1;
   transform: none;
 }
@@ -314,7 +315,8 @@ p {
   color: var(--muted);
   font-size: 12px;
 }
-.project-card > p {
+.project-card > p,
+.project-story > p {
   color: #65685f;
   font-size: 15px;
   margin-top: 8px;
@@ -2133,9 +2135,9 @@ p {
 }
 .monkey-closeup {
   position: absolute;
-  left: 9%;
-  top: 15%;
-  width: 28%;
+  left: 0%;
+  top: 12%;
+  width: 35%;
   transform: rotate(9deg);
 }
 .monkey-lens {
@@ -2350,4 +2352,55 @@ p {
   .monkey-keepsake figcaption {
     font-size: 26px;
   }
+}
+
+/* A moving workbench, framed in paper rather than a black mat */
+.project-robotics .project-image {
+  background: #e9e2d7;
+}
+.project-robotics .project-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-story {
+  text-decoration: none;
+}
+.workbench-film-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.workbench-film-link:focus-visible {
+  outline-offset: -5px;
+}
+.workbench-film-label {
+  position: absolute;
+  bottom: 17px;
+  left: 20px;
+  background: #fffbeeeb;
+  padding: 8px 12px 5px;
+  font:
+    26px/1 PersonalHand,
+    cursive;
+  transform: rotate(-3deg);
+}
+.workbench-film-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff9;
+  border-radius: 50%;
+  color: #39372f;
+  background: #fffbe9d9;
+  cursor: pointer;
+  font-size: 21px;
+}
+.humans-parent-note .note-ampersand {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.73em;
 }

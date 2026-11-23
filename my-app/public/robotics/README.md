@@ -21,3 +21,19 @@ These are copies of existing local project artifacts, not generated illustration
   - Early pilots do not establish a general safety ranking
 
 The project page is an ongoing notebook and keeps the simulation, offline adaptation, and decision-only safety work distinct. It does not attribute the upstream LeRobot workshop dataset or benchmark to Yan.
+
+## Workbench film
+
+`workbench.mp4` is a silent 22-second edit (source seconds 5–27) of Yan’s supplied `copy_00EE2A7D-304B-40B4-B8E8-F985E9CCE179.MOV`, originally 42.77 seconds and 58,563,666 bytes. The 720×540, 24 fps H.264 file fills the project card. `workbench.jpg` is its still at 8 seconds. Pink and blue are retained; the HDR phone footage is converted to SDR using the shared LUT script. This is observed workbench footage, not evidence of an autonomous policy success.
+
+Reproduction (FFmpeg with libx264 and lut3d):
+
+```sh
+python3 scripts/video-hlg-lut.py /tmp/hlg-to-sdr.cube
+ffmpeg -ss 5 -i INPUT.MOV -t 22 -map 0:v:0 -an \
+  -vf 'crop=1080:810:0:280,scale=720:540:in_color_matrix=bt2020:flags=lanczos,format=rgb24,lut3d=/tmp/hlg-to-sdr.cube,fps=24,scale=out_color_matrix=bt709,format=yuv420p,setparams=color_primaries=bt709:color_trc=bt709:colorspace=bt709' \
+  -c:v libx264 -preset slow -crf 27 -movflags +faststart -map_metadata -1 workbench.mp4
+ffmpeg -ss 8 -i workbench.mp4 -frames:v 1 -q:v 2 workbench.jpg
+```
+
+The source URL is attached only near the viewport. Playback stops when offscreen or the tab is hidden. Reduced-motion/data-saver visitors see the poster until choosing play. The pause/play button is a sibling of the project link, not an interactive element nested inside it.

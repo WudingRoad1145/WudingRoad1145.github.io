@@ -7,27 +7,27 @@ import s from "./RoborockRescue.module.css";
 const steps = [
   {
     time: 0,
-    title: "open it up",
-    note: "a broken radar servo",
-    path: "M698 390 C650 370 660 470 581 489 M593 472 L577 491 L601 497",
+    title: "start underneath",
+    note: "the bottom cover and its screws",
+    path: "M610 293 Q536 310 443 408 M452 389 L439 411 L464 407",
   },
   {
-    time: 7,
-    title: "keep track of the little things",
-    note: "the whole device comes apart",
-    path: "M571 284 C659 252 703 347 683 521 C679 623 576 642 556 535 C535 404 544 306 595 288 M545 513 Q510 535 476 509 M482 495 L473 509 L489 519",
+    time: 6,
+    title: "make room for the parts",
+    note: "the bumper and covers, laid out beside me",
+    path: "M578 365 C674 353 691 650 601 675 C526 687 500 411 578 365",
   },
   {
-    time: 14,
-    title: "ask for a little help",
-    note: "the laptop is part of the toolkit",
-    path: "M266 36 Q343 6 420 66 L468 199 Q382 264 285 201 Z M275 51 L294 194 M429 112 Q475 81 508 105 M495 91 L510 106 L494 117",
+    time: 16,
+    title: "past the outer shell",
+    note: "getting inside to reach the radar assembly",
+    path: "M454 441 Q518 417 550 385 M537 387 L552 381 L548 397",
   },
   {
-    time: 20,
-    title: "back to the screws",
-    note: "one small piece at a time",
-    path: "M690 560 C620 602 550 560 493 512 M501 534 L489 508 L516 510",
+    time: 22,
+    title: "back to the housing",
+    note: "lining up the casing and its screws",
+    path: "M618 300 Q545 333 456 425 M462 405 L451 430 L476 422",
   },
 ];
 
@@ -43,7 +43,6 @@ export default function RoborockRescue() {
   const [paused, setPaused] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
-  const [duration, setDuration] = useState(27.3);
   const [failed, setFailed] = useState(false);
   const load = manual || (near && !reduced && !saveData);
   const active = Math.max(
@@ -145,7 +144,6 @@ export default function RoborockRescue() {
               aria-label="A silent timelapse of Yan taking apart and working on a Roborock Qrevo Pro"
               onLoadedMetadata={() => {
                 if (video.current) {
-                  setDuration(video.current.duration);
                   if (seekWhenReady.current !== null) {
                     video.current.currentTime = seekWhenReady.current;
                     seekWhenReady.current = null;
@@ -166,28 +164,23 @@ export default function RoborockRescue() {
               <path d={steps[active].path} />
             </svg>
             <span className={s.filmLabel}>a small repair diary</span>
-          </div>
-          <div className={s.controls}>
-            <button
-              type="button"
-              onClick={() => {
-                if (playing) setPaused(true);
-                else {
-                  setManual(true);
-                  setPaused(false);
-                }
-              }}
-            >
-              {playing ? "Pause film" : "Play film"}
-            </button>
-            <progress
-              value={time}
-              max={duration}
-              aria-label="Repair film progress"
-            />
-            <button type="button" onClick={() => seek(0)}>
-              Start again
-            </button>
+            {!failed && (
+              <button
+                className={s.filmToggle}
+                data-playing={playing}
+                type="button"
+                aria-label={playing ? "Pause repair film" : "Play repair film"}
+                onClick={() => {
+                  if (playing) setPaused(true);
+                  else {
+                    setManual(true);
+                    setPaused(false);
+                  }
+                }}
+              >
+                <span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span>
+              </button>
+            )}
           </div>
           {failed && (
             <p className={s.fallback}>
@@ -215,6 +208,14 @@ export default function RoborockRescue() {
               </button>
             ))}
           </div>
+          <a
+            className={s.reference}
+            href="https://www.ifixit.com/Teardown/Roborock+Q+Revo:+Teardown/177533"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Q Revo teardown reference ↗
+          </a>
           <Link className={s.bigWoman} href="/projects/big-woman">
             <svg viewBox="0 0 100 85" fill="none" aria-hidden="true">
               <path d="M9 5 C83 0 82 51 42 49 C6 48 36 22 49 42 C64 65 40 70 76 74 M64 61 L79 75 L61 81" />

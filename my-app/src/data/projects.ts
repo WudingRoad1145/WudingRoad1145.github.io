@@ -9,7 +9,7 @@ export const projects = [
     alt: "My pink SO101 robot arm beside blue tape and a paper target",
     category: "Ongoing exploration",
     medium: "Robotics · Learning · Safety",
-    tone: "agents",
+    tone: "robotics",
   },
   {
     slug: "babymilu",

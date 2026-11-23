@@ -33,7 +33,9 @@ export default function HumansILove() {
         </svg>
         <span className="humans-note-label">starting with these two</span>
         <div className="humans-parent-note">
-          <h3>Mum &amp; Dad,</h3>
+          <h3>
+            Mum <span className="note-ampersand">&amp;</span> Dad,
+          </h3>
           <p>Thank you for making me a human to begin with</p>
           <p>And for making me unapologetically myself</p>
           <span className="humans-note-heart" aria-hidden="true">
