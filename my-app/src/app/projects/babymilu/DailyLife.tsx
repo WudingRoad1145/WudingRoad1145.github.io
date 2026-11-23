@@ -8,32 +8,34 @@ const scenes = [
   {
     label: "Morning",
     title: "A reason to begin",
-    copy: "A character alarm gave us a moment to design around: a familiar voice helping someone start the day. We explored how timing, tone, and room for a response could make waking up feel personal.",
+    copy: "A character alarm gave us a moment to design around: a familiar voice helping someone start the day We explored how timing, tone, and room for a response could make waking up feel personal",
     image: "/babymilu/day-morning.webp",
-    alt: "Morning use-case image: a person in a white hoodie asleep under a blanket.",
+    alt: "Morning use-case image: a person in a white hoodie asleep under a blanket",
     face: "/babymilu/day-face-morning.webp",
     stillFace: "/babymilu/day-face-morning-still.webp",
-    companionAlt: "BabyMilu with a smiling, white-haired character on its face screen.",
+    companionAlt:
+      "BabyMilu with a smiling, white-haired character on its face screen",
   },
   {
     label: "During the day",
     title: "A little encouragement",
-    copy: "We imagined a companion for things someone already wanted to do—a check-in before heading out, or a nudge to follow through. The question was whether it helped in that moment.",
+    copy: "We imagined a companion for things someone already wanted to do—a check-in before heading out, or a nudge to follow through The question was whether it helped in that moment",
     image: "/babymilu/day-outside.webp",
-    alt: "A pink backpack with BabyMilu in its pocket and charms attached.",
+    alt: "A pink backpack with BabyMilu in its pocket and charms attached",
     face: "/babymilu/day-face-day.webp",
     stillFace: "/babymilu/day-face-day-still.webp",
-    companionAlt: "BabyMilu with a silver-haired character on its face screen.",
+    companionAlt: "BabyMilu with a silver-haired character on its face screen",
   },
   {
     label: "Evening",
     title: "Company, on your terms",
-    copy: "A goodnight, a quiet presence, or nothing at all. Early conversations with users reminded us that feeling accompanied did not have to mean keeping a conversation going.",
+    copy: "A goodnight, a quiet presence, or nothing at all Early conversations with users reminded us that feeling accompanied did not have to mean keeping a conversation going",
     image: "/babymilu/day-night.webp",
-    alt: "Evening use-case image: a seated person with their knees drawn close.",
+    alt: "Evening use-case image: a seated person with their knees drawn close",
     face: "/babymilu/day-face-night-still.webp",
     stillFace: "/babymilu/day-face-night-still.webp",
-    companionAlt: "BabyMilu with a calm, blue-eyed character on its face screen.",
+    companionAlt:
+      "BabyMilu with a calm, blue-eyed character on its face screen",
   },
 ] as const;
 
@@ -69,7 +71,9 @@ export default function DailyLife() {
       observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            const index = sceneRefs.current.indexOf(entry.target as HTMLElement);
+            const index = sceneRefs.current.indexOf(
+              entry.target as HTMLElement,
+            );
             if (index < 0) return;
             if (entry.isIntersecting) visibleScenes.add(index);
             else visibleScenes.delete(index);
@@ -109,7 +113,9 @@ export default function DailyLife() {
     setActiveScene(index);
     if (!window.matchMedia(desktopQuery).matches) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     sceneRefs.current[index]?.scrollIntoView({
       block: "center",
       // "instant" also overrides the site's global smooth-scroll rule.
@@ -118,12 +124,16 @@ export default function DailyLife() {
   };
 
   const handleSceneKey = (event: KeyboardEvent<HTMLDivElement>) => {
-    const focusedIndex = buttonRefs.current.indexOf(event.target as HTMLButtonElement);
+    const focusedIndex = buttonRefs.current.indexOf(
+      event.target as HTMLButtonElement,
+    );
     if (focusedIndex < 0) return;
 
     let nextIndex: number;
-    if (event.key === "ArrowRight") nextIndex = (focusedIndex + 1) % scenes.length;
-    else if (event.key === "ArrowLeft") nextIndex = (focusedIndex - 1 + scenes.length) % scenes.length;
+    if (event.key === "ArrowRight")
+      nextIndex = (focusedIndex + 1) % scenes.length;
+    else if (event.key === "ArrowLeft")
+      nextIndex = (focusedIndex - 1 + scenes.length) % scenes.length;
     else if (event.key === "Home") nextIndex = 0;
     else if (event.key === "End") nextIndex = scenes.length - 1;
     else return;
@@ -134,17 +144,28 @@ export default function DailyLife() {
   };
 
   return (
-    <section id="daily-life" aria-labelledby={headingId} className={styles.section}>
+    <section
+      id="daily-life"
+      aria-labelledby={headingId}
+      className={styles.section}
+    >
       <header className={styles.header}>
-        <h2 id={headingId}>A familiar voice. An ordinary day.</h2>
-        <p>Three early explorations of where a character might fit into everyday life.</p>
+        <h2 id={headingId}>A familiar voice An ordinary day</h2>
+        <p>
+          Three early explorations of where a character might fit into everyday
+          life
+        </p>
       </header>
 
       <div className={styles.sequence}>
         <div className={styles.stageColumn}>
           <div className={styles.stage}>
             <figure className={styles.figure}>
-              <div className={styles.visual} id={imageId} data-scene={activeScene}>
+              <div
+                className={styles.visual}
+                id={imageId}
+                data-scene={activeScene}
+              >
                 <span className={styles.moment} aria-hidden="true">
                   {scenes[activeScene].label}
                 </span>
@@ -173,7 +194,11 @@ export default function DailyLife() {
                 >
                   <div className={styles.faceScreen}>
                     <Image
-                      src={reducedMotion || animationPaused ? scenes[activeScene].stillFace : scenes[activeScene].face}
+                      src={
+                        reducedMotion || animationPaused
+                          ? scenes[activeScene].stillFace
+                          : scenes[activeScene].face
+                      }
                       alt=""
                       fill
                       sizes="160px"
@@ -203,7 +228,9 @@ export default function DailyLife() {
                 <button
                   key={scene.label}
                   type="button"
-                  ref={(element) => { buttonRefs.current[index] = element; }}
+                  ref={(element) => {
+                    buttonRefs.current[index] = element;
+                  }}
                   aria-pressed={activeScene === index}
                   aria-controls={`${imageId} ${id}-scene-${index}`}
                   onClick={() => selectScene(index)}
@@ -212,16 +239,17 @@ export default function DailyLife() {
                 </button>
               ))}
             </div>
-            {!reducedMotion && scenes[activeScene].face !== scenes[activeScene].stillFace && (
-              <button
-                type="button"
-                className={styles.motionControl}
-                aria-controls={imageId}
-                onClick={() => setAnimationPaused((paused) => !paused)}
-              >
-                {animationPaused ? "Play animation" : "Pause animation"}
-              </button>
-            )}
+            {!reducedMotion &&
+              scenes[activeScene].face !== scenes[activeScene].stillFace && (
+                <button
+                  type="button"
+                  className={styles.motionControl}
+                  aria-controls={imageId}
+                  onClick={() => setAnimationPaused((paused) => !paused)}
+                >
+                  {animationPaused ? "Play animation" : "Pause animation"}
+                </button>
+              )}
           </div>
         </div>
 
@@ -230,7 +258,9 @@ export default function DailyLife() {
             <article
               key={scene.label}
               id={`${id}-scene-${index}`}
-              ref={(element) => { sceneRefs.current[index] = element; }}
+              ref={(element) => {
+                sceneRefs.current[index] = element;
+              }}
               className={styles.scene}
               data-active={activeScene === index}
               aria-labelledby={`${id}-scene-heading-${index}`}

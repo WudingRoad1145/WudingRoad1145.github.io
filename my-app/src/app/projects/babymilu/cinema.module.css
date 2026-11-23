@@ -1,0 +1,233 @@
+.opening {
+  position: relative;
+  height: 300svh;
+  background: #cfc2ec;
+}
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 43% 57%;
+  color: #423451;
+}
+.media {
+  grid-column: 2;
+  position: relative;
+  grid-row: 1;
+  min-width: 0;
+}
+.scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  overflow: hidden;
+}
+.scene[data-active="true"] {
+  opacity: 1;
+}
+.scene > video,
+.scene > img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scene:first-child > video,
+.scene:first-child > img:first-child {
+  object-fit: contain;
+  background: #cfc2ec;
+}
+.scene > .originalPlush {
+  position: absolute;
+  width: 49%;
+  height: auto;
+  max-height: 66%;
+  object-fit: contain;
+  bottom: 3%;
+  left: 25%;
+  filter: drop-shadow(0 15px 12px #23152835);
+}
+.words {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 2;
+  align-self: center;
+  padding: 55px 6% 55px 13%;
+}
+.kicker {
+  display: block;
+  font-family: MiluSneakers, sans-serif;
+  font-size: 17px;
+  margin-bottom: 55px;
+}
+.titleFrame > span {
+  font:
+    25px/1.1 PersonalHand,
+    cursive;
+  display: block;
+  margin-bottom: 20px;
+}
+.opening .titleFrame h1,
+.opening .titleFrame h2 {
+  margin: 0;
+  font-size: clamp(40px, 4.3vw, 68px);
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+.titleFrame h1 em {
+  font-family: MiluSerif, Georgia, serif;
+  font-weight: 400;
+}
+.opening .titleFrame p {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 350px;
+  margin-top: 28px;
+}
+.controls {
+  margin-top: 42px;
+}
+.controls > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.opening .controls button {
+  background: none;
+  border: 0;
+  text-align: left;
+  font-size: 13px;
+  padding: 5px 0;
+  color: #423451;
+  cursor: pointer;
+}
+.controls button span {
+  display: inline-block;
+  width: 17px;
+  height: 2px;
+  margin: 0 9px 4px 0;
+  background: currentColor;
+  opacity: 0.3;
+  transition: width 0.3s;
+}
+.controls button[aria-pressed="true"] span {
+  width: 35px;
+  opacity: 1;
+}
+.controls > button {
+  margin-top: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.skip {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #42345180;
+  text-decoration: none;
+}
+.source {
+  font-size: 11px;
+  line-height: 1.5;
+  display: block;
+  margin-top: 25px;
+  opacity: 0.8;
+}
+.markers {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  pointer-events: none;
+}
+.markers > div {
+  height: 100svh;
+}
+@media (max-width: 700px) {
+  .stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    min-height: 680px;
+  }
+  .media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .scene:first-child > video,
+  .scene:first-child > img:first-child {
+    object-fit: contain;
+  }
+  .scene:not(:first-child) > video,
+  .scene:not(:first-child) > img:first-child {
+    object-position: center 40%;
+  }
+  .scene > .originalPlush {
+    width: 30%;
+    max-height: 82%;
+    left: 35%;
+    bottom: 0;
+  }
+  .words {
+    grid-row: 2;
+    padding: 16px 6% 20px;
+    align-self: start;
+  }
+  .kicker {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .titleFrame > span {
+    display: none;
+  }
+  .opening .titleFrame h1,
+  .opening .titleFrame h2 {
+    font-size: clamp(29px, 7.7vw, 42px);
+  }
+  .opening .titleFrame p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 12px;
+    max-width: 100%;
+  }
+  .controls {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .controls > div {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .opening .controls button {
+    font-size: 0;
+  }
+  .controls > div button {
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .controls > button {
+    font-size: 12px !important;
+    margin: 0;
+  }
+  .controls button span {
+    margin: 0;
+    width: 22px;
+  }
+  .skip {
+    margin-top: 7px;
+    font-size: 12px;
+  }
+  .source {
+    font-size: 10px;
+    margin-top: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    transition: none;
+  }
+}

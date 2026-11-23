@@ -25,29 +25,14 @@ export default function WalletPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-start px-24 py-16">
-      {/* Navigation Bar */}
-      <nav className="fixed top-8 right-8 flex gap-6">
-        <Link href="/" className="text-black hover:underline uppercase">
-          About
-        </Link>
-        <Link href="/projects" className="text-black hover:underline uppercase">
-          Projects
-        </Link>
-        <Link href="/adventures" className="text-black hover:underline uppercase">
-          Adventures
-        </Link>
-        <Link href="/humans" className="text-black hover:underline uppercase">
-          Humans
-        </Link>
-      </nav>
-
+    <main className="essay-page">
+      <Link href="/projects" className="essay-back">
+        Selected work
+      </Link>
       {/* Content Grid */}
-      <div className="max-w-6xl w-full grid grid-cols-12 gap-10 rtl mt-16">
+      <div className="essay-content">
         {/* Title Section */}
-        <h1 className="text-6xl mb-8">
-          Account Abstraction Wallet
-        </h1>
+        <h1 className="text-6xl mb-8">Account Abstraction Wallet</h1>
 
         {/* Date and Award Section */}
         <div className="col-span-12 text-left mb-10">
@@ -86,8 +71,9 @@ export default function WalletPage() {
             <Image
               src={images[currentImage]}
               alt={`Project Image ${currentImage + 1}`}
-              layout="fill"
-              objectFit="contain"
+              fill
+              sizes="(max-width: 700px) 88vw, 1000px"
+              style={{ objectFit: "contain" }}
               className="rounded-lg shadow-md"
             />
           </div>
@@ -113,32 +99,33 @@ export default function WalletPage() {
         </h2>
         <ul className="col-span-12 list-disc list-inside text-lg space-y-4 text-left mb-10">
           <li>
-            <strong>Use your computer/mobile phone as a hardware wallet:</strong>{" "}
+            <strong>
+              Use your computer/mobile phone as a hardware wallet:
+            </strong>{" "}
             Porton Wallet lets you use the ultra-secure hardware enclave in your
-            iPhone/MacBook to store private keys. Use Touch ID or Face ID to sign
-            transactions. Your private key never leaves the secure enclave,
+            iPhone/MacBook to store private keys Use Touch ID or Face ID to sign
+            transactions Your private key never leaves the secure enclave,
             ensuring security equivalent to or better than traditional hardware
-            wallets without sacrificing usability.
+            wallets without sacrificing usability
           </li>
           <li>
-            <strong>Gas subsidy mechanism:</strong> Leveraging the paymaster module
-            in EIP-4337, Porton Wallet allows project teams to subsidize gas fees
-            for users. This feature makes interactions easier and lowers barriers
-            for new users, especially in GameFi and NFT applications.
+            <strong>Gas subsidy mechanism:</strong> Leveraging the paymaster
+            module in EIP-4337, Porton Wallet allows project teams to subsidize
+            gas fees for users This feature makes interactions easier and lowers
+            barriers for new users, especially in GameFi and NFT applications
           </li>
           <li>
-            <strong>Signature-less transactions:</strong> Implemented a session key
-            mechanism that allows users to interact with contracts without
-            repeatedly signing transactions for a defined period, maintaining full
-            decentralization and non-custodianship.
+            <strong>Signature-less transactions:</strong> Implemented a session
+            key mechanism that allows users to interact with contracts without
+            repeatedly signing transactions for a defined period, maintaining
+            full decentralization and non-custodianship
           </li>
           <li>
-            <strong>Use ERC20 tokens to pay gas fees:</strong> Allows users to pay
-            gas fees with any ERC20 token, like USDC or USDT, provided there is a
-            sponsoring paymaster module.
+            <strong>Use ERC20 tokens to pay gas fees:</strong> Allows users to
+            pay gas fees with any ERC20 token, like USDC or USDT, provided there
+            is a sponsoring paymaster module
           </li>
         </ul>
-
 
         <div className="col-span-12 flex justify-center mb-10">
           <Image
@@ -155,30 +142,28 @@ export default function WalletPage() {
         </h2>
         <ul className="col-span-12 list-disc list-inside text-lg space-y-4 text-left">
           <li>
-            <strong>EntryPoint Smart Contract:</strong> Uses public infrastructure
-            defined by EIP-4337.
+            <strong>EntryPoint Smart Contract:</strong> Uses public
+            infrastructure defined by EIP-4337
           </li>
           <li>
             <strong>Wallet Smart Contract:</strong> Supports device-native
             hardware enclaves using WebAuthN and includes session key logic for
-            signature-less transactions.
+            signature-less transactions
           </li>
           <li>
             <strong>Paymaster Smart Contract:</strong> Implements logic for
-            partial/full gas subsidies and flexible incentivization structures.
+            partial/full gas subsidies and flexible incentivization structures
           </li>
           <li>
             <strong>Bundler/Private Relayer:</strong> Custom private relayer to
-            bypass current public bundler faults.
+            bypass current public bundler faults
           </li>
           <li>
-            <strong>Frontend:</strong> A 5-page website to demonstrate the wallet’s
-            functionality.
+            <strong>Frontend:</strong> A 5-page website to demonstrate the
+            wallet’s functionality
           </li>
         </ul>
-
-        
       </div>
-    </div>
+    </main>
   );
 }
