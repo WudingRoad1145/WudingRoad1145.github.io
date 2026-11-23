@@ -6,7 +6,9 @@ export default function ProjectsPage() {
   return (
     <main className="work-page">
       <header className="page-heading">
-        <span className="small-label">A collection of work</span>
+        <span className="small-label">
+          a collection of honest intellectual curiosity
+        </span>
         <h1>
           Things made
           <br />

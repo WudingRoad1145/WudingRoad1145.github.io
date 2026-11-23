@@ -24,18 +24,6 @@ export const projects = [
     tone: "milu",
   },
   {
-    slug: "hipo",
-    title: "HiPo",
-    subtitle: "A little room for another perspective",
-    description:
-      "A browser extension that surfaces polarization and makes opposing viewpoints easier to find",
-    image: "/images/hipo.jpg",
-    alt: "HiPo showing an article and its polarization analysis on a laptop",
-    category: "Product design & engineering",
-    medium: "Browser extension",
-    tone: "hipo",
-  },
-  {
     slug: "wiser",
     title: "Wiser",
     subtitle: "Learning what it means to help",
@@ -50,9 +38,9 @@ export const projects = [
   {
     slug: "multi-agent",
     title: "Getting agents to cooperate",
-    subtitle: "Can a commitment change the outcome?",
+    subtitle: "Helping agents cooperate when self-interest gets in the way",
     description:
-      "Research on commitment devices and cooperation among generative agents ICML 2024 Agentic Markets Workshop",
+      "How can agents collaborate instead of getting stuck in prisoner’s-dilemma dynamics? Exploring commitment devices at the ICML 2024 Agentic Markets Workshop",
     image: "/images/agent.jpg",
     alt: "Colored agents in a simulated game environment",
     category: "Research",
@@ -61,6 +49,18 @@ export const projects = [
   },
 ];
 export const archivedProjects = [
+  {
+    slug: "hipo",
+    title: "HiPo",
+    subtitle: "A little room for another perspective",
+    description:
+      "A browser extension that surfaces polarization and makes opposing viewpoints easier to find",
+    image: "/images/hipo.jpg",
+    alt: "HiPo showing an article and its polarization analysis on a laptop",
+    category: "Product design & engineering",
+    medium: "Browser extension",
+    tone: "hipo",
+  },
   {
     slug: "AA",
     title: "Porton Wallet",

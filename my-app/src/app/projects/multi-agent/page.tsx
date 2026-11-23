@@ -52,12 +52,8 @@ export default function MultiPage() {
           Summary
         </h2>
         <p className="col-span-12 text-lg text-left mb-10">
-          Large Language Model (LLM)-based agents have demonstrated potential in
-          various applications, effectively serving as proxies for human
-          interaction in numerous tasks Previously, the exploration of agent
-          cooperation has been primarily confined to Multi-agent Reinforcement
-          Learning (MARL), where commitment devices (CDs) have significantly
-          improved collaborative efforts
+          How can agents collaborate when following their individual interests
+          can leave everyone worse off, as in the Prisoner’s Dilemma?
         </p>
         <p className="col-span-12 text-lg text-left mb-10">
           This paper examines the effectiveness of CDs in fostering cooperative
