@@ -107,8 +107,8 @@ export const artworks = [
   {
     id: "humans-of-shanghai",
     title: "Humans of Shanghai",
-    year: "2017",
-    date: "July 2017",
+    year: "2013–2018",
+    date: "2013–2018",
     medium: "Portrait sketches",
     size: "Six drawings · 30 × 42 cm each",
     images: [
@@ -157,24 +157,10 @@ export const artworks = [
     ],
   },
   {
-    id: "trampoline",
-    title: "Trampoline",
-    year: "2019",
-    date: "October 2019",
-    medium: "Collage",
-    size: "18 × 18 cm",
-    images: [
-      picture(
-        "p01-01.webp",
-        "An abstract collage of pink, yellow, orange, green, red and blue paper shapes",
-      ),
-    ],
-  },
-  {
     id: "2017208",
     title: "2017208",
-    year: "2019",
-    date: "October 2019",
+    year: "2017",
+    date: "2017",
     medium: "Digital art, stencil and graffiti",
     size: "Stencil and graffiti 70 × 120 cm · 15 digital studies",
     images: [
@@ -208,8 +194,8 @@ export const artworks = [
   {
     id: "shan-shui",
     title: "Shan Shui",
-    year: "2019",
-    date: "August 2019",
+    year: "circa 2018",
+    date: "circa 2018",
     medium: "VR art · Tilt Brush",
     size: "Digital view · 1920 × 1080 px",
     images: [
@@ -222,8 +208,11 @@ export const artworks = [
   {
     id: "plant-transportation",
     title: "Plant Transportation",
-    year: "2019",
-    date: "March 2019",
+    year: "2018–2019",
+    date: "2018–2019",
+    story: [
+      "We made this cartoon series to help our biology classmates review plant biology together",
+    ],
     medium: "Digital illustration · biology cartoons",
     size: "From Enzyme Bio-chemistry Cartoon – Plant Transportation",
     images: [

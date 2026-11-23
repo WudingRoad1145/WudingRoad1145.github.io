@@ -5,7 +5,7 @@ import s from "./art.module.css";
 
 export const metadata = {
   title: "无用之用 — Yán Fēng",
-  description: "Drawings, objects and experiments by Yán Fēng, 2017–2019",
+  description: "Drawings, objects and experiments by Yán Fēng, 2013–2019",
 };
 
 export default function ArtPage() {
@@ -17,7 +17,7 @@ export default function ArtPage() {
       <header className={s.opening}>
         <div>
           <span className={s.eyebrow}>
-            2017–2019 / art and other experiments
+            2013–2019 / art and other experiments
           </span>
           <h1 lang="zh">无用之用</h1>
           <p className={s.lead}>
@@ -33,11 +33,7 @@ export default function ArtPage() {
             take a little wander <span aria-hidden="true">↘</span>
           </a>
         </div>
-        <a
-          href="#trampoline"
-          className={s.cover}
-          aria-label="Find Trampoline, a collage from 2019"
-        >
+        <figure className={s.cover} id="trampoline">
           <Image
             src="/art/p01-01.webp"
             alt="Bright overlapping paper shapes in Trampoline"
@@ -46,8 +42,8 @@ export default function ArtPage() {
             sizes="(max-width: 700px) 70vw, 360px"
             priority
           />
-          <span>Trampoline, 2019</span>
-        </a>
+          <figcaption>Trampoline, 2019 · collage</figcaption>
+        </figure>
       </header>
       <ArtGallery />
       <footer className={s.end}>

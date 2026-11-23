@@ -21,12 +21,15 @@ The complete set is about 4.2 MB, with images loaded on demand by Next Image
 | 10 | Enzyme Bio-chemistry Cartoon – Plant Transportation | March 2019 | Digital |
 | 11 | Emotion | February 2019 | Iron wire |
 
-The title `2017208` is not its creation year
+The table above records the original PDF dates, not the corrected website dates
+Yan’s later corrections take precedence: `2017208` is from 2017, Humans of Shanghai spans 2013–2018, Shan Shui is circa 2018, and Plant Transportation spans 2018–2019
+The page’s overall date range is therefore 2013–2019
 The PDF uses the ambiguous material word “fatlute” for Coding Buddha; the page uses the broader documented category of mixed media instead of guessing a material
 
 Stories for TAG-C, Coding Buddha, Millionaire, Artist V0 and Emotion are edited from the artist statements in the PDF
 Emotion retains its attribution to Alexander Calder
-The other six pieces intentionally have no invented backstory, following the artist's clarification
+Plant Transportation now includes Yan’s supplied story about making a serial cartoon to help biology classmates review plant biology
+The other five pieces intentionally have no invented backstory, following the artist's clarification
 The website presents title, year and documented medium for those works
 All alternate images, including 15 digital studies for 2017208, are available in the native viewer
 
@@ -36,6 +39,7 @@ The artwork page is `/projects/miscellaneous`
 The gallery and modal share the selected alternate view for each artwork
 The native modal supports Escape, returns focus to its opener, and locks body scrolling only while open
 Left and right arrows change views of the current artwork
-Previous and next piece controls move through all 11 artworks
+Trampoline appears once in the opening with its title, year and medium
+Previous and next piece controls move through the 10 remaining gallery artworks
 Zoom stays inside the image area on desktop and mobile
 Reduced-motion preferences disable image transitions

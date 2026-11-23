@@ -61,7 +61,7 @@ export default function ArtGallery() {
   return (
     <>
       <div className={s.galleryLabel} id="artworks">
-        <span>11 things to spend a little time with</span>
+        <span>{artworks.length} more things to spend a little time with</span>
         <span className={s.handwritten}>click a piece, come closer ↙</span>
       </div>
       <div className={s.gallery}>
