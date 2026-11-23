@@ -128,7 +128,6 @@ p {
 }
 .portfolio-home,
 .work-page,
-.about-page,
 .notebook-page,
 .humans-page {
   max-width: 1440px;
@@ -468,67 +467,6 @@ p {
 .other-work a:hover {
   color: var(--accent);
 }
-.about-page {
-  padding-bottom: 120px;
-}
-.about-page h1 span {
-  font-size: 0.55em;
-  letter-spacing: -0.08em;
-  color: #777a72;
-  margin-left: 0.2em;
-}
-.about-name {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px 30px;
-  font-size: 14px;
-  color: var(--muted);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 10%;
-}
-.about-grid figure {
-  max-width: 440px;
-}
-.about-grid img {
-  width: 100%;
-  height: auto;
-}
-.about-grid figcaption {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 14px;
-}
-.about-prose {
-  font-size: 17px;
-  line-height: 1.75;
-}
-.about-prose p + p {
-  margin-top: 24px;
-}
-.about-prose .lead {
-  font-size: 25px;
-  line-height: 1.5;
-  letter-spacing: -0.035em;
-  margin-bottom: 30px;
-}
-.about-prose > a {
-  margin-top: 22px;
-}
-.about-more {
-  display: flex;
-  gap: 30px;
-  border-top: 1px solid var(--line);
-  margin-top: 38px;
-  padding-top: 22px;
-  font-size: 14px;
-}
-.about-more a {
-  text-decoration: none;
-}
 .notebook-page {
   padding-bottom: 120px;
 }
@@ -830,7 +768,6 @@ p {
   }
   .portfolio-home,
   .work-page,
-  .about-page,
   .notebook-page,
   .humans-page {
     padding-left: 6%;
@@ -927,22 +864,7 @@ p {
   .other-work a span:last-child {
     align-self: start;
   }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .about-grid figure {
-    max-width: 100%;
-  }
-  .about-grid img {
-    max-height: 480px;
-    object-fit: cover;
-    object-position: center 65%;
-  }
-  .about-prose .lead {
-    font-size: 23px;
-  }
-  .about-page,
+
   .notebook-page,
   .work-page,
   .humans-page {
@@ -1758,7 +1680,6 @@ p {
   margin-bottom: 25px;
 }
 .work-page .page-heading h1,
-.about-page .page-heading h1,
 .humans-page .page-heading h1,
 .notebook-page .page-heading h1 {
   font-family: Georgia, serif;

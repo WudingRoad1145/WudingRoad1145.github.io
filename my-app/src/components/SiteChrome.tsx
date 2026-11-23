@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 const links = [
   ["/projects", "Work"],
-  ["/about", "About"],
   ["/adventures", "Adventures"],
   ["/humans", "Humans"],
 ];
@@ -25,7 +24,6 @@ export default function SiteChrome({
   const home = path === "/";
   const navigation = home
     ? [
-        ["/about", "About"],
         ["/projects", "Projects"],
         ["/adventures", "Adventures"],
         ["/humans", "Humans"],

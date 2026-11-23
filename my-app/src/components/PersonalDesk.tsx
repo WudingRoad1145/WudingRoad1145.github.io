@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
@@ -53,7 +52,6 @@ export default function PersonalDesk() {
         </p>
         <p className="desk-invitation">Recently: my first IRONMAN 70.3!</p>
         <div className="desk-intro-links">
-          <Link href="/about">A little more about me</Link>
           <a href="mailto:yanffyy@gmail.com">Say hello</a>
         </div>
         <span className="desk-play-prompt">

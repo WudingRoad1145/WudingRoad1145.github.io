@@ -54,3 +54,7 @@ On the homepage, check the Good form (hover, click/tap, keyboard, submit, error,
 Yan prefers no periods in authored visible prose. Sentence-ending dots and ellipses have been removed from page copy, captions, UI messages, and metadata, including project pages. Keep functional punctuation in URLs, email addresses, file names, code, and numbers. Original photographs/handwritten artifacts and visitor-submitted responses retain their original content.
 
 For the rescue section, check lazy loading, automatic offscreen pause, manual play/pause/restart, chapter seeking, reduced-motion and data-saver stills, and the Big Woman link. Check that keepsakes initially avoid the introduction, then remain visible and draggable above it when moved into the center. Uncovered intro links remain clickable.
+
+## Personal introduction
+
+The introduction lives on the homepage at `/#my-world`. There is no separate About page or About navigation item. Old `/about` URLs redirect permanently to the homepage introduction via `next.config.mjs`.
