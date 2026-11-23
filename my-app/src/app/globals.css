@@ -2125,8 +2125,12 @@ p {
 .monkey-copy p + p {
   margin-top: 15px;
 }
+.monkey-copy [lang="zh"] {
+  white-space: nowrap;
+}
 .monkey-postscript {
   display: inline-block;
+  text-wrap: balance;
   color: #3b4d82;
   font:
     28px/1.1 PersonalHand,
