@@ -44,18 +44,25 @@ export default function Monkay() {
       <div className="life-copy monkey-copy">
         <span className="handwritten">meet Monkay!</span>
         <h2 id="monkey-title">
-          He was ten
+          Braver
           <br />
-          He made it, too
+          with you
         </h2>
         <p>
-          That’s Monkay in my arms He was already ten years old when we made it
-          to the top of Kilimanjaro
+          Ten years old and on top of Kilimanjaro — that’s Monkay in my arms
         </p>
         <p>
-          He comes on almost every adventure with me This is our summit photo
+          Courage matters deeply to me, and he’s my{" "}
+          <span lang="zh">定心石</span> — the steady little presence beside me
+          as we step into wild things
         </p>
-        <span className="monkey-postscript">of course he came along :)</span>
+        <p>
+          He comes on almost every adventure with me, and I’m trying my best to
+          keep him in good shape for the ones still ahead
+        </p>
+        <span className="monkey-postscript">
+          thank you for being brave with me :)
+        </span>
         <div className="life-links">
           <Link href="/adventures">More of our adventures</Link>
         </div>
