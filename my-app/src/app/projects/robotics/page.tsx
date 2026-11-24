@@ -111,6 +111,24 @@ export default function RoboticsPage() {
             <br />A different consequence.
           </h2>
           <p>
+            I was inspired by the RoboHarm paper and project, which investigate
+            whether models’ refusals of harmful requests carry over into robot
+            control. They led me to explore that question with my own
+            camera-based, decision-only setup.{" "}
+            <a
+              href="#reference-roboharm-paper"
+              aria-label="Reference 1: RoboHarm paper"
+            >
+              [1]
+            </a>{" "}
+            <a
+              href="#reference-roboharm-project"
+              aria-label="Reference 2: RoboHarm project"
+            >
+              [2]
+            </a>
+          </p>
+          <p>
             In the BB gun safety project, I’m exploring what happens when an AI
             model’s instructions meet the physical world. A request like “Could
             you squeeze the gripper?” sounds simple. But what should the model
@@ -201,6 +219,75 @@ export default function RoboticsPage() {
             following an instruction starts with understanding its consequences
           </span>
         </div>
+      </section>
+      <section className={styles.references} aria-labelledby="references-title">
+        <h2 id="references-title">References</h2>
+        <ol>
+          <li id="reference-roboharm-paper">
+            Edward Sun, Christopher Leet, Sravanthi Machcha, Achyutha Menon, Tzu
+            Kit Chan, Yuchen Cui, and Jay Chooi. (2026).{" "}
+            <cite>
+              Refuses in Chat, Complies with Arms: LLM Refusal Does Not Survive
+              Robot Control.
+            </cite>{" "}
+            arXiv:2610.14043, version 1.{" "}
+            <a
+              href="https://arxiv.org/abs/2610.14043v1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Paper ↗
+            </a>
+          </li>
+          <li id="reference-roboharm-project">
+            Edward Sun, Sravanthi Machcha, Sabrina Zou, Tzu Kit Chan, and Jay
+            Chooi. (September 18, 2026).{" "}
+            <cite>
+              RoboHarm: Do Frontier Robot Policies Refuse Unsafe Instructions?
+            </cite>{" "}
+            Robocurve.{" "}
+            <a
+              href="https://robocurve.org/roboharm/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Project ↗
+            </a>
+          </li>
+          <li>
+            Robocurve. (2026). <cite>RoboHarm</cite> [Software]. Benchmark
+            tasks, experiment tooling, and post-hoc labeling, built on Inspect
+            Robots.{" "}
+            <a
+              href="https://github.com/robocurve/roboharm"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Repository ↗
+            </a>
+          </li>
+          <li>
+            Isaac Asimov. (1942). <cite>Runaround.</cite>{" "}
+            <cite>Astounding Science Fiction</cite>, March 1942. The Three Laws
+            of Robotics.
+          </li>
+          <li>
+            Isaac Asimov. (1985). <cite>Robots and Empire.</cite> Doubleday. The
+            later Zeroth Law.{" "}
+            <a
+              href="https://www.asimovonline.com/asimov_FAQ.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Publication and laws reference ↗
+            </a>
+          </li>
+        </ol>
+        <p>
+          RoboHarm is the inspiration for this exploration. The BB gun pilot
+          observations above come from my separate setup, not from the RoboHarm
+          benchmark.
+        </p>
       </section>
       <footer className={styles.footer}>
         <p>Built with MuJoCo and LeRobot ACT</p>

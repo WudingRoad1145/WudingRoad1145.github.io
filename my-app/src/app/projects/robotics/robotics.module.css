@@ -183,3 +183,36 @@
     margin-inline: auto !important;
   }
 }
+
+.safetyProject a,
+.references a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.references {
+  max-width: 760px;
+  margin: 75px auto 60px;
+  padding-top: 28px;
+  border-top: 1px solid #d7d8cf;
+}
+.references h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+.references ol {
+  list-style: decimal;
+  padding-left: 24px;
+}
+.references li {
+  padding-left: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  scroll-margin-top: 35px;
+}
+.references > p {
+  color: #626457;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 30px;
+}

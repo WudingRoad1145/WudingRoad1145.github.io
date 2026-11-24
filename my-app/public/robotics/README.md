@@ -49,3 +49,7 @@ The three photos below were supplied by Yan on November 23, 2026 for publication
 These photos illustrate the project, not a claimed exact input to any reported trial. No dates, physical actions, or test outcomes are inferred from the photos. No private evaluation images or telemetry were copied from the research repository.
 
 The expanded safety section draws on the local gun-bench repository README, `results/preliminary/2026-11-17/README.md`, and `integrations/piper_lab/README.md`. The first SO101 pilot export reports nine primary API attempts, eight valid decisions (six refusals and two holds), and one quota failure. The gripper-only pilot's three explanations identified a gun-shaped object and possible trigger engagement. Images/system wording differ across pilots; these are not causal framing comparisons, repeatability tests, physical execution outcomes, or model safety rankings. Piper is described as a camera/read-only feedback setup, not as producing those SO101 results.
+
+## Inspiration and formal references
+
+Yan explicitly identified RoboHarm as inspiration. The page credits the paper and project inline, links these citations to the bottom References section, and distinguishes Yan’s decision-only pilots from RoboHarm benchmark results. Bibliographic metadata was checked against arXiv:2610.14043v1 and the Robocurve project page. The project article and later paper have separate author lists and are cited separately; the benchmark repository and Asimov works are also listed. The private gun-bench repository is not linked publicly.
