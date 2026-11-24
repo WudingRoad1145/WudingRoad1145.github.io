@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <rect width="900" height="650" fill="#f2ba49"/>
+  <g transform="rotate(-5 400 310)">
+    <rect x="210" y="75" width="400" height="450" fill="#173e3c" opacity=".12" transform="translate(5 12)"/>
+    <rect x="210" y="75" width="400" height="450" fill="#fff5e5"/>
+    <text x="240" y="115" fill="#173e3c" font-family="Arial,sans-serif" font-size="17" letter-spacing="3">2016</text>
+    <text x="410" y="345" text-anchor="middle" fill="#173e3c" font-family="Songti SC,Noto Serif CJK SC,serif" font-size="230">桥</text>
+    <text x="410" y="450" text-anchor="middle" fill="#173e3c" font-family="Georgia,serif" font-size="65">Bridge</text>
+  </g>
+  <g transform="rotate(6 620 480)">
+    <rect x="465" y="380" width="300" height="175" fill="#173e3c"/>
+    <g fill="none" stroke="#f2ba49" stroke-width="4" stroke-linecap="round">
+      <path d="M500 505 C530 390 700 390 730 505 M500 505 H730 M535 505 V450 M580 505 V425 M635 505 V420 M685 505 V442"/>
+    </g>
+  </g>
+</svg>
