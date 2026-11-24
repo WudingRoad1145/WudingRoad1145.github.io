@@ -9,21 +9,31 @@
 }
 .opening h1 {
   font:
-    650 clamp(48px, 7vw, 88px) / 1.02 var(--font-geist-sans),
+    650 clamp(36px, 5.5vw, 64px) / 1.1 var(--font-geist-sans),
     sans-serif;
-  letter-spacing: -0.065em;
-  margin: 24px 0;
+  letter-spacing: -0.05em;
+  margin: 48px 0 0;
+  max-width: 760px;
 }
-.opening p {
-  font-size: 21px;
-  line-height: 1.6;
-  max-width: 650px;
+.laws {
+  max-width: 720px;
 }
-.status {
-  display: block;
-  color: #6e705f;
-  font-size: 13px;
-  margin-top: 24px;
+.laws p {
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+.laws strong {
+  font-weight: 600;
+}
+.laws .attribution {
+  margin-top: 28px;
+  font-size: 14px;
+  color: #626457;
+}
+.attribution a {
+  text-underline-offset: 4px;
+  text-decoration: underline;
 }
 .photos {
   display: grid;

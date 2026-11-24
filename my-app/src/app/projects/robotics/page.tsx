@@ -11,19 +11,37 @@ export default function RoboticsPage() {
         Back to my little world
       </Link>
       <header className={styles.opening}>
-        <span className="handwritten">on my workbench right now</span>
-        <h1>
-          A little arm,
-          <br />
-          some big questions
-        </h1>
-        <p>
-          Learning how to teach a robot to act — and exploring when it should
-          stop and question an instruction.
-        </p>
-        <span className={styles.status}>
-          MuJoCo policy training + SO101 safety exploration · Ongoing
-        </span>
+        <div className={styles.laws}>
+          <p>
+            <strong>First Law:</strong> A robot cannot harm a human or allow one
+            to come to harm through inaction.
+          </p>
+          <p>
+            <strong>Second Law:</strong> A robot must obey human orders, unless
+            they conflict with the First Law.
+          </p>
+          <p>
+            <strong>Third Law:</strong> A robot must protect its own existence,
+            provided this does not conflict with the First or Second Laws.
+          </p>
+          <p>
+            <strong>Zeroth Law</strong> was later introduced, stating that a
+            robot may not harm humanity as a whole.
+          </p>
+          <p className={styles.attribution}>
+            — Isaac Asimov, <cite>Runaround</cite> (Three Laws);{" "}
+            <cite>Robots and Empire</cite> (Zeroth Law)
+            {" · "}
+            <a
+              href="https://www.asimovonline.com/asimov_FAQ.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              About the laws ↗
+            </a>
+          </p>
+        </div>
+        <h1>How far away are we from that future?</h1>
       </header>
       <div className={styles.photos}>
         <figure>

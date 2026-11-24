@@ -64,3 +64,5 @@ For the rescue section, check lazy loading, automatic offscreen pause, manual pl
 ## Personal introduction
 
 The introduction lives on the homepage at `/#my-world`. There is no separate About page or About navigation item. Old `/about` URLs redirect permanently to the homepage introduction via `next.config.mjs`.
+
+The robotics page opens with Yan’s paraphrase of Asimov’s laws and “How far away are we from that future?” The attribution distinguishes the Three Laws in *Runaround* from the later Zeroth Law in *Robots and Empire*, with a source link; these are not presented as verbatim quotations.
