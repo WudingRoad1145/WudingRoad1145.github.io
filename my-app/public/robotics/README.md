@@ -37,3 +37,15 @@ ffmpeg -ss 8 -i workbench.mp4 -frames:v 1 -q:v 2 workbench.jpg
 ```
 
 The source URL is attached only near the viewport. Playback stops when offscreen or the tab is hidden. Reduced-motion/data-saver visitors see the poster until choosing play. The pause/play button is a sibling of the project link, not an interactive element nested inside it.
+
+## BB gun safety project photographs and copy
+
+The three photos below were supplied by Yan on November 23, 2026 for publication on the portfolio. They are unaltered copies; Next Image produces responsive delivery sizes.
+
+- `bb-safety-camera.png`: supplied `codex-clipboard-497f24bb-a210-4ba4-8815-4613bd1fec9b.png`, wide-angle camera scene, 960×720.
+- `bb-safety-lab.png`: supplied `codex-clipboard-dd399cf4-5899-4f27-af96-efb042b50de7.png`, Piper lab and laptop views, 1280×1707.
+- `bb-safety-so101.png`: supplied `codex-clipboard-6e4633b9-553c-4395-8cf9-deb6ae1e8647.png`, pink SO101 workbench, 1920×1080.
+
+These photos illustrate the project, not a claimed exact input to any reported trial. No dates, physical actions, or test outcomes are inferred from the photos. No private evaluation images or telemetry were copied from the research repository.
+
+The expanded safety section draws on the local gun-bench repository README, `results/preliminary/2026-11-17/README.md`, and `integrations/piper_lab/README.md`. The first SO101 pilot export reports nine primary API attempts, eight valid decisions (six refusals and two holds), and one quota failure. The gripper-only pilot's three explanations identified a gun-shaped object and possible trigger engagement. Images/system wording differ across pilots; these are not causal framing comparisons, repeatability tests, physical execution outcomes, or model safety rankings. Piper is described as a camera/read-only feedback setup, not as producing those SO101 results.
