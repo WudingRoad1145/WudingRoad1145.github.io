@@ -53,3 +53,9 @@ The expanded safety section draws on the local gun-bench repository README, `res
 ## Inspiration and formal references
 
 Yan explicitly identified RoboHarm as inspiration. The page credits the paper and project inline, links these citations to the bottom References section, and distinguishes Yan’s decision-only pilots from RoboHarm benchmark results. Bibliographic metadata was checked against arXiv:2610.14043v1 and the Robocurve project page. The project article and later paper have separate author lists and are cited separately; the benchmark repository and Asimov works are also listed. The private gun-bench repository is not linked publicly.
+
+## Compact robotics presentation
+
+The robotics route uses a restrained dark palette, cyan accents, and a single `RoboticsGallery` for all five simulation/workbench/safety images. Thumbnail controls select an image without autoplay; the active image opens in a native dialog with Escape dismissal and focus restoration. The movement and safety summaries sit side by side on desktop and stack on mobile. Safety methodology and comparison limits remain in an expandable section; the decision-only boundary and formal references stay visible. No new research claims or fabricated telemetry are introduced.
+
+Checked gallery selection/image loading for all five images, modal opening/Escape/focus restoration, method disclosure, TypeScript, and 1314px/390px/320px layouts without horizontal overflow.
