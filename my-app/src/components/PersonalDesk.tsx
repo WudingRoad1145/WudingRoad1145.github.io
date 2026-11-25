@@ -132,9 +132,6 @@ export default function PersonalDesk() {
           onExplore={uncoverInvitation}
         >
           <RunnerCutout />
-          <span className="runner-spark" aria-hidden="true">
-            ✳
-          </span>
           <span className="runner-tag">
             BIG
             <br />
@@ -145,7 +142,14 @@ export default function PersonalDesk() {
         <DeskInvitation found={foundInvitation} />
       </div>
       <div className="desk-instructions">
-        <span>Move things around Click to wander</span>
+        <span>
+          <span className="desk-mouse-hint">
+            Move things around · Click to wander
+          </span>
+          <span className="desk-touch-hint">
+            Swipe to scroll · Drag the handles · Tap to explore
+          </span>
+        </span>
         <button
           type="button"
           onClick={() => {
