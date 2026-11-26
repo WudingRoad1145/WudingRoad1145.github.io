@@ -46,9 +46,12 @@ export default function RoboticsPage() {
               </a>
             </p>
           </div>
-          <p>
-            How far away are we from that future? I’m exploring a small part of
-            that question with a tabletop robot arm.
+          <p className={styles.questionLead}>
+            How far away are we from that future?
+          </p>
+          <p className={styles.questionNote}>
+            I’m exploring a small part of that question with a tabletop robot
+            arm.
           </p>
         </div>
         <ParticleArm />

@@ -94,6 +94,15 @@
   max-width: 550px;
   margin: 0;
 }
+.opening .questionLead {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 28px 0 10px;
+}
+.opening .questionNote {
+  color: var(--muted);
+}
 .particleArm {
   display: block;
   width: 220px;
