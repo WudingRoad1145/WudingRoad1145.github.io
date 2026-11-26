@@ -56,7 +56,7 @@ Yan explicitly identified RoboHarm as inspiration. The page credits the paper an
 
 ## Quiet robotics notebook
 
-The robotics route uses a flat `#242424` background, `#E5E5DE` text, `#B7B7AF` secondary text, and `#424242` rules. The 880px reading column contains a compact introduction, two vertical experiment entries, one small five-image strip, Asimov's question/laws, and formal references. Observations and methods use native disclosures. The photos retain natural colors, open in a native dialog, and support Escape dismissal/focus restoration. Research facts and limits are unchanged.
+The robotics route uses a flat `#242424` background, `#E5E5DE` text, `#B7B7AF` secondary text, and `#424242` rules. The 880px reading column contains an introduction with all four of Asimov’s laws visible below the title (Zeroth through Third), two vertical experiment entries, one small five-image strip, and formal references. Observations and methods use native disclosures. The photos retain natural colors, open in a native dialog, and support Escape dismissal/focus restoration. Research facts and limits are unchanged.
 
 `SiteChrome` applies the notebook shell only for `/projects/robotics`, including the existing navigation and footer. Other routes keep their existing styles. No shared global CSS changes are needed.
 
@@ -66,4 +66,4 @@ The robotics route uses a flat `#242424` background, `#E5E5DE` text, `#B7B7AF` s
 
 The SVG is present in server-rendered HTML. Integer hashing makes the point sampling identical on server and client. Pointer movement displaces only nearby points by at most four viewBox units; they settle after the pointer leaves or stops moving. Animation frames run only while points are settling. Touch and reduced-motion settings keep the illustration static, and preference/visibility changes reset it. The 220px desktop drawing becomes 135–150px on small screens. No dependency or global pointer listener is added.
 
-Validation: TypeScript and diff checks; 1314px, 754px, 390px, and 320px layouts without overflow; exact palette and drawing sizes; no hydration warnings after fresh loads; local particle displacement/settling and static reduced-motion/touch behavior; no surrounding text movement; all five images and modal Escape/focus restoration; mobile photo opening/closing and navigation; all four disclosures; citation anchors; client navigation to Work/home removes the robotics-only shell.
+Validation: TypeScript and diff checks; 1314px, 754px, 390px, and 320px layouts without overflow; exact palette and drawing sizes; no hydration warnings after fresh loads; local particle displacement/settling and static reduced-motion/touch behavior; no surrounding text movement; all five images and modal Escape/focus restoration; mobile photo opening/closing and navigation; all three disclosures; citation anchors; client navigation to Work/home removes the robotics-only shell.

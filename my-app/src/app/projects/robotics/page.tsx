@@ -14,9 +14,41 @@ export default function RoboticsPage() {
       <header className={styles.opening}>
         <div>
           <h1>Robotics, in progress</h1>
+          <div className={styles.laws}>
+            <p>
+              <strong>Zeroth Law:</strong> A robot may not harm humanity as a
+              whole.
+            </p>
+            <p>
+              <strong>First Law:</strong> A robot cannot harm a human or allow
+              one to come to harm through inaction.
+            </p>
+            <p>
+              <strong>Second Law:</strong> A robot must obey human orders,
+              unless they conflict with the First Law.
+            </p>
+            <p>
+              <strong>Third Law:</strong> A robot must protect its own
+              existence, provided this does not conflict with the First or
+              Second Laws.
+            </p>
+
+            <p className={styles.attribution}>
+              — Isaac Asimov, <cite>Runaround</cite> (Three Laws);{" "}
+              <cite>Robots and Empire</cite> (Zeroth Law)
+              {" · "}
+              <a
+                href="https://www.asimovonline.com/asimov_FAQ.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                About the laws ↗
+              </a>
+            </p>
+          </div>
           <p>
-            A few things I’m building and learning with a tabletop robot arm.
-            How to teach it to move, and when it should pause.
+            How far away are we from that future? I’m exploring a small part of
+            that question with a tabletop robot arm.
           </p>
         </div>
         <ParticleArm />
@@ -125,47 +157,6 @@ export default function RoboticsPage() {
         </section>
       </div>
       <RoboticsGallery />
-      <section className={styles.question} aria-labelledby="question-title">
-        <h2 id="question-title">A question I keep coming back to</h2>
-        <p>
-          Asimov imagined robots guided by laws about harm, obedience, and
-          self-preservation. How far away are we from that future?
-        </p>
-        <details className={styles.notes}>
-          <summary>The laws behind the question</summary>
-          <div className={styles.laws}>
-            <p>
-              <strong>First Law:</strong> A robot cannot harm a human or allow
-              one to come to harm through inaction.
-            </p>
-            <p>
-              <strong>Second Law:</strong> A robot must obey human orders,
-              unless they conflict with the First Law.
-            </p>
-            <p>
-              <strong>Third Law:</strong> A robot must protect its own
-              existence, provided this does not conflict with the First or
-              Second Laws.
-            </p>
-            <p>
-              <strong>Zeroth Law</strong> was later introduced, stating that a
-              robot may not harm humanity as a whole.
-            </p>
-            <p className={styles.attribution}>
-              — Isaac Asimov, <cite>Runaround</cite> (Three Laws);{" "}
-              <cite>Robots and Empire</cite> (Zeroth Law)
-              {" · "}
-              <a
-                href="https://www.asimovonline.com/asimov_FAQ.html"
-                target="_blank"
-                rel="noreferrer"
-              >
-                About the laws ↗
-              </a>
-            </p>
-          </div>
-        </details>
-      </section>
       <section className={styles.references} aria-labelledby="references-title">
         <h2 id="references-title">References</h2>
         <ol>
