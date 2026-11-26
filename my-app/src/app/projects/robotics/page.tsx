@@ -1,3 +1,4 @@
+import ParticleArm from "./ParticleArm";
 import RoboticsGallery from "./RoboticsGallery";
 import Link from "next/link";
 import styles from "./robotics.module.css";
@@ -7,51 +8,23 @@ export const metadata = { title: "Robotics, in progress — Yán Fēng" };
 export default function RoboticsPage() {
   return (
     <main className={styles.page}>
-      <div className={styles.topline}>
-        <Link href="/#my-world">← Back to my little world</Link>
-        <span>Robotics / Ongoing exploration</span>
-      </div>
+      <Link className={styles.back} href="/projects">
+        ← Back to work
+      </Link>
       <header className={styles.opening}>
-        <div className={styles.laws}>
+        <div>
+          <h1>Robotics, in progress</h1>
           <p>
-            <strong>First Law:</strong> A robot cannot harm a human or allow one
-            to come to harm through inaction.
-          </p>
-          <p>
-            <strong>Second Law:</strong> A robot must obey human orders, unless
-            they conflict with the First Law.
-          </p>
-          <p>
-            <strong>Third Law:</strong> A robot must protect its own existence,
-            provided this does not conflict with the First or Second Laws.
-          </p>
-          <p>
-            <strong>Zeroth Law</strong> was later introduced, stating that a
-            robot may not harm humanity as a whole.
-          </p>
-          <p className={styles.attribution}>
-            — Isaac Asimov, <cite>Runaround</cite> (Three Laws);{" "}
-            <cite>Robots and Empire</cite> (Zeroth Law)
-            {" · "}
-            <a
-              href="https://www.asimovonline.com/asimov_FAQ.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              About the laws ↗
-            </a>
+            A few things I’m building and learning with a tabletop robot arm.
+            How to teach it to move, and when it should pause.
           </p>
         </div>
-        <h1>How far away are we from that future?</h1>
+        <ParticleArm />
       </header>
-      <RoboticsGallery />
-      <div className={styles.research}>
+      <div>
         <section className={styles.chapter} aria-labelledby="movement-title">
-          <span className={styles.label}>01 / Learning to move</span>
           <h2 id="movement-title">
-            Pick up the tape
-            <br />
-            Put it in the square
+            <a href="#movement-title">Pick up the tape, put it in the square</a>
           </h2>
           <p>
             I’m adapting an ACT imitation-learning policy in MuJoCo, then
@@ -59,28 +32,30 @@ export default function RoboticsPage() {
             exposes a lot: demonstrations, camera framing, grasping, and the gap
             between a simulated joint and a real motor.
           </p>
-          <div className={styles.observation}>
-            <h3>Early observations</h3>
-            <p>
-              The blue-tape policy completed all 10 reserved simulated trials in
-              a narrow, controlled setup.
+          <p className={styles.context}>MuJoCo · LeRobot ACT · SO101</p>
+          <details className={styles.notes}>
+            <summary>Notes from the experiments</summary>
+            <div className={styles.observation}>
+              <h3>Early observations</h3>
+              <p>
+                The blue-tape policy completed all 10 reserved simulated trials
+                in a narrow, controlled setup.
+              </p>
+              <p>
+                Fine-tuning on 10 real demonstrations improved the fit to those
+                recordings, but held-out prediction error remained above a
+                hold-current-pose baseline.
+              </p>
+            </div>
+            <p className={styles.note}>
+              The real-data checkpoint has been evaluated offline only. It has
+              not yet demonstrated autonomous success on the physical arm.
             </p>
-            <p>
-              Fine-tuning on 10 real demonstrations improved the fit to those
-              recordings, but held-out prediction error remained above a
-              hold-current-pose baseline.
-            </p>
-          </div>
-          <p className={styles.note}>
-            The real-data checkpoint has been evaluated offline only. It has not
-            yet demonstrated autonomous success on the physical arm.
-          </p>
+          </details>
         </section>
         <section className={styles.chapter} aria-labelledby="bb-safety-title">
-          <span className={styles.label}>02 / Learning when to pause</span>
           <h2 id="bb-safety-title">
-            An ordinary request
-            <br />A different consequence
+            <a href="#bb-safety-title">When should a robot pause?</a>
           </h2>
           <p>
             Inspired by the RoboHarm paper and project, I’m exploring whether a
@@ -103,38 +78,45 @@ export default function RoboticsPage() {
             the question. What should the model do when the camera shows a
             gun-shaped object in the scene?
           </p>
-          <div className={styles.observation}>
-            <h3>First SO101 pilots</h3>
-            <p>
-              Nine primary API attempts produced eight valid decisions: six
-              refusals and two holds. One quota error was not counted as a
-              safety decision.
-            </p>
-            <p>
-              In the gripper-only pilot, all three explanations identified a
-              gun-shaped object and possible trigger engagement without the
-              request naming either. One model held; two refused.
-            </p>
-          </div>
-          <details className={styles.method}>
-            <summary>Method and limits</summary>
-            <p>
-              I built a comparison harness that gives each model the same camera
-              image and read-only robot state within a pilot, in fresh
-              conversations. The response is a decision — authorize, refuse,
-              hold, or clarify — and a brief explanation.
-            </p>
-            <p>
-              The three early SO101 pilots used an explicit harmful instruction,
-              a toy claim, and a gripper-only request. The project also includes
-              a Piper setup with two camera views and read-only joint feedback.
-            </p>
-            <p>
-              Each pilot used one scene per model. Images and some prompt
-              wording changed between pilots, so these results cannot isolate
-              wording effects, establish a model ranking, or demonstrate
-              reliable safety.
-            </p>
+          <p className={styles.context}>
+            BB gun safety project · SO101 and Piper · Decision-only evaluation
+          </p>
+          <details className={styles.notes}>
+            <summary>Notes from the first pilots</summary>
+            <div className={styles.observation}>
+              <h3>First SO101 pilots</h3>
+              <p>
+                Nine primary API attempts produced eight valid decisions: six
+                refusals and two holds. One quota error was not counted as a
+                safety decision.
+              </p>
+              <p>
+                In the gripper-only pilot, all three explanations identified a
+                gun-shaped object and possible trigger engagement without the
+                request naming either. One model held; two refused.
+              </p>
+            </div>
+            <details className={styles.method}>
+              <summary>Method and limits</summary>
+              <p>
+                I built a comparison harness that gives each model the same
+                camera image and read-only robot state within a pilot, in fresh
+                conversations. The response is a decision — authorize, refuse,
+                hold, or clarify — and a brief explanation.
+              </p>
+              <p>
+                The three early SO101 pilots used an explicit harmful
+                instruction, a toy claim, and a gripper-only request. The
+                project also includes a Piper setup with two camera views and
+                read-only joint feedback.
+              </p>
+              <p>
+                Each pilot used one scene per model. Images and some prompt
+                wording changed between pilots, so these results cannot isolate
+                wording effects, establish a model ranking, or demonstrate
+                reliable safety.
+              </p>
+            </details>
           </details>
           <p className={styles.note}>
             Decisions only. Models cannot move the arm or actuate the object.
@@ -142,6 +124,48 @@ export default function RoboticsPage() {
           </p>
         </section>
       </div>
+      <RoboticsGallery />
+      <section className={styles.question} aria-labelledby="question-title">
+        <h2 id="question-title">A question I keep coming back to</h2>
+        <p>
+          Asimov imagined robots guided by laws about harm, obedience, and
+          self-preservation. How far away are we from that future?
+        </p>
+        <details className={styles.notes}>
+          <summary>The laws behind the question</summary>
+          <div className={styles.laws}>
+            <p>
+              <strong>First Law:</strong> A robot cannot harm a human or allow
+              one to come to harm through inaction.
+            </p>
+            <p>
+              <strong>Second Law:</strong> A robot must obey human orders,
+              unless they conflict with the First Law.
+            </p>
+            <p>
+              <strong>Third Law:</strong> A robot must protect its own
+              existence, provided this does not conflict with the First or
+              Second Laws.
+            </p>
+            <p>
+              <strong>Zeroth Law</strong> was later introduced, stating that a
+              robot may not harm humanity as a whole.
+            </p>
+            <p className={styles.attribution}>
+              — Isaac Asimov, <cite>Runaround</cite> (Three Laws);{" "}
+              <cite>Robots and Empire</cite> (Zeroth Law)
+              {" · "}
+              <a
+                href="https://www.asimovonline.com/asimov_FAQ.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                About the laws ↗
+              </a>
+            </p>
+          </div>
+        </details>
+      </section>
       <section className={styles.references} aria-labelledby="references-title">
         <h2 id="references-title">References</h2>
         <ol>
@@ -212,15 +236,12 @@ export default function RoboticsPage() {
         </p>
       </section>
       <footer className={styles.footer}>
-        <p>Built with MuJoCo and LeRobot ACT</p>
+        <p>Built with MuJoCo and LeRobot ACT.</p>
         <p>
           Simulation robot model: The Robot Studio / MuJoCo Menagerie, Apache
-          2.0
+          2.0.
         </p>
-        <a
-          className="text-link"
-          href="mailto:yanffyy@gmail.com?subject=Let%E2%80%99s%20talk%20robots"
-        >
+        <a href="mailto:yanffyy@gmail.com?subject=Let%E2%80%99s%20talk%20robots">
           Let’s talk robots ↗
         </a>
       </footer>

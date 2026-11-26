@@ -56,44 +56,27 @@ export default function RoboticsGallery() {
       className={s.gallery}
       aria-label="Robotics photographs and simulation"
     >
-      <div className={s.galleryBar}>
-        <span>Field images</span>
-        <span>{String(active + 1).padStart(2, "0")} / 05</span>
-      </div>
-      <button
-        className={s.imageStage}
-        onClick={() => dialog.current?.showModal()}
-        aria-label={`Enlarge ${photo.label}`}
-        type="button"
-      >
-        <Image
-          key={photo.src}
-          src={photo.src}
-          alt={photo.alt}
-          fill
-          sizes="(max-width: 700px) 92vw, 1080px"
-          priority
-        />
-        <span className={s.enlarge}>Enlarge ↗</span>
-      </button>
-      <p className={s.imageCaption} aria-live="polite">
-        {photo.caption}
+      <h2>From the workbench</h2>
+      <p className={s.context}>
+        A few photographs and a simulation frame. Click to take a closer look.
       </p>
-      <div className={s.thumbnails} aria-label="Choose an image">
+      <div className={s.thumbnails}>
         {images.map((image, i) => (
           <button
             type="button"
             key={image.src}
-            onClick={() => setActive(i)}
-            aria-pressed={active === i}
-            aria-label={`Show ${image.label}`}
+            onClick={() => {
+              setActive(i);
+              dialog.current?.showModal();
+            }}
+            aria-label={`Enlarge ${image.label}`}
           >
             <Image
               src={image.src}
-              alt=""
-              width={160}
-              height={90}
-              sizes="160px"
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              sizes="(max-width: 500px) 44vw, 170px"
             />
             <span>{image.label}</span>
           </button>

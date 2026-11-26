@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import roboticsStyles from "@/app/projects/robotics/robotics.module.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -23,7 +24,15 @@ export default function SiteChrome({
   const milu = path === "/projects/babymilu";
   const home = path === "/";
   return (
-    <div className={home ? "home-canvas" : undefined}>
+    <div
+      className={
+        home
+          ? "home-canvas"
+          : path === "/projects/robotics"
+            ? roboticsStyles.shell
+            : undefined
+      }
+    >
       <a className="skip-link" href="#page-content">
         Skip to content
       </a>

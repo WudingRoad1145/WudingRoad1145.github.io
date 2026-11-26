@@ -54,8 +54,16 @@ The expanded safety section draws on the local gun-bench repository README, `res
 
 Yan explicitly identified RoboHarm as inspiration. The page credits the paper and project inline, links these citations to the bottom References section, and distinguishes Yan’s decision-only pilots from RoboHarm benchmark results. Bibliographic metadata was checked against arXiv:2610.14043v1 and the Robocurve project page. The project article and later paper have separate author lists and are cited separately; the benchmark repository and Asimov works are also listed. The private gun-bench repository is not linked publicly.
 
-## Compact robotics presentation
+## Quiet robotics notebook
 
-The robotics route uses a restrained dark palette, cyan accents, and a single `RoboticsGallery` for all five simulation/workbench/safety images. Thumbnail controls select an image without autoplay; the active image opens in a native dialog with Escape dismissal and focus restoration. The movement and safety summaries sit side by side on desktop and stack on mobile. Safety methodology and comparison limits remain in an expandable section; the decision-only boundary and formal references stay visible. No new research claims or fabricated telemetry are introduced.
+The robotics route uses a flat `#242424` background, `#E5E5DE` text, `#B7B7AF` secondary text, and `#424242` rules. The 880px reading column contains a compact introduction, two vertical experiment entries, one small five-image strip, Asimov's question/laws, and formal references. Observations and methods use native disclosures. The photos retain natural colors, open in a native dialog, and support Escape dismissal/focus restoration. Research facts and limits are unchanged.
 
-Checked gallery selection/image loading for all five images, modal opening/Escape/focus restoration, method disclosure, TypeScript, and 1314px/390px/320px layouts without horizontal overflow.
+`SiteChrome` applies the notebook shell only for `/projects/robotics`, including the existing navigation and footer. Other routes keep their existing styles. No shared global CSS changes are needed.
+
+### Particle arm
+
+`ParticleArm.tsx` draws an original side-view tabletop arm with 1,187 fine SVG points. The visual interaction reference is Bruno Imbrizi's [Interactive Particles with Three.js](https://tympanus.net/codrops/2019/01/17/interactive-particles-with-three-js/) (Codrops, January 17, 2019). This implementation uses a small procedural SVG drawing rather than the tutorial's image/WebGL implementation; no source art or code was copied.
+
+The SVG is present in server-rendered HTML. Integer hashing makes the point sampling identical on server and client. Pointer movement displaces only nearby points by at most four viewBox units; they settle after the pointer leaves or stops moving. Animation frames run only while points are settling. Touch and reduced-motion settings keep the illustration static, and preference/visibility changes reset it. The 220px desktop drawing becomes 135–150px on small screens. No dependency or global pointer listener is added.
+
+Validation: TypeScript and diff checks; 1314px, 754px, 390px, and 320px layouts without overflow; exact palette and drawing sizes; no hydration warnings after fresh loads; local particle displacement/settling and static reduced-motion/touch behavior; no surrounding text movement; all five images and modal Escape/focus restoration; mobile photo opening/closing and navigation; all four disclosures; citation anchors; client navigation to Work/home removes the robotics-only shell.
