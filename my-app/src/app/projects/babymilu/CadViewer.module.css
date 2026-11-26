@@ -1,0 +1,129 @@
+.study {
+  scroll-margin-top: 80px;
+  margin: 64px 0 0;
+  padding: 32px 0;
+  border-top: 1px solid #ffffff25;
+  border-bottom: 1px solid #ffffff25;
+}
+.copy {
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+.date {
+  font-size: 14px;
+  color: inherit;
+  opacity: 0.75;
+}
+.study .copy h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 12px 0 16px;
+  letter-spacing: -0.025em;
+}
+.study .copy p {
+  font-size: 17px;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 420px;
+  margin: 0 auto;
+  background: #f4f1ee;
+  border: 1px solid #e5ddd9;
+  color: #30242c;
+}
+.model {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.poster {
+  position: relative;
+  height: 100%;
+}
+.study .poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.poster button {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 11px 18px;
+  border: 1px solid #73616d;
+  background: #fffaf8;
+  color: #30242c;
+  border-radius: 3px;
+}
+.poster button:disabled {
+  cursor: wait;
+}
+.study .loading {
+  position: absolute;
+  bottom: 16px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+.controls {
+  max-width: 760px;
+  margin: 18px auto 0;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-bottom: 12px;
+}
+.buttons button {
+  color: inherit;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 10px 0;
+  min-height: 44px;
+  font-size: 14px;
+}
+.controls > span {
+  font-size: 14px;
+  opacity: 0.75;
+}
+.study .caption {
+  max-width: 760px;
+  margin: 16px auto 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.study .error {
+  font-size: 15px;
+  margin-top: 12px;
+}
+@media (max-width: 600px) {
+  .frame {
+    height: 310px;
+  }
+  .study {
+    margin-top: 40px;
+  }
+  .poster button {
+    font-size: 14px;
+  }
+}
+
+.model::part(default-progress-bar) {
+  display: none;
+}
