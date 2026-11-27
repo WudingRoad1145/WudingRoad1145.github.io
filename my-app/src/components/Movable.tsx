@@ -19,6 +19,7 @@ export default function Movable({
   className = "",
   onOpen,
   onExplore,
+  staticOnMobile = false,
 }: {
   children: ReactNode;
   label: string;
@@ -28,6 +29,7 @@ export default function Movable({
   className?: string;
   onOpen: () => void;
   onExplore?: () => void;
+  staticOnMobile?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const helpId = useId();
@@ -41,6 +43,22 @@ export default function Movable({
     moved: boolean;
   } | null>(null);
   const suppressClick = useRef(false);
+  const [mobileDragDisabled, setMobileDragDisabled] = useState(false);
+  useEffect(() => {
+    if (!staticOnMobile) return;
+    const media = window.matchMedia("(max-width: 700px), (pointer: coarse)");
+    const update = () => {
+      setMobileDragDisabled(media.matches);
+      if (media.matches) {
+        drag.current = null;
+        suppressClick.current = false;
+        setPosition({ x: 0, y: 0 });
+      }
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, [staticOnMobile]);
   useEffect(() => {
     if (Math.hypot(position.x, position.y) >= 64) onExplore?.();
   }, [position, onExplore]);
@@ -66,28 +84,28 @@ export default function Movable({
   }, []);
   useEffect(() => {
     const parent = ref.current?.parentElement;
-    if (!parent) return;
+    if (!parent || mobileDragDisabled) return;
     const observer = new ResizeObserver(() =>
       setPosition((p) => clamp(p.x, p.y)),
     );
     observer.observe(parent);
     return () => observer.disconnect();
-  }, [clamp]);
+  }, [clamp, mobileDragDisabled]);
   return (
     <div
       ref={ref}
-      className={`movable ${className}`}
+      className={`movable ${staticOnMobile ? "movable-static-mobile" : ""} ${className}`}
       style={
         {
           left: `var(--object-x, ${x}%)`,
           top: `var(--object-y, ${y}%)`,
-          transform: `translate(${position.x}px, ${position.y}px) rotate(${angle}deg)`,
+          transform: `translate(${mobileDragDisabled ? 0 : position.x}px, ${mobileDragDisabled ? 0 : position.y}px) rotate(${angle}deg)`,
           zIndex: z,
         } as CSSProperties
       }
       onFocus={() => setZ(++highest)}
       onPointerDown={(event) => {
-        if (event.button !== 0) return;
+        if (event.button !== 0 || mobileDragDisabled) return;
         const button = (event.target as HTMLElement).closest("button");
         // A swipe on the object belongs to the page; only its handle owns touch dragging.
         if (
@@ -108,7 +126,7 @@ export default function Movable({
       }}
       onPointerMove={(event) => {
         const d = drag.current;
-        if (!d) return;
+        if (!d || mobileDragDisabled) return;
         const dx = event.clientX - d.x,
           dy = event.clientY - d.y;
         if (Math.hypot(dx, dy) > 5) d.moved = true;
@@ -130,7 +148,7 @@ export default function Movable({
           ArrowUp: [0, -12],
           ArrowDown: [0, 12],
         };
-        if (moves[event.key]) {
+        if (moves[event.key] && !mobileDragDisabled) {
           event.preventDefault();
           const [dx, dy] = moves[event.key];
           setPosition((p) => clamp(p.x + dx, p.y + dy));
@@ -173,9 +191,9 @@ export default function Movable({
         </svg>
       </button>
       <span id={helpId} className="sr-only">
-        Swipe the object to scroll. Drag its move handle to reposition it, or
-        use the arrow keys when focused. Tap the object or press Enter to open
-        it.
+        {mobileDragDisabled
+          ? "Swipe to scroll. Tap the object or press Enter to open it."
+          : "Swipe the object to scroll. Drag its move handle to reposition it, or use the arrow keys when focused. Tap the object or press Enter to open it."}
       </span>
     </div>
   );

@@ -65,8 +65,13 @@ export default function PersonalDesk() {
           </span>
         </div>
         <span className="desk-play-prompt">
-          psst — click things, drag things, have a little play
-          <em>I got you an easter egg!</em>
+          <span className="desk-mouse-hint">
+            psst — click things, drag things, have a little play
+            <em>I got you an easter egg!</em>
+          </span>
+          <span className="desk-touch-hint">
+            psst — tap things, have a little play
+          </span>
         </span>
       </div>
       <div
@@ -75,6 +80,7 @@ export default function PersonalDesk() {
         aria-label="A few things from Yan’s world"
       >
         <Movable
+          staticOnMobile
           label="Open BabyMilu’s story"
           x={2}
           y={10}
@@ -89,6 +95,7 @@ export default function PersonalDesk() {
           <span>our baby, Milu</span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Open my robotics explorations"
           x={76}
           y={8}
@@ -109,6 +116,7 @@ export default function PersonalDesk() {
           </span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Read the Wiser letters"
           x={79}
           y={46}
@@ -123,6 +131,7 @@ export default function PersonalDesk() {
           <span>inner strength that kept me going</span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Open Big Woman"
           x={3}
           y={52}
@@ -147,7 +156,7 @@ export default function PersonalDesk() {
             Move things around · Click to wander
           </span>
           <span className="desk-touch-hint">
-            Swipe to scroll · Drag the handles · Tap to explore
+            Swipe to scroll · Tap to explore
           </span>
         </span>
         <button

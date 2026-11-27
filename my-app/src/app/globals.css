@@ -2322,8 +2322,15 @@ p {
   .movable > .movable-handle {
     display: flex;
   }
+}
+@media (max-width: 700px), (pointer: coarse) {
+  .movable-static-mobile > .movable-handle,
+  .desk-instructions > button,
   .desk-mouse-hint {
     display: none;
+  }
+  .movable-static-mobile > .movable-open {
+    cursor: pointer;
   }
   .desk-touch-hint {
     display: inline;
