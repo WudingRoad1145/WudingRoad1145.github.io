@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CinemaOpening from "./CinemaOpening";
 import DailyLife from "./DailyLife";
+import CadViewer from "./CadViewer";
 import s from "./story.module.css";
 
 const asset = (name: string) => `/babymilu/${name}`;
@@ -506,6 +507,7 @@ export default function BabyMiluStory() {
                 <p>Mounting trials · April 2026</p>
               </div>
             </div>
+            <CadViewer />
             <div className={s.factoryClosing}>
               <span>
                 Making one work

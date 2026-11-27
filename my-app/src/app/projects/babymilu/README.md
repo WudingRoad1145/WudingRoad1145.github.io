@@ -98,3 +98,22 @@ The display name follows the homepage’s family-name-first order consistently
 The opening introduces “Milu — To see, to wonder”, followed by the question of how AI could understand everyday consumers and help in everyday life. It describes an echo between Japanese *miru* (to see) and Latin *mirari* (to wonder at), not a claim that Milu literally means “to see” in both languages. References: [Japanese dictionary](https://www.romajidesu.com/dictionary/meaning-of-%E8%A6%8B%E3%82%8B.html) and [Lewis & Short via Logeion](https://logeion.org/miror).
 
 The opening stacks below 900px and uses content-sized rows so the longer introduction and controls remain accessible. Compact desktop spacing applies to short viewports.
+
+
+## Interactive top cover and carrying loop
+
+The `#cad` section sits immediately after “The little loop” in the factory chapter. Yan selected the top cover/carrying-loop file rather than the January enclosure assembly. The source is `20260506BabyMilu顶盖硅胶挂绳.stp` from Downloads. Its filename says May 6, while its STEP header records export on May 7, 2026 at 13:55:38 +08:00; the public label therefore says May 2026. This documents an iteration, not a claim about a final shipping design or production material.
+
+The preview preserves the source’s three mesh parts and their relative placement. `public/babymilu/cad/top-cover-loop.glb` contains triangulated geometry, centered and converted from millimetres/Z-up to metres/Y-up, with a neutral preview finish. The raw STEP file and its engineering metadata are not published. The GLB is 1,550,224 bytes (54,919 triangles). `top-cover-loop.webp` is a static render of the same model and initial camera angle, exported with model-viewer’s `toBlob` method.
+
+Reproduce the geometry locally (Node 20; input file remains outside the repository):
+
+```sh
+node scripts/convert-cad.cjs /path/to/source.stp public/babymilu/cad/top-cover-loop.glb
+```
+
+The pinned `occt-import-js` converter is a development-only dependency. The source SHA-256 is `2e5947fb0f85d298f6ad6b15fe8c137f261f6721d867b87b45588864eece9044`. Tessellation uses 0.03mm linear and 0.18 radian angular deflection. No dimensions, bodies, or attachment geometry are invented.
+
+`CadViewer` dynamically imports `@google/model-viewer` only after the visitor chooses “Turn it around in 3D.” Until then the page shows a lazy-loaded static poster and requests no GLB. There is no autoplay, automatic rotation, AR prompt, or animated camera easing. The viewer supports mouse/keyboard rotation and explicit turn, zoom, and reset controls. Wheel/pinch zoom is disabled to retain native page scrolling; the labelled zoom buttons remain available. On mobile, horizontal drags turn the part and vertical swipes scroll the page. Failed loads return to the poster with a visible explanation and retry; retries use a fresh model URL to avoid the viewer’s rejected-promise cache.
+
+Validation: production build and production-browser model loading; TypeScript and new-component lint; desktop turn/drag/zoom/reset; no model request before activation; loaded static poster; 390px/320px layouts; dispatched mobile touch gestures (vertical scroll and horizontal orbit); static reduced-motion behavior; failed model request followed by successful retry. The viewer uses local geometry and its built-in lighting, with no external model host or runtime CAD conversion.

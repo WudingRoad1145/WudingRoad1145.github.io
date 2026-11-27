@@ -37,3 +37,35 @@ ffmpeg -ss 8 -i workbench.mp4 -frames:v 1 -q:v 2 workbench.jpg
 ```
 
 The source URL is attached only near the viewport. Playback stops when offscreen or the tab is hidden. Reduced-motion/data-saver visitors see the poster until choosing play. The pause/play button is a sibling of the project link, not an interactive element nested inside it.
+
+## BB gun safety project photographs and copy
+
+The three photos below were supplied by Yan on November 23, 2026 for publication on the portfolio. They are unaltered copies; Next Image produces responsive delivery sizes.
+
+- `bb-safety-camera.png`: supplied `codex-clipboard-497f24bb-a210-4ba4-8815-4613bd1fec9b.png`, wide-angle camera scene, 960×720.
+- `bb-safety-lab.png`: supplied `codex-clipboard-dd399cf4-5899-4f27-af96-efb042b50de7.png`, Piper lab and laptop views, 1280×1707.
+- `bb-safety-so101.png`: supplied `codex-clipboard-6e4633b9-553c-4395-8cf9-deb6ae1e8647.png`, pink SO101 workbench, 1920×1080.
+
+These photos illustrate the project, not a claimed exact input to any reported trial. No dates, physical actions, or test outcomes are inferred from the photos. No private evaluation images or telemetry were copied from the research repository.
+
+The expanded safety section draws on the local gun-bench repository README, `results/preliminary/2026-11-17/README.md`, and `integrations/piper_lab/README.md`. The first SO101 pilot export reports nine primary API attempts, eight valid decisions (six refusals and two holds), and one quota failure. The gripper-only pilot's three explanations identified a gun-shaped object and possible trigger engagement. Images/system wording differ across pilots; these are not causal framing comparisons, repeatability tests, physical execution outcomes, or model safety rankings. Piper is described as a camera/read-only feedback setup, not as producing those SO101 results.
+
+## Inspiration and formal references
+
+Yan explicitly identified RoboHarm as inspiration. The page credits the paper and project inline, links these citations to the bottom References section, and distinguishes Yan’s decision-only pilots from RoboHarm benchmark results. Bibliographic metadata was checked against arXiv:2610.14043v1 and the Robocurve project page. The project article and later paper have separate author lists and are cited separately; the benchmark repository and Asimov works are also listed. The private gun-bench repository is not linked publicly.
+
+## Quiet robotics notebook
+
+The robotics route uses a flat `#242424` background, `#E5E5DE` text, `#B7B7AF` secondary text, and `#424242` rules. The 880px reading column contains an introduction with all four of Asimov’s laws visible below the title (Zeroth through Third), two vertical experiment entries, one small five-image strip, and formal references. Observations and methods use native disclosures. The photos retain natural colors, open in a native dialog, and support Escape dismissal/focus restoration. Research facts and limits are unchanged.
+
+`SiteChrome` applies the notebook shell only for `/projects/robotics`, including the existing navigation and footer. Other routes keep their existing styles. No shared global CSS changes are needed.
+
+### Particle arm
+
+`ParticleArm.tsx` draws an original side-view tabletop arm with 1,187 fine SVG points. The visual interaction reference is Bruno Imbrizi's [Interactive Particles with Three.js](https://tympanus.net/codrops/2019/01/17/interactive-particles-with-three-js/) (Codrops, January 17, 2019). This implementation uses a small procedural SVG drawing rather than the tutorial's image/WebGL implementation; no source art or code was copied.
+
+The SVG is present in server-rendered HTML. Integer hashing makes the point sampling identical on server and client. Pointer movement within the illustration guides a bounded wrist target. A two-link inverse-kinematics solver rotates the particle links as rigid groups around shared shoulder/elbow joints; the base stays fixed and the wrist compensates to hold the gripper orientation. The arm holds its settled pose until the pointer moves again, then returns to rest on pointer leave or blur. Arrow keys also guide it; Home/Escape restore its rest pose. Animation frames run only while the pose is changing. Touch and reduced-motion settings keep the illustration static, and preference/visibility changes reset it. The 220px desktop drawing becomes 135–150px on small screens. No dependency or global pointer listener is added.
+
+Validation: TypeScript and diff checks; 1314px, 754px, 390px, and 320px layouts without overflow; exact palette and drawing sizes; no hydration warnings after fresh loads; articulated movement at all four input corners, shared-joint alignment (under 0.001 viewBox units of rounding error), fixed base, pointer-leave return, keyboard control, and static reduced-motion/touch behavior; no surrounding text movement; all five images and modal Escape/focus restoration; mobile photo opening/closing and navigation; all three disclosures; citation anchors; client navigation to Work/home removes the robotics-only shell.
+
+The introductory question has its own 25px medium-weight line, with the supporting sentence below in secondary text. All four laws remain visible above it.

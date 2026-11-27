@@ -36,6 +36,18 @@ export const projects = [
     tone: "wiser",
   },
   {
+    slug: "bridge",
+    title: "Bridge 桥",
+    subtitle: "A little closer, one tap at a time",
+    description:
+      "A 2016 project helping older adults use smartphones through research, a booklet, and regular community teaching.",
+    image: "/bridge/cover.svg",
+    alt: "Bridge 桥, 2016 — a paper composition with an illustrated bridge",
+    category: "Community teaching · 2016",
+    medium: "Research · Education · Community",
+    tone: "bridge",
+  },
+  {
     slug: "multi-agent",
     title: "Getting agents to cooperate",
     subtitle: "Helping agents cooperate when self-interest gets in the way",

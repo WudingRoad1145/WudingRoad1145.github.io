@@ -13,6 +13,7 @@ export default function ProjectCard({
     robotics: "wanna collab?",
     babymilu: "greet milu",
     wiser: "a formative story",
+    bridge: "a little closer",
     "multi-agent": "let’s brainstorm",
   };
   const invitation = invitations[project.slug] || "take a look";

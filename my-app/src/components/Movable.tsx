@@ -29,7 +29,7 @@ export default function Movable({
   onOpen: () => void;
   onExplore?: () => void;
 }) {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const helpId = useId();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [z, setZ] = useState(1);
@@ -74,12 +74,9 @@ export default function Movable({
     return () => observer.disconnect();
   }, [clamp]);
   return (
-    <button
+    <div
       ref={ref}
-      type="button"
       className={`movable ${className}`}
-      aria-label={label}
-      aria-describedby={helpId}
       style={
         {
           left: `var(--object-x, ${x}%)`,
@@ -91,7 +88,14 @@ export default function Movable({
       onFocus={() => setZ(++highest)}
       onPointerDown={(event) => {
         if (event.button !== 0) return;
-        event.currentTarget.setPointerCapture(event.pointerId);
+        const button = (event.target as HTMLElement).closest("button");
+        // A swipe on the object belongs to the page; only its handle owns touch dragging.
+        if (
+          event.pointerType === "touch" &&
+          !button?.hasAttribute("data-drag-handle")
+        )
+          return;
+        button?.setPointerCapture(event.pointerId);
         suppressClick.current = false;
         drag.current = {
           x: event.clientX,
@@ -111,16 +115,13 @@ export default function Movable({
         if (d.moved) setPosition(clamp(d.startX + dx, d.startY + dy));
       }}
       onPointerUp={() => {
-        suppressClick.current = !!drag.current?.moved;
+        if (!drag.current) return;
+        suppressClick.current = drag.current.moved;
         drag.current = null;
       }}
       onPointerCancel={() => {
         drag.current = null;
         suppressClick.current = true;
-      }}
-      onClick={() => {
-        if (!suppressClick.current) onOpen();
-        suppressClick.current = false;
       }}
       onKeyDown={(event) => {
         const moves: Record<string, [number, number]> = {
@@ -137,10 +138,45 @@ export default function Movable({
           suppressClick.current = false;
       }}
     >
-      {children}
+      <button
+        type="button"
+        className="movable-open"
+        aria-label={label}
+        aria-describedby={helpId}
+        onPointerDown={(event) => {
+          if (event.pointerType === "touch") suppressClick.current = false;
+        }}
+        onClick={() => {
+          if (!suppressClick.current) onOpen();
+          suppressClick.current = false;
+        }}
+      >
+        {children}
+      </button>
+      <button
+        type="button"
+        className="movable-handle"
+        data-drag-handle
+        aria-label={`Move object: ${label}`}
+        aria-describedby={helpId}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
+          <path d="M12 3v18M3 12h18M8 7l4-4 4 4M8 17l4 4 4-4M7 8l-4 4 4 4M17 8l4 4-4 4" />
+        </svg>
+      </button>
       <span id={helpId} className="sr-only">
-        Drag to move Arrow keys move the object Enter opens it
+        Swipe the object to scroll. Drag its move handle to reposition it, or
+        use the arrow keys when focused. Tap the object or press Enter to open
+        it.
       </span>
-    </button>
+    </div>
   );
 }
