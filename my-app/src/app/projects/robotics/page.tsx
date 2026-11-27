@@ -1,6 +1,6 @@
 import ParticleArm from "./ParticleArm";
 import RoboticsGallery from "./RoboticsGallery";
-import Link from "next/link";
+import { ReturnLink } from "@/components/HomeReturn";
 import styles from "./robotics.module.css";
 
 export const metadata = { title: "Robotics, in progress — Yán Fēng" };
@@ -8,9 +8,7 @@ export const metadata = { title: "Robotics, in progress — Yán Fēng" };
 export default function RoboticsPage() {
   return (
     <main className={styles.page}>
-      <Link className={styles.back} href="/projects">
-        ← Back to work
-      </Link>
+      <ReturnLink className={styles.back}>← Back to work</ReturnLink>
       <header className={styles.opening}>
         <div>
           <h1>Robotics, in progress</h1>

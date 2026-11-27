@@ -1,12 +1,10 @@
 import WiserNotes from "@/components/WiserNotes";
-import Link from "next/link";
+import { ReturnLink } from "@/components/HomeReturn";
 
 export default function WiserPage() {
   return (
     <main className="essay-page">
-      <Link href="/projects" className="essay-back">
-        Selected work
-      </Link>
+      <ReturnLink className="essay-back">Selected work</ReturnLink>
       {/* Content Grid */}
       <div className="essay-content">
         {/* Title Section */}

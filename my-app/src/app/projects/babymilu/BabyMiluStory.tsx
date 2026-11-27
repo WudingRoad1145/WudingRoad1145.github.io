@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { ReturnLink } from "@/components/HomeReturn";
 import CinemaOpening from "./CinemaOpening";
 import DailyLife from "./DailyLife";
 import CadViewer from "./CadViewer";
@@ -620,7 +620,7 @@ export default function BabyMiluStory() {
               Charlotte, David, Elaina for believing in this dream with us.
             </p>
           </div>
-          <Link href="/projects">Back to selected work</Link>
+          <ReturnLink>Back to selected work</ReturnLink>
         </footer>
       </main>
     </div>

@@ -2336,3 +2336,11 @@ p {
     display: inline;
   }
 }
+
+/* A quiet return path for pages entered from the homepage. */
+.home-return:has(a) {
+  width: min(90%, 1140px);
+  margin: 16px auto;
+  font-size: 14px;
+}
+.home-return a { text-decoration: underline; text-underline-offset: 4px; }
