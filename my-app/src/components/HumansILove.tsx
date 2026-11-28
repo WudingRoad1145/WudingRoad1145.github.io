@@ -8,7 +8,7 @@ export default function HumansILove() {
       aria-labelledby="humans-keepsake-title"
     >
       <div className="humans-keepsake-heading">
-        <span className="handwritten">no one becomes themselves alone</span>
+        <span className="handwritten">no one becomes themselves alone.</span>
         <h2 id="humans-keepsake-title">
           Some humans
           <br />I love
@@ -31,17 +31,17 @@ export default function HumansILove() {
         >
           <path d="M8 17 C70 2 137 12 129 49 C124 78 88 72 96 49 C103 32 145 57 140 91 M129 81 L140 92 L151 80" />
         </svg>
-        <span className="humans-note-label">starting with these two</span>
+        <span className="humans-note-label">starting with these two.</span>
         <div className="humans-parent-note">
           <h3>
             Mum <span className="note-ampersand">&amp;</span> Dad,
           </h3>
-          <p>Thank you for making me a human to begin with</p>
-          <p>And for making me unapologetically myself</p>
+          <p>Thank you for making me a human to begin with.</p>
+          <p>And for making me unapologetically myself.</p>
         </div>
       </div>
       <p className="humans-section-postscript">
-        thank you for making me a better human
+        thank you for making me a better human.
       </p>
     </section>
   );

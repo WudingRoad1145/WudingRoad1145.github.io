@@ -54,5 +54,17 @@
     "file": "team-outside.webp",
     "width": 640,
     "height": 480
+  },
+  {
+    "file": "logo.jpg",
+    "source": "Supplied by Yan in the Bridge correction request, November 27, 2026. Copied unchanged from the attached JPEG.",
+    "width": 640,
+    "height": 640
+  },
+  {
+    "file": "community-group.jpg",
+    "source": "Group photograph supplied by Yan in the Bridge correction request, November 27, 2026. Copied unchanged from the attached JPEG; capture date not provided.",
+    "width": 1080,
+    "height": 499
   }
 ]

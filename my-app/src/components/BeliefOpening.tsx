@@ -130,12 +130,13 @@ export default function BeliefOpening() {
             connect! <span>connect!</span> connect!
           </span>
           <p>
-            Play! Break things! Put them back together Get dirty Talk to people!
+            Play! Break things! Put them back together. Get dirty. Talk to
+            people!
           </p>
           <p>
-            Mean well Follow through
+            Mean well. Follow through.
             <br />
-            My way of loving this world
+            My way of loving this world.
           </p>
           <svg
             className={styles.curl}
@@ -186,7 +187,7 @@ export default function BeliefOpening() {
               {!reply ? (
                 <form onSubmit={submit}>
                   <p className={styles.threeWords}>
-                    quality, character, virtue
+                    quality, character, virtue.
                   </p>
                   <label id="good-question" htmlFor="good-answer">
                     What is good to you?
@@ -225,10 +226,10 @@ export default function BeliefOpening() {
               ) : (
                 <div className={styles.response} aria-live="polite">
                   <p className={styles.thanks} id="good-question">
-                    Thank you for leaving a little of yourself
+                    Thank you for leaving a little of yourself.
                   </p>
                   <blockquote>“{reply.answer}”</blockquote>
-                  <p className={styles.myTurn}>as for me</p>
+                  <p className={styles.myTurn}>as for me.</p>
                   <p>
                     I don’t know. But the idea of knowing I was a good person by
                     my own standard keeps coming back to me. I’m trying to live
@@ -265,15 +266,15 @@ export default function BeliefOpening() {
           )}
         </div>
         <div className={styles.humanNote}>
-          <p>why we make, pursue, exist</p>
+          <p>why we make, pursue, exist.</p>
           <p>
             The one thing we are and will always be better at: being human and
-            loving humanity
+            loving humanity.
           </p>
         </div>
       </div>
       <a href="#my-world" className={styles.below}>
-        a little of my world, below
+        a little of my world, below.
       </a>
     </section>
   );

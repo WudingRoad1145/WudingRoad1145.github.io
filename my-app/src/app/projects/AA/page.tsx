@@ -103,27 +103,28 @@ export default function WalletPage() {
               Use your computer/mobile phone as a hardware wallet:
             </strong>{" "}
             Porton Wallet lets you use the ultra-secure hardware enclave in your
-            iPhone/MacBook to store private keys Use Touch ID or Face ID to sign
-            transactions Your private key never leaves the secure enclave,
+            iPhone/MacBook to store private keys. Use Touch ID or Face ID to
+            sign transactions. Your private key never leaves the secure enclave,
             ensuring security equivalent to or better than traditional hardware
-            wallets without sacrificing usability
+            wallets without sacrificing usability.
           </li>
           <li>
             <strong>Gas subsidy mechanism:</strong> Leveraging the paymaster
             module in EIP-4337, Porton Wallet allows project teams to subsidize
-            gas fees for users This feature makes interactions easier and lowers
-            barriers for new users, especially in GameFi and NFT applications
+            gas fees for users. This feature makes interactions easier and
+            lowers barriers for new users, especially in GameFi and NFT
+            applications.
           </li>
           <li>
             <strong>Signature-less transactions:</strong> Implemented a session
             key mechanism that allows users to interact with contracts without
             repeatedly signing transactions for a defined period, maintaining
-            full decentralization and non-custodianship
+            full decentralization and non-custodianship.
           </li>
           <li>
             <strong>Use ERC20 tokens to pay gas fees:</strong> Allows users to
             pay gas fees with any ERC20 token, like USDC or USDT, provided there
-            is a sponsoring paymaster module
+            is a sponsoring paymaster module.
           </li>
         </ul>
 
@@ -143,24 +144,24 @@ export default function WalletPage() {
         <ul className="col-span-12 list-disc list-inside text-lg space-y-4 text-left">
           <li>
             <strong>EntryPoint Smart Contract:</strong> Uses public
-            infrastructure defined by EIP-4337
+            infrastructure defined by EIP-4337.
           </li>
           <li>
             <strong>Wallet Smart Contract:</strong> Supports device-native
             hardware enclaves using WebAuthN and includes session key logic for
-            signature-less transactions
+            signature-less transactions.
           </li>
           <li>
             <strong>Paymaster Smart Contract:</strong> Implements logic for
-            partial/full gas subsidies and flexible incentivization structures
+            partial/full gas subsidies and flexible incentivization structures.
           </li>
           <li>
             <strong>Bundler/Private Relayer:</strong> Custom private relayer to
-            bypass current public bundler faults
+            bypass current public bundler faults.
           </li>
           <li>
             <strong>Frontend:</strong> A 5-page website to demonstrate the
-            wallet’s functionality
+            wallet’s functionality.
           </li>
         </ul>
       </div>

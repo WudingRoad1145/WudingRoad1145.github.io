@@ -51,7 +51,7 @@ export default function BigWomanPlay() {
         <Link href="/projects" className="text-link">
           A personal pursuit
         </Link>
-        <p className="handwritten">a lifelong work in progress</p>
+        <p className="handwritten">a lifelong work in progress.</p>
         <span ref={measure} className={styles.measure} aria-hidden="true">
           WOMAN
         </span>
@@ -112,11 +112,11 @@ export default function BigWomanPlay() {
         >
           {turned ? (
             <span className="photo-back">
-              “Your biceps scared me”
+              “Your biceps scared me.”
               <br />
-              <br />I spent years wanting to change how my body looked
+              <br />I spent years wanting to change how my body looked.
               <br />
-              <em>Fortunately, I never succeeded</em>
+              <em>Fortunately, I never succeeded.</em>
             </span>
           ) : (
             <img
@@ -125,12 +125,12 @@ export default function BigWomanPlay() {
             />
           )}
           <small>
-            {turned ? "turn it back over" : "there’s a story on the back"}
+            {turned ? "turn it back over." : "there’s a story on the back."}
           </small>
         </button>
         <div className={`strength-copy ${styles.essay}`}>
           <span className="handwritten">
-            a little appreciation for this body
+            a little appreciation for this body.
           </span>
           <h2 id="strong-title">
             Strong, capable,
@@ -139,7 +139,7 @@ export default function BigWomanPlay() {
           </h2>
           <p className={styles.appreciation}>
             For every shot, every swim, every mountain, and my first IRONMAN
-            70.3 — thank you
+            70.3 — thank you.
           </p>
           <p>
             Growing up in China as a naturally athletic girl who loved movement,
@@ -162,7 +162,7 @@ export default function BigWomanPlay() {
       <section className={styles.fixing} aria-labelledby="girls-fixing-title">
         <header className={styles.fixingHeading}>
           <span className="handwritten">
-            and these hands can do more than lift
+            and these hands can do more than lift.
           </span>
           <h2 id="girls-fixing-title">
             Girls fixing
@@ -187,8 +187,8 @@ export default function BigWomanPlay() {
             </p>
           </div>
           <figure className={styles.messagePlaceholder}>
-            <figcaption>A message that stayed with me</figcaption>
-            <p>Space for the original Discord screenshot</p>
+            <figcaption>A message that stayed with me.</figcaption>
+            <p>Space for the original Discord screenshot.</p>
             <small>From an early BabyMilu supporter</small>
           </figure>
         </div>
@@ -203,13 +203,13 @@ export default function BigWomanPlay() {
               aria-label="Taking apart my Roborock Qrevo Pro to replace its broken radar"
             >
               <source src="/roborock/rescue.mp4" type="video/mp4" />
-              Your browser cannot play this repair video
+              Your browser cannot play this repair video.
             </video>
-            <figcaption>one broken radar, a whole robot in pieces</figcaption>
+            <figcaption>one broken radar, a whole robot in pieces.</figcaption>
           </figure>
           <div className={styles.repairCopy}>
             <span className="handwritten">
-              starting at home, one thing at a time
+              starting at home, one thing at a time.
             </span>
             <h3>We can do it all!</h3>
             <p>
@@ -222,7 +222,7 @@ export default function BigWomanPlay() {
               whole device apart and replaced the radar.
             </p>
             <p className="handwritten">
-              It is not that hard at all
+              It is not that hard at all.
               <br />
               We can learn how!
             </p>
@@ -245,13 +245,15 @@ export default function BigWomanPlay() {
         >
           <header className={styles.dryerHeading}>
             <div>
-              <span className="handwritten">a household effort</span>
+              <span className="handwritten">a household effort.</span>
               <h3 id="dryer-title">A dryer, a few roommates</h3>
               <p>
                 My roommates and I took apart a dryer and fixed it together.
               </p>
             </div>
-            <span className={styles.comingSoon}>photos and videos to come</span>
+            <span className={styles.comingSoon}>
+              photos and videos to come.
+            </span>
           </header>
           {/* Replace these reserved frames with the original media when supplied.
               No stock imagery, fake playback controls or invented repair steps. */}
@@ -267,20 +269,20 @@ export default function BigWomanPlay() {
             </div>
             <div className={styles.dryerPhotoStack} aria-hidden="true">
               <div className={styles.dryerPhotoSpace}>
-                <span>a few moments along the way</span>
+                <span>a few moments along the way.</span>
                 <span className={styles.frameCorner}>02</span>
               </div>
               <div className={styles.dryerPhotoSpace}>
-                <span>figuring it out together</span>
+                <span>figuring it out together.</span>
                 <span className={styles.frameCorner}>03</span>
               </div>
             </div>
           </div>
         </section>
         <p className={styles.signoff}>
-          Strong enough to try
+          Strong enough to try.
           <br />
-          Curious enough to figure it out
+          Curious enough to figure it out.
         </p>
       </section>
     </main>

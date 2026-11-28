@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ReturnLink } from "@/components/HomeReturn";
 import s from "./bridge.module.css";
 import BridgePhotos from "./BridgePhotos";
 import BridgeSpeech from "./BridgeSpeech";
@@ -14,7 +14,7 @@ export default function BridgePage() {
     <main className={s.page}>
       <header className={s.opening}>
         <div className={s.openingTop}>
-          <Link href="/projects">← Back to Work</Link>
+          <ReturnLink>← Back to Work</ReturnLink>
           <span>2016 · Freshman year of high school</span>
         </div>
         <div className={s.hero}>
@@ -31,21 +31,35 @@ export default function BridgePage() {
               teaching.
             </p>
           </div>
-          <BridgePhotos
-            layout="hero"
-            photos={[
-              {
-                file: "trying-the-phone.webp",
-                alt: "An older participant trying the steps on her smartphone",
-                caption: "one step at a time",
-              },
-              {
-                file: "at-the-laptop.webp",
-                alt: "A Bridge student at the laptop during the community session",
-                caption: "learning from both sides of the screen",
-              },
-            ]}
-          />
+          <div className={s.heroKeepsakes}>
+            <BridgePhotos
+              layout="hero"
+              photos={[
+                {
+                  file: "trying-the-phone.webp",
+                  alt: "An older participant trying the steps on her smartphone",
+                  caption: "one step at a time.",
+                },
+              ]}
+            />
+            <aside
+              className={s.heroMemory}
+              aria-label="A memory from our classes"
+            >
+              <p>
+                I still vividly remember a grandma rushing in mid-lecture,
+                grabbing me and asking:
+              </p>
+              <blockquote>
+                “Why didn’t you announce that you were starting early today? I’m
+                skipping my daily grocery shopping to be here!”
+              </blockquote>
+              <p>
+                That was the moment I realized that what we were doing was
+                really delivering value.
+              </p>
+            </aside>
+          </div>
         </div>
         <dl className={s.facts}>
           <div>
@@ -91,7 +105,10 @@ export default function BridgePage() {
           <p>
             We began by researching the difficulties people encountered with
             mobile phones and apps. That work became the foundation for a
-            booklet and the teaching we did in the community.
+            booklet and the teaching we did in the community. In hindsight, it
+            feels like a very early, human-led version of today’s “computer
+            use”: guiding older adults to tap the right things on screen, step
+            by step.
           </p>
           <p>
             Looking back, this was an early experience of learning to explain
@@ -115,7 +132,7 @@ export default function BridgePage() {
             <em>come back to</em>
           </h2>
           <span className={s.handNote}>
-            a guide can stay after a conversation ends
+            a guide can stay after a conversation ends.
           </span>
         </div>
         <div className={s.prose}>
@@ -139,7 +156,7 @@ export default function BridgePage() {
               {
                 file: "teaching-slides.webp",
                 alt: "Overview of the original Bridge teaching slides, with individual smartphone steps on separate slides",
-                caption: "our teaching slides · 2017 community archive",
+                caption: "our teaching slides · 2017 community archive.",
               },
             ]}
           />
@@ -200,17 +217,17 @@ export default function BridgePage() {
               {
                 file: "participants.webp",
                 alt: "Older adults listening together at a Bridge community session",
-                caption: "a room full of questions",
+                caption: "a room full of questions.",
               },
               {
                 file: "presenting.webp",
                 alt: "Bridge students presenting smartphone instructions with a laptop and microphone",
-                caption: "our turn to explain",
+                caption: "our turn to explain.",
               },
               {
                 file: "community-room.webp",
                 alt: "A wider view of the community room with participants using their phones",
-                caption: "time to try it for yourself",
+                caption: "time to try it for yourself.",
               },
             ]}
           />
@@ -225,7 +242,7 @@ export default function BridgePage() {
         </div>
         <div className={s.communityNote}>
           <span className={s.handNote}>
-            a phone, a question, a little time together
+            a phone, a question, a little time together.
           </span>
           <svg viewBox="0 0 280 40" aria-hidden="true">
             <path d="M4 29 Q130 3 276 19 M14 35 Q140 17 266 28" />
@@ -279,6 +296,11 @@ export default function BridgePage() {
             carefully.
           </p>
           <p>
+            Our mission grew into a school club. Four years later, when I
+            graduated, my peers kept it going — and Bridge continued after I
+            left.
+          </p>
+          <p>
             With thanks to my teammates and the community members who shared
             their time with us.
           </p>
@@ -287,13 +309,13 @@ export default function BridgePage() {
           layout="single"
           photos={[
             {
-              file: "team-outside.webp",
-              alt: "Four Bridge team members standing together outside the community venue",
-              caption: "some of us, after the session · 2017",
+              file: "community-group.jpg",
+              alt: "A large group of Bridge participants and student volunteers together in the community classroom",
+              caption: "our community, together.",
             },
           ]}
         />
-        <span className={s.handNote}>I’m glad we made Bridge</span>
+        <span className={s.handNote}>I’m glad we made Bridge.</span>
         <div className={s.archiveLinks}>
           <span className={s.eyebrow}>From the Bridge archive</span>
           <a
@@ -311,9 +333,9 @@ export default function BridgePage() {
             你尝试过没有智能手机生活吗？ · Our project film, 2017 ↗
           </a>
         </div>
-        <Link href="/projects" className={s.back}>
+        <ReturnLink className={s.back}>
           Back to the things I’m making ↗
-        </Link>
+        </ReturnLink>
       </section>
     </main>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { HomeLink, ReturnLink } from "./HomeReturn";
 import Link from "next/link";
 import roboticsStyles from "@/app/projects/robotics/robotics.module.css";
 import { usePathname } from "next/navigation";
@@ -37,9 +38,9 @@ export default function SiteChrome({
         Skip to content
       </a>
       <header className="site-header">
-        <Link href="/" className="wordmark" aria-label="Yán Fēng, home">
+        <HomeLink className="wordmark" aria-label="Yán Fēng, home">
           Yán Fēng <span lang="zh">颜丰</span>
-        </Link>
+        </HomeLink>
         <button
           className="menu-toggle"
           type="button"
@@ -79,15 +80,26 @@ export default function SiteChrome({
         </nav>
       </header>
       <div id="page-content" tabIndex={-1}>
+        {[
+          "/projects",
+          "/projects/big-woman",
+          "/projects/babymilu",
+          "/humans",
+          "/adventures",
+        ].includes(path) && (
+          <div className="home-return">
+            <ReturnLink onlyFromHome />
+          </div>
+        )}
         {children}
       </div>
       {!milu && (
         <footer className="site-footer">
           <div>
-            <Link href="/" className="wordmark">
+            <HomeLink className="wordmark">
               Yán Fēng <span lang="zh">颜丰</span>
-            </Link>
-            <p>Making things Becoming human</p>
+            </HomeLink>
+            <p>Making things. Becoming human.</p>
           </div>
           <div>
             <span className="small-label">Leave a little hello</span>

@@ -62,7 +62,7 @@ export default function ArtGallery() {
     <>
       <div className={s.galleryLabel} id="artworks">
         <span>{artworks.length} more things to spend a little time with</span>
-        <span className={s.handwritten}>click a piece, come closer ↙</span>
+        <span className={s.handwritten}>click a piece, come closer. ↙</span>
       </div>
       <div className={s.gallery}>
         {artworks.map((item, index) => {
@@ -92,7 +92,7 @@ export default function ArtGallery() {
                         : "(max-width: 700px) 88vw, 480px"
                     }
                   />
-                  <span className={s.closer}>come closer ↗</span>
+                  <span className={s.closer}>come closer. ↗</span>
                 </button>
                 {thumbnails(item)}
                 {item.note && <span className={s.objectNote}>{item.note}</span>}

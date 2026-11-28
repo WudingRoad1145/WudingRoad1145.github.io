@@ -1,18 +1,20 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import RunnerCutout from "./RunnerCutout";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
 import DeskInvitation from "./DeskInvitation";
 export default function PersonalDesk() {
   const router = useRouter();
+  const deskBounds = useRef<HTMLDivElement>(null);
   const [reset, setReset] = useState(0);
   const [foundInvitation, setFoundInvitation] = useState(false);
   const uncoverInvitation = useCallback(() => setFoundInvitation(true), []);
   return (
-    <div className="desk-wrap">
+    <div className="desk-wrap" ref={deskBounds}>
       <div className="desk-introduction">
         <h2 id="keepsakes-title">
           hi, I’m Yán Fēng <span lang="zh">颜丰</span>
@@ -61,13 +63,37 @@ export default function PersonalDesk() {
         <div className="desk-intro-links">
           <span>
             Say hi any time — or{" "}
-            <a href="mailto:yanffyy@gmail.com">shoot me a message here</a>
+            <a href="mailto:yanffyy@gmail.com">shoot me a message here</a>.
           </span>
         </div>
         <span className="desk-play-prompt">
-          psst — click things, drag things, have a little play
-          <em>I got you an easter egg!</em>
+          <span className="desk-mouse-hint">
+            psst — click things, drag things, have a little play.
+            <em>I got you an easter egg!</em>
+          </span>
+          <span className="desk-touch-hint">
+            psst — tap things, have a little play.
+          </span>
         </span>
+        <Movable
+          key={`bridge-${reset}`}
+          className="desk-bridge"
+          label="Open Bridge, my 2016 community project"
+          x={0}
+          y={0}
+          angle={9}
+          staticOnMobile
+          boundsRef={deskBounds}
+          onOpen={() => router.push("/projects/bridge")}
+        >
+          <Image
+            src="/bridge/logo.jpg"
+            width={640}
+            height={640}
+            sizes="(max-width: 900px) 90px, 104px"
+            alt=""
+          />
+        </Movable>
       </div>
       <div
         className="desk"
@@ -75,6 +101,7 @@ export default function PersonalDesk() {
         aria-label="A few things from Yan’s world"
       >
         <Movable
+          staticOnMobile
           label="Open BabyMilu’s story"
           x={2}
           y={10}
@@ -86,9 +113,10 @@ export default function PersonalDesk() {
             src="/babymilu/original-plush.png"
             alt="BabyMilu with its original character face"
           />
-          <span>our baby, Milu</span>
+          <span>our baby, Milu.</span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Open my robotics explorations"
           x={76}
           y={8}
@@ -104,11 +132,12 @@ export default function PersonalDesk() {
             sizes="(max-width: 700px) 40vw, (max-width: 900px) 240px, 250px"
           />
           <span>
-            teaching this little arm a few things
-            <small>(and importantly what you can’t do)</small>
+            teaching this little arm a few things.
+            <small>(and importantly, what you can’t do).</small>
           </span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Read the Wiser letters"
           x={79}
           y={46}
@@ -120,9 +149,10 @@ export default function PersonalDesk() {
             src="/images/notes/note1.jpg"
             alt="A green handwritten letter that says Yen the Queen"
           />
-          <span>inner strength that kept me going</span>
+          <span>inner strength that kept me going.</span>
         </Movable>
         <Movable
+          staticOnMobile
           label="Open Big Woman"
           x={3}
           y={52}
@@ -135,21 +165,26 @@ export default function PersonalDesk() {
           <span className="runner-tag">
             BIG
             <br />
-            WOMAN<small>takes up space</small>
+            WOMAN<small>takes up space.</small>
           </span>
           <span className="runner-caption">my first 70.3!</span>
         </Movable>
         <DeskInvitation found={foundInvitation} />
       </div>
+      <Link
+        className="desk-bridge-mobile"
+        href="/projects/bridge"
+        aria-label="Open Bridge, my 2016 community project"
+      >
+        <Image
+          src="/bridge/logo.jpg"
+          width={640}
+          height={640}
+          sizes="90px"
+          alt=""
+        />
+      </Link>
       <div className="desk-instructions">
-        <span>
-          <span className="desk-mouse-hint">
-            Move things around · Click to wander
-          </span>
-          <span className="desk-touch-hint">
-            Swipe to scroll · Drag the handles · Tap to explore
-          </span>
-        </span>
         <button
           type="button"
           onClick={() => {

@@ -8,25 +8,25 @@ const steps = [
   {
     time: 0,
     title: "start underneath",
-    note: "the bottom cover and its screws",
+    note: "the bottom cover and its screws.",
     path: "M610 293 Q536 310 443 408 M452 389 L439 411 L464 407",
   },
   {
     time: 6,
     title: "make room for the parts",
-    note: "the bumper and covers, laid out beside me",
+    note: "the bumper and covers, laid out beside me.",
     path: "M578 365 C674 353 691 650 601 675 C526 687 500 411 578 365",
   },
   {
     time: 16,
     title: "past the outer shell",
-    note: "getting inside to reach the radar assembly",
+    note: "getting inside to reach the radar assembly.",
     path: "M454 441 Q518 417 550 385 M537 387 L552 381 L548 397",
   },
   {
     time: 22,
     title: "back to the housing",
-    note: "lining up the casing and its screws",
+    note: "lining up the casing and its screws.",
     path: "M618 300 Q545 333 456 425 M462 405 L451 430 L476 422",
   },
 ];
@@ -127,7 +127,7 @@ export default function RoborockRescue() {
     >
       <div className={s.layout}>
         <div className={s.intro}>
-          <span className={s.handwritten}>what I’ve been up to lately</span>
+          <span className={s.handwritten}>what I’ve been up to lately.</span>
           <h2 id="rescue-title">
             a robot
             <br />
@@ -138,7 +138,7 @@ export default function RoborockRescue() {
             device apart and replaced the radar.
           </p>
           <span className={s.marginNote}>
-            one broken part, a whole robot in pieces
+            one broken part, a whole robot in pieces.
           </span>
         </div>
         <div className={s.filmColumn}>
@@ -183,7 +183,7 @@ export default function RoborockRescue() {
             >
               <path d={steps[active].path} />
             </svg>
-            <span className={s.filmLabel}>a small repair diary</span>
+            <span className={s.filmLabel}>a small repair diary.</span>
             {!failed && (
               <button
                 className={s.filmToggle}
@@ -209,7 +209,7 @@ export default function RoborockRescue() {
           )}
         </div>
         <div className={s.notes}>
-          <span className={s.chapterHint}>follow the little things</span>
+          <span className={s.chapterHint}>follow the little things.</span>
           <div className={s.steps}>
             {steps.map((step, index) => (
               <button

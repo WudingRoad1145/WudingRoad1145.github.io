@@ -30,7 +30,7 @@ export default function ArtPage() {
             <br />A few ways of following my curiosity.
           </p>
           <a className={s.wander} href="#artworks">
-            take a little wander <span aria-hidden="true">↘</span>
+            take a little wander. <span aria-hidden="true">↘</span>
           </a>
         </div>
         <figure className={s.cover} id="trampoline">
@@ -47,7 +47,7 @@ export default function ArtPage() {
       </header>
       <ArtGallery />
       <footer className={s.end}>
-        <span className={s.handwritten}>still curious</span>
+        <span className={s.handwritten}>still curious.</span>
         <Link href="/projects">back to the things I’m making ↗</Link>
       </footer>
     </main>

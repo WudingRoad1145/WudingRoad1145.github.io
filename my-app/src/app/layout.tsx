@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { HomeReturnProvider } from "@/components/HomeReturn";
 import SiteChrome from "@/components/SiteChrome";
 
 const geistSans = localFont({
@@ -33,7 +34,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SiteChrome>{children}</SiteChrome>
+        <HomeReturnProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </HomeReturnProvider>
       </body>
     </html>
   );

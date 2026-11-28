@@ -40,9 +40,10 @@ export default function Monkay() {
           </div>
         </div>
         <figcaption>
-          meet Monkay — ten years old on top of Kilimanjaro
+          meet Monkay — ten years old on top of Kilimanjaro.
           <small>
-            He’s 16 as of 2026, and I’m trying very hard to keep him in good shape.
+            He’s 16 as of 2026, and I’m trying very hard to keep him in good
+            shape.
           </small>
         </figcaption>
       </figure>
@@ -57,7 +58,7 @@ export default function Monkay() {
           things, and being willing to begin again.
         </p>
         <span className="monkey-postscript">
-          set yourself free as if it is day one, always
+          set yourself free as if it is day one, always.
         </span>
         <div className="life-links">
           <Link href="/adventures">

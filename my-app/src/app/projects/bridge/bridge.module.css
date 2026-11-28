@@ -85,11 +85,26 @@
   transform: rotate(-3deg);
   margin-right: 20px;
 }
-.heroAlbum > figure:nth-child(2) {
-  grid-column: 3 / 7;
-  transform: rotate(4deg);
-  margin-top: 18px;
-  z-index: 1;
+.heroKeepsakes {
+  min-width: 0;
+}
+.heroMemory {
+  position: relative;
+  margin: 20px 0 0 12%;
+  padding: 24px;
+  background: var(--paper);
+  box-shadow: 0 6px 16px #1b291612;
+}
+.heroMemory p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+.heroMemory blockquote {
+  font:
+    26px / 1.1 PersonalHand,
+    cursive;
+  margin: 18px 0;
 }
 .spreadAlbum {
   display: grid;
