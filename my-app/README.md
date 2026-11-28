@@ -72,3 +72,5 @@ Mobile keepsake regression checks: emulated touch swipes over the objects scroll
 Homepage return regression checks: open each of the five keepsakes and return through its link or the home wordmark; compare the original and restored scroll positions on mobile and desktop. Also check the Monkay hash link, Humans, browser Back/Forward, a subpage reload, a direct project visit, and a project opened from Work. The latter two must retain the Work fallback.
 
 The Bridge sticker uses the shared `Movable` interaction with the desk wrapper as its drag bounds, while its desktop starting position stays anchored to the introduction. At widths up to 900px, a static link occupies its own centered row below BIG WOMAN and Wiser; only the layout-appropriate Bridge control is visible and focusable. Desktop pointer and arrow-key movement, click-to-open, and “Put everything back” apply to it too; mobile scrolling and tapping remain unchanged.
+
+The “good” notebook now uses a Google Sheets adapter. See [connection setup and current status](docs/good-responses.md); the spreadsheet and script are prepared, but Google authorization and deployment are still required.

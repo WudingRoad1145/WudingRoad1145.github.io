@@ -50,10 +50,7 @@ function checkCooldown(existing: StoredThought | undefined, answer: string) {
 }
 
 function storeMode() {
-  if (
-    process.env.PORTFOLIO_SUPABASE_URL &&
-    process.env.PORTFOLIO_SUPABASE_SECRET_KEY
-  )
+  if (process.env.GOOGLE_NOTEBOOK_URL && process.env.GOOGLE_NOTEBOOK_TOKEN)
     return "shared";
   if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test")
     return "local";
@@ -117,62 +114,53 @@ async function saveLocal(
   return pending;
 }
 
-async function databaseRequest(query: string, init: RequestInit = {}) {
-  const base = process.env.PORTFOLIO_SUPABASE_URL!;
-  const secret = process.env.PORTFOLIO_SUPABASE_SECRET_KEY!;
-  if (new URL(base).protocol !== "https:")
-    throw new Error("Shared notebook requires HTTPS");
-  const response = await fetch(
-    `${base.replace(/\/$/, "")}/rest/v1/portfolio_good_responses${query}`,
-    {
-      ...init,
-      headers: {
-        apikey: secret,
-        ...(secret.startsWith("eyJ")
-          ? { Authorization: `Bearer ${secret}` }
-          : {}),
-        "Content-Type": "application/json",
-        ...init.headers,
-      },
-      cache: "no-store",
-      signal: AbortSignal.timeout(8000),
-    },
-  );
-  if (!response.ok) throw new Error("Shared notebook request failed");
-  return response;
-}
-
 async function saveShared(
   visitor: string,
   answer: string,
 ): Promise<ThoughtReceipt> {
-  const existing: StoredThought[] = await (
-    await databaseRequest(
-      `?visitor_id=eq.${visitor}&select=visitor_id,answer,created_at&limit=1`,
-    )
-  ).json();
-  checkCooldown(existing[0], answer);
-  const previous: { answer: string }[] = await (
-    await databaseRequest(
-      `?visitor_id=neq.${visitor}&select=answer&order=created_at.desc,visitor_id.desc&limit=3`,
-    )
-  ).json();
-  if (existing[0]?.answer !== answer) {
-    await databaseRequest("?on_conflict=visitor_id", {
-      method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify({
-        visitor_id: visitor,
-        answer,
-        created_at: new Date().toISOString(),
-      }),
-    });
+  const endpoint = new URL(process.env.GOOGLE_NOTEBOOK_URL!);
+  if (
+    endpoint.origin !== "https://script.google.com" ||
+    !/^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(endpoint.pathname) ||
+    endpoint.search ||
+    endpoint.hash ||
+    endpoint.username ||
+    endpoint.password
+  )
+    throw new Error("Use the deployed Google Apps Script web app URL");
+  const response = await fetch(endpoint.toString(), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      token: process.env.GOOGLE_NOTEBOOK_TOKEN,
+      visitor_id: visitor,
+      answer,
+    }),
+    cache: "no-store",
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!response.ok) throw new Error("Google notebook request failed");
+  const result = await response.json();
+  if (result?.ok === false && result?.status === 429) {
+    throw new ThoughtError(
+      "Give that thought a moment. You can change it in a minute.",
+      429,
+    );
   }
-  return {
-    answer,
-    previous: previous.map((thought) => thought.answer),
-    mode: "shared",
-  };
+  // Apps Script returns application errors in JSON with HTTP 200. Never claim
+  // success for an authorization page, malformed response, or failed write.
+  if (
+    result?.ok !== true ||
+    result.answer !== answer ||
+    !Array.isArray(result.previous) ||
+    result.previous.length > 3 ||
+    result.previous.some(
+      (item: unknown) =>
+        typeof item !== "string" || !item.trim() || item.length > 160,
+    )
+  )
+    throw new Error("Google notebook returned an invalid receipt");
+  return { answer, previous: result.previous, mode: "shared" };
 }
 
 export async function saveThought(
