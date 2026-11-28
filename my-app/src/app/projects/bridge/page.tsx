@@ -31,21 +31,35 @@ export default function BridgePage() {
               teaching.
             </p>
           </div>
-          <BridgePhotos
-            layout="hero"
-            photos={[
-              {
-                file: "trying-the-phone.webp",
-                alt: "An older participant trying the steps on her smartphone",
-                caption: "one step at a time.",
-              },
-              {
-                file: "at-the-laptop.webp",
-                alt: "A Bridge student at the laptop during the community session",
-                caption: "learning from both sides of the screen.",
-              },
-            ]}
-          />
+          <div className={s.heroKeepsakes}>
+            <BridgePhotos
+              layout="hero"
+              photos={[
+                {
+                  file: "trying-the-phone.webp",
+                  alt: "An older participant trying the steps on her smartphone",
+                  caption: "one step at a time.",
+                },
+              ]}
+            />
+            <aside
+              className={s.heroMemory}
+              aria-label="A memory from our classes"
+            >
+              <p>
+                I still vividly remember a grandma rushing in mid-lecture,
+                grabbing me and asking:
+              </p>
+              <blockquote>
+                “Why didn’t you announce that you were starting early today? I’m
+                skipping my daily grocery shopping to be here!”
+              </blockquote>
+              <p>
+                That was the moment I realized that what we were doing was
+                really delivering value.
+              </p>
+            </aside>
+          </div>
         </div>
         <dl className={s.facts}>
           <div>
@@ -91,7 +105,10 @@ export default function BridgePage() {
           <p>
             We began by researching the difficulties people encountered with
             mobile phones and apps. That work became the foundation for a
-            booklet and the teaching we did in the community.
+            booklet and the teaching we did in the community. In hindsight, it
+            feels like a very early, human-led version of today’s “computer
+            use”: guiding older adults to tap the right things on screen, step
+            by step.
           </p>
           <p>
             Looking back, this was an early experience of learning to explain
@@ -279,6 +296,11 @@ export default function BridgePage() {
             carefully.
           </p>
           <p>
+            Our mission grew into a school club. Four years later, when I
+            graduated, my peers kept it going — and Bridge continued after I
+            left.
+          </p>
+          <p>
             With thanks to my teammates and the community members who shared
             their time with us.
           </p>
@@ -287,9 +309,9 @@ export default function BridgePage() {
           layout="single"
           photos={[
             {
-              file: "team-outside.webp",
-              alt: "Four Bridge team members standing together outside the community venue",
-              caption: "some of us, after the session · 2017.",
+              file: "community-group.jpg",
+              alt: "A large group of Bridge participants and student volunteers together in the community classroom",
+              caption: "our community, together.",
             },
           ]}
         />

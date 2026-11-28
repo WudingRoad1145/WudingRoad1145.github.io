@@ -79,7 +79,13 @@ export default function PersonalDesk() {
           href="/projects/bridge"
           aria-label="Open Bridge, my 2016 community project"
         >
-          <Image src="/bridge/sticker.svg" width={160} height={140} alt="" />
+          <Image
+            src="/bridge/logo.jpg"
+            width={640}
+            height={640}
+            sizes="(max-width: 900px) 90px, 104px"
+            alt=""
+          />
         </Link>
       </div>
       <div

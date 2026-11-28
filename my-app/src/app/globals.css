@@ -2349,17 +2349,17 @@ p {
 .keepsakes-section .desk-introduction { margin-bottom: 140px; }
 .desk-bridge {
   position: absolute;
-  width: 122px;
+  width: 104px;
   right: 24px;
-  bottom: -96px;
+  bottom: -80px;
   transform: rotate(9deg);
   z-index: -1;
   filter: drop-shadow(0 3px 3px #35433322);
 }
-.desk-bridge img { display: block; width: 100%; height: auto; }
+.desk-bridge img { display: block; width: 100%; height: auto; border-radius: 50%; }
 .desk-bridge:focus-visible { outline: 2px solid #365e53; outline-offset: 4px; }
 .keepsakes-section .desk-instructions { justify-content: flex-end; }
 @media (max-width: 900px) {
   .keepsakes-section .desk-introduction { margin-bottom: 80px; }
-  .desk-bridge { width: 104px; bottom: -64px; right: 28px; }
+  .desk-bridge { width: 90px; bottom: -45px; right: 28px; }
 }
