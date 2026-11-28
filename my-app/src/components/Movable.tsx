@@ -6,6 +6,7 @@ import {
   useEffect,
   useCallback,
   type ReactNode,
+  type RefObject,
   type CSSProperties,
 } from "react";
 let highest = 20;
@@ -20,6 +21,7 @@ export default function Movable({
   onOpen,
   onExplore,
   staticOnMobile = false,
+  boundsRef,
 }: {
   children: ReactNode;
   label: string;
@@ -30,6 +32,7 @@ export default function Movable({
   onOpen: () => void;
   onExplore?: () => void;
   staticOnMobile?: boolean;
+  boundsRef?: RefObject<HTMLElement>;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const helpId = useId();
@@ -62,35 +65,58 @@ export default function Movable({
   useEffect(() => {
     if (Math.hypot(position.x, position.y) >= 64) onExplore?.();
   }, [position, onExplore]);
-  const clamp = useCallback((x: number, y: number) => {
-    const el = ref.current;
-    if (!el?.parentElement) return { x, y };
-    return {
-      x: Math.max(
-        8 - el.offsetLeft,
-        Math.min(
-          el.parentElement.clientWidth - el.offsetWidth - el.offsetLeft - 8,
-          x,
+  const clamp = useCallback(
+    (x: number, y: number) => {
+      const el = ref.current;
+      if (!el?.parentElement) return { x, y };
+      if (boundsRef?.current) {
+        // A keepsake anchored to the intro can still move across the whole desk.
+        const bounds = boundsRef.current.getBoundingClientRect();
+        const box = el.getBoundingClientRect();
+        const translation = new DOMMatrixReadOnly(
+          getComputedStyle(el).transform,
+        );
+        const left = box.left - translation.m41;
+        const top = box.top - translation.m42;
+        return {
+          x: Math.max(
+            bounds.left + 8 - left,
+            Math.min(bounds.right - 8 - box.width - left, x),
+          ),
+          y: Math.max(
+            bounds.top + 8 - top,
+            Math.min(bounds.bottom - 8 - box.height - top, y),
+          ),
+        };
+      }
+      return {
+        x: Math.max(
+          8 - el.offsetLeft,
+          Math.min(
+            el.parentElement.clientWidth - el.offsetWidth - el.offsetLeft - 8,
+            x,
+          ),
         ),
-      ),
-      y: Math.max(
-        8 - el.offsetTop,
-        Math.min(
-          el.parentElement.clientHeight - el.offsetHeight - el.offsetTop - 8,
-          y,
+        y: Math.max(
+          8 - el.offsetTop,
+          Math.min(
+            el.parentElement.clientHeight - el.offsetHeight - el.offsetTop - 8,
+            y,
+          ),
         ),
-      ),
-    };
-  }, []);
+      };
+    },
+    [boundsRef],
+  );
   useEffect(() => {
-    const parent = ref.current?.parentElement;
+    const parent = boundsRef?.current ?? ref.current?.parentElement;
     if (!parent || mobileDragDisabled) return;
     const observer = new ResizeObserver(() =>
       setPosition((p) => clamp(p.x, p.y)),
     );
     observer.observe(parent);
     return () => observer.disconnect();
-  }, [clamp, mobileDragDisabled]);
+  }, [boundsRef, clamp, mobileDragDisabled]);
   return (
     <div
       ref={ref}

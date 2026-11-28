@@ -2348,16 +2348,16 @@ p {
 /* The Bridge keepsake peeks out below the introduction, behind its paper. */
 .keepsakes-section .desk-introduction { margin-bottom: 140px; }
 .desk-bridge {
+  --object-x: auto;
+  --object-y: auto;
   position: absolute;
   width: 104px;
   right: 24px;
   bottom: -80px;
-  transform: rotate(9deg);
-  z-index: -1;
   filter: drop-shadow(0 3px 3px #35433322);
 }
 .desk-bridge img { display: block; width: 100%; height: auto; border-radius: 50%; }
-.desk-bridge:focus-visible { outline: 2px solid #365e53; outline-offset: 4px; }
+.desk-introduction:has(.desk-bridge > .movable-open:focus) { z-index: 40; }
 .keepsakes-section .desk-instructions { justify-content: flex-end; }
 @media (max-width: 900px) {
   .keepsakes-section .desk-introduction { margin-bottom: 80px; }

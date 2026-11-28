@@ -1,19 +1,19 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import RunnerCutout from "./RunnerCutout";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
 import DeskInvitation from "./DeskInvitation";
 export default function PersonalDesk() {
   const router = useRouter();
+  const deskBounds = useRef<HTMLDivElement>(null);
   const [reset, setReset] = useState(0);
   const [foundInvitation, setFoundInvitation] = useState(false);
   const uncoverInvitation = useCallback(() => setFoundInvitation(true), []);
   return (
-    <div className="desk-wrap">
+    <div className="desk-wrap" ref={deskBounds}>
       <div className="desk-introduction">
         <h2 id="keepsakes-title">
           hi, I’m Yán Fēng <span lang="zh">颜丰</span>
@@ -74,10 +74,16 @@ export default function PersonalDesk() {
             psst — tap things, have a little play.
           </span>
         </span>
-        <Link
+        <Movable
+          key={`bridge-${reset}`}
           className="desk-bridge"
-          href="/projects/bridge"
-          aria-label="Open Bridge, my 2016 community project"
+          label="Open Bridge, my 2016 community project"
+          x={0}
+          y={0}
+          angle={9}
+          staticOnMobile
+          boundsRef={deskBounds}
+          onOpen={() => router.push("/projects/bridge")}
         >
           <Image
             src="/bridge/logo.jpg"
@@ -86,7 +92,7 @@ export default function PersonalDesk() {
             sizes="(max-width: 900px) 90px, 104px"
             alt=""
           />
-        </Link>
+        </Movable>
       </div>
       <div
         className="desk"
