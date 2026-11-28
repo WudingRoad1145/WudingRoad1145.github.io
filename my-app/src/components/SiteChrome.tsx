@@ -99,7 +99,7 @@ export default function SiteChrome({
             <HomeLink className="wordmark">
               Yán Fēng <span lang="zh">颜丰</span>
             </HomeLink>
-            <p>Making things Becoming human</p>
+            <p>Making things. Becoming human.</p>
           </div>
           <div>
             <span className="small-label">Leave a little hello</span>

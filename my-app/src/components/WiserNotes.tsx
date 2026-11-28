@@ -35,7 +35,7 @@ export default function WiserNotes({ children }: { children: ReactNode }) {
     <section className="wiser-scatter" aria-label="The Wiser story and letters">
       <div className="pile-tools">
         <p id="wiser-letter-hint" className="handwritten">
-          move the letters around or click a letter to feel the love
+          move the letters around or click a letter to feel the love.
         </p>
         <div>
           <button type="button" onClick={() => setLettersVisible((v) => !v)}>

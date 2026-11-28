@@ -69,25 +69,25 @@ export default function ProjectPage() {
             <li>
               <strong>Lightweight, Everyday Accessibility:</strong> Choosing a
               Chrome extension allows HiPo to seamlessly integrate into users'
-              daily browsing Its lightweight design ensures it works silently
+              daily browsing. Its lightweight design ensures it works silently
               and effectively to help users discern polarization in their daily
-              digests without any additional friction
+              digests without any additional friction.
             </li>
             <li>
               <strong>Promoting Civil Conversations:</strong> Beyond
               highlighting biases in user readings, HiPo fosters civil
               conversations by offering a section of opposing viewpoints and
-              related articles With easy one-click links, users can discover
+              related articles. With easy one-click links, users can discover
               alternative perspectives and fill in the "gaps in understanding,"
-              reducing the barriers to meaningful dialogue
+              reducing the barriers to meaningful dialogue.
             </li>
             <li>
               <strong>Minimizing Built-In Model Bias:</strong> The slider
               feature enables users to provide their own perception of
-              polarization levels This feedback helps reduce reliance on the
-              prebuilt model's biases Over time, with sufficient data
+              polarization levels. This feedback helps reduce reliance on the
+              prebuilt model's biases. Over time, with sufficient data
               collection, HiPo can fine-tune its algorithms to better capture
-              the nuances of user perspectives
+              the nuances of user perspectives.
             </li>
           </ul>
         </div>

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import RunnerCutout from "./RunnerCutout";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
@@ -61,18 +62,25 @@ export default function PersonalDesk() {
         <div className="desk-intro-links">
           <span>
             Say hi any time — or{" "}
-            <a href="mailto:yanffyy@gmail.com">shoot me a message here</a>
+            <a href="mailto:yanffyy@gmail.com">shoot me a message here</a>.
           </span>
         </div>
         <span className="desk-play-prompt">
           <span className="desk-mouse-hint">
-            psst — click things, drag things, have a little play
+            psst — click things, drag things, have a little play.
             <em>I got you an easter egg!</em>
           </span>
           <span className="desk-touch-hint">
-            psst — tap things, have a little play
+            psst — tap things, have a little play.
           </span>
         </span>
+        <Link
+          className="desk-bridge"
+          href="/projects/bridge"
+          aria-label="Open Bridge, my 2016 community project"
+        >
+          <Image src="/bridge/sticker.svg" width={160} height={140} alt="" />
+        </Link>
       </div>
       <div
         className="desk"
@@ -92,7 +100,7 @@ export default function PersonalDesk() {
             src="/babymilu/original-plush.png"
             alt="BabyMilu with its original character face"
           />
-          <span>our baby, Milu</span>
+          <span>our baby, Milu.</span>
         </Movable>
         <Movable
           staticOnMobile
@@ -111,8 +119,8 @@ export default function PersonalDesk() {
             sizes="(max-width: 700px) 40vw, (max-width: 900px) 240px, 250px"
           />
           <span>
-            teaching this little arm a few things
-            <small>(and importantly what you can’t do)</small>
+            teaching this little arm a few things.
+            <small>(and importantly, what you can’t do).</small>
           </span>
         </Movable>
         <Movable
@@ -128,7 +136,7 @@ export default function PersonalDesk() {
             src="/images/notes/note1.jpg"
             alt="A green handwritten letter that says Yen the Queen"
           />
-          <span>inner strength that kept me going</span>
+          <span>inner strength that kept me going.</span>
         </Movable>
         <Movable
           staticOnMobile
@@ -144,21 +152,13 @@ export default function PersonalDesk() {
           <span className="runner-tag">
             BIG
             <br />
-            WOMAN<small>takes up space</small>
+            WOMAN<small>takes up space.</small>
           </span>
           <span className="runner-caption">my first 70.3!</span>
         </Movable>
         <DeskInvitation found={foundInvitation} />
       </div>
       <div className="desk-instructions">
-        <span>
-          <span className="desk-mouse-hint">
-            Move things around · Click to wander
-          </span>
-          <span className="desk-touch-hint">
-            Swipe to scroll · Tap to explore
-          </span>
-        </span>
         <button
           type="button"
           onClick={() => {

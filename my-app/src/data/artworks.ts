@@ -15,7 +15,7 @@ export const artworks = [
     medium: "Electrical circuits, Arduino, code, paper and pen",
     size: "35 × 48 cm",
     feature: true,
-    note: "mum, my model",
+    note: "mum, my model.",
     story: [
       "Can a computer be an artist? I used a neural network to process portraits and built a drawing machine with Arduino, circuits, paper and pen — my mum sat for it.",
       "If people learn to make art by copying, what separates our learning from a computer’s? This experiment put that question on a drawing board.",
@@ -77,7 +77,7 @@ export const artworks = [
     medium: "Photography, installation, plastic paper and correction pen",
     size: "Three panels · 21 × 30 cm each",
     feature: true,
-    note: "one street away",
+    note: "one street away.",
     story: [
       "Growing up in Shanghai, I noticed the older streets just one road away from the bright, busy Nanjing Road — Tianjin Road, Niuzhuang Road and Ningbo Road.",
       "I called this work Millionaire for the contradiction I saw: homes valued at millions, yet residents living with difficult conditions and memories they could not simply exchange for a better life.",
@@ -140,7 +140,7 @@ export const artworks = [
     medium: "Iron wire",
     size: "22 × 25 × 23 cm",
     feature: true,
-    note: "same face, another feeling",
+    note: "same face, another feeling.",
     story: [
       "Following Alexander Calder’s idea of drawing in space, I bent iron wire into an angry face — a set of lines with a three-dimensional presence.",
       "Changing the light gives the same face different expressions in shadow, a small way of exploring how many feelings one face can hold.",

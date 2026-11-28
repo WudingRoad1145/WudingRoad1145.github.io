@@ -56,7 +56,7 @@ export default function DeskInvitation({ found }: { found: boolean }) {
             ×
           </button>
           <span className={styles.eyebrow}>
-            a little invitation, just for you
+            a little invitation, just for you.
           </span>
           <h2 id="secret-invitation-title">You found me!</h2>
           <p>Thinking about trying any of these, but not sure how to start?</p>
@@ -77,9 +77,9 @@ export default function DeskInvitation({ found }: { found: boolean }) {
           </div>
           <p>Or simply want a partner in crime?</p>
           <p className={styles.handwritten}>
-            You found me
+            You found me.
             <br />
-            Let’s figure it out together :)
+            Let’s figure it out together. :)
           </p>
           <a
             className={styles.hello}

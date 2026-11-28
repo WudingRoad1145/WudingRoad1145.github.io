@@ -300,7 +300,7 @@ export default function BabyMiluStory() {
                 height="1067"
                 loading="lazy"
               />
-              <figcaption>The first prototype Yes, that’s a GoPro</figcaption>
+              <figcaption>The first prototype. Yes, that’s a GoPro.</figcaption>
             </figure>
             <span className={s.photoNote}>poor Kuromi</span>
           </div>
@@ -322,7 +322,7 @@ export default function BabyMiluStory() {
               We filmed character-alarm ideas with the same prototype. The
               TikToks took off. Our Discord grew. We found our first backers.
             </p>
-            <p className={s.pullLine}>Suddenly, people were waiting for it</p>
+            <p className={s.pullLine}>Suddenly, people were waiting for it.</p>
             <div className={s.marginNote}>
               The animation was simulated What we were testing was the
               invitation: would you want this character in your life?
@@ -492,7 +492,7 @@ export default function BabyMiluStory() {
                     height="800"
                     loading="lazy"
                   />
-                  <figcaption>Think with a sketch</figcaption>
+                  <figcaption>Think with a sketch.</figcaption>
                 </figure>
                 <figure>
                   <img
@@ -502,7 +502,7 @@ export default function BabyMiluStory() {
                     height="800"
                     loading="lazy"
                   />
-                  <figcaption>Then with a part</figcaption>
+                  <figcaption>Then with a part.</figcaption>
                 </figure>
                 <p>Mounting trials · April 2026</p>
               </div>
@@ -535,7 +535,7 @@ export default function BabyMiluStory() {
             <figcaption>
               A boxed DVT unit · June 2026
               <br />
-              The exact first-box photograph is still to identify
+              The exact first-box photograph is still to identify.
             </figcaption>
           </figure>
           <div>
@@ -593,9 +593,9 @@ export default function BabyMiluStory() {
               height="49"
             />
             <p>
-              Made with a lot of people
+              Made with a lot of people.
               <br />
-              Remembered with a lot of love
+              Remembered with a lot of love.
             </p>
           </div>
           <div>
@@ -613,7 +613,7 @@ export default function BabyMiluStory() {
             <p>
               And our engineering, design, mechanical, factory,
               <br />
-              and community collaborators
+              and community collaborators.
             </p>
             <p>
               Thanks to Gopal, Evan, Lizz, Joy, Miffy, Jiayue, Aaron, Anwei,
