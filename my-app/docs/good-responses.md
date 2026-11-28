@@ -49,7 +49,7 @@ References: [Apps Script web apps](https://developers.google.com/apps-script/gui
 
 ### Setup status
 
-The Notebook tab and standalone script have been prepared. Google authorization, token configuration, web-app deployment, production environment settings, and live end-to-end verification are still pending. No hosting settings have been changed.
+Completed November 27, 2026. Google authorization and token configuration are complete. Apps Script version 1 is deployed. With explicit approval, server-only GOOGLE_NOTEBOOK_URL and GOOGLE_NOTEBOOK_TOKEN were added to the existing Vercel project babymilu/wuding-road1145-github-io for Preview and Production; the token is marked sensitive. Both environments were rebuilt. Production deployment dpl_3yi8QxSS6v6tTM3ggSAcmDCjh3oT serves yanffyy.xyz; preview deployment dpl_5dkYZT4n1w9aob4YLr8hPeZxjDTF is also ready. The live blue note form successfully saved a reply into the selected Sheet and showed its success state. Earlier live endpoint/local-browser checks passed for rejected credentials, prior-response reads, literal formula-like input, idempotent retry, and cooldown. All four disposable test rows were cleared afterward. The endpoint URL and token are deployment settings, not public client code. The ignored local environment is configured too. Spreadsheet sharing settings were left unchanged.
 
 ## Checks
 
