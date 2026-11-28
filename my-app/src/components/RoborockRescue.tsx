@@ -7,26 +7,26 @@ import s from "./RoborockRescue.module.css";
 const steps = [
   {
     time: 0,
-    title: "start underneath",
-    note: "the bottom cover and its screws.",
+    title: "remove the battery!",
+    note: "safety first!",
     path: "M610 293 Q536 310 443 408 M452 389 L439 411 L464 407",
   },
   {
     time: 6,
-    title: "make room for the parts",
-    note: "the bumper and covers, laid out beside me.",
+    title: "remove the bumper!",
+    note: "set it aside with its screws.",
     path: "M578 365 C674 353 691 650 601 675 C526 687 500 411 578 365",
   },
   {
     time: 16,
-    title: "past the outer shell",
-    note: "getting inside to reach the radar assembly.",
+    title: "remove 14 screws",
+    note: "flip back to the top and remove the top cover.",
     path: "M454 441 Q518 417 550 385 M537 387 L552 381 L548 397",
   },
   {
     time: 22,
-    title: "back to the housing",
-    note: "lining up the casing and its screws.",
+    title: "find the radar module",
+    note: "replace it with the new module.",
     path: "M618 300 Q545 333 456 425 M462 405 L451 430 L476 422",
   },
 ];
@@ -228,14 +228,6 @@ export default function RoborockRescue() {
               </button>
             ))}
           </div>
-          <a
-            className={s.reference}
-            href="https://www.ifixit.com/Teardown/Roborock+Q+Revo:+Teardown/177533"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Q Revo teardown reference ↗
-          </a>
           <Link className={s.bigWoman} href="/projects/big-woman">
             <svg viewBox="0 0 100 85" fill="none" aria-hidden="true">
               <path d="M9 5 C83 0 82 51 42 49 C6 48 36 22 49 42 C64 65 40 70 76 74 M64 61 L79 75 L61 81" />
