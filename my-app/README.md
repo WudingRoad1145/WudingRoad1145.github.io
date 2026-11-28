@@ -73,4 +73,4 @@ Homepage return regression checks: open each of the five keepsakes and return th
 
 The Bridge sticker uses the shared `Movable` interaction with the desk wrapper as its drag bounds, while its desktop starting position stays anchored to the introduction. At widths up to 900px, a static link occupies its own centered row below BIG WOMAN and Wiser; only the layout-appropriate Bridge control is visible and focusable. Desktop pointer and arrow-key movement, click-to-open, and “Put everything back” apply to it too; mobile scrolling and tapping remain unchanged.
 
-The “good” notebook now uses a Google Sheets adapter. See [connection setup and current status](docs/good-responses.md); the Google endpoint is deployed and verified through the local blue note form; the Vercel connection settings are still pending.
+The “good” notebook now uses a Google Sheets adapter. See [connection setup and current status](docs/good-responses.md); the Google endpoint and Vercel Preview/Production settings are configured, and a submission through the live blue note on yanffyy.xyz was verified in the Sheet. All disposable test entries were removed.
