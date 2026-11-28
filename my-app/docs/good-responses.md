@@ -49,7 +49,7 @@ References: [Apps Script web apps](https://developers.google.com/apps-script/gui
 
 ### Setup status
 
-The Notebook tab and standalone script have been prepared. Google authorization, token configuration, web-app deployment, production environment settings, and live end-to-end verification are still pending. No hosting settings have been changed.
+Google authorization and token configuration are complete. Apps Script version 1 is deployed, and the local website is connected to the live Sheet through its ignored local environment. Live verification passed for rejected credentials, save/read, literal formula-like input, idempotent retry, cooldown, and the actual blue note browser form. The three disposable test rows were cleared afterward. Vercel environment configuration and a connected hosted deployment are still pending; no hosting settings have been changed. The endpoint URL and token are deployment settings, not public client code.
 
 ## Checks
 
