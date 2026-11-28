@@ -2357,9 +2357,24 @@ p {
   filter: drop-shadow(0 3px 3px #35433322);
 }
 .desk-bridge img { display: block; width: 100%; height: auto; border-radius: 50%; }
+.desk-bridge-mobile { display: none; }
 .desk-introduction:has(.desk-bridge > .movable-open:focus) { z-index: 40; }
 .keepsakes-section .desk-instructions { justify-content: flex-end; }
 @media (max-width: 900px) {
-  .keepsakes-section .desk-introduction { margin-bottom: 80px; }
-  .desk-bridge { --object-y: auto; width: 90px; bottom: -45px; right: 28px; }
+  .keepsakes-section .desk-introduction { margin-bottom: 24px; }
+  .desk-bridge { display: none; }
+  .desk-bridge-mobile {
+    display: block;
+    width: 90px;
+    margin: 48px auto 16px;
+    border-radius: 50%;
+    transform: rotate(9deg);
+    filter: drop-shadow(0 3px 3px #35433322);
+    touch-action: pan-y pinch-zoom;
+  }
+  .desk-bridge-mobile img { display: block; width: 100%; height: auto; border-radius: 50%; }
+}
+@media (max-width: 700px) {
+  /* Leave room for the larger letter and its caption as the mobile desk widens. */
+  .desk-bridge-mobile { margin-top: clamp(16px, calc(30vw - 90px), 120px); }
 }

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import RunnerCutout from "./RunnerCutout";
 import Movable from "./Movable";
 import NamePronunciation from "./NamePronunciation";
@@ -170,6 +171,19 @@ export default function PersonalDesk() {
         </Movable>
         <DeskInvitation found={foundInvitation} />
       </div>
+      <Link
+        className="desk-bridge-mobile"
+        href="/projects/bridge"
+        aria-label="Open Bridge, my 2016 community project"
+      >
+        <Image
+          src="/bridge/logo.jpg"
+          width={640}
+          height={640}
+          sizes="90px"
+          alt=""
+        />
+      </Link>
       <div className="desk-instructions">
         <button
           type="button"
