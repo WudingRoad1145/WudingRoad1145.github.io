@@ -2345,15 +2345,15 @@ p {
 }
 .home-return a { text-decoration: underline; text-underline-offset: 4px; }
 
-/* The Bridge keepsake peeks out below the introduction, behind its paper. */
+/* Bridge starts beside the introduction, between the robot photo and letter. */
 .keepsakes-section .desk-introduction { margin-bottom: 140px; }
 .desk-bridge {
   --object-x: auto;
-  --object-y: auto;
+  --object-y: 44%;
   position: absolute;
   width: 104px;
-  right: 24px;
-  bottom: -80px;
+  right: -92px;
+  bottom: auto;
   filter: drop-shadow(0 3px 3px #35433322);
 }
 .desk-bridge img { display: block; width: 100%; height: auto; border-radius: 50%; }
@@ -2361,5 +2361,5 @@ p {
 .keepsakes-section .desk-instructions { justify-content: flex-end; }
 @media (max-width: 900px) {
   .keepsakes-section .desk-introduction { margin-bottom: 80px; }
-  .desk-bridge { width: 90px; bottom: -45px; right: 28px; }
+  .desk-bridge { --object-y: auto; width: 90px; bottom: -45px; right: 28px; }
 }
